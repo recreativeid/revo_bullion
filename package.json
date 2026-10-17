@@ -1,0 +1,24 @@
+{
+  "name": "revo-bullion",
+  "version": "1.0.0",
+  "description": "REVO BULLION — Precious Moments Last Forever | Kad Emas & Perak Tulen Au/Ag 999.9",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "revo-bullion",
+    "gold-card",
+    "silver-card",
+    "corporate-gifts",
+    "doorgift-emas",
+    "malaysia"
+  ],
+  "author": "REVO BULLION",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

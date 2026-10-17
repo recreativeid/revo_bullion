@@ -1,0 +1,1645 @@
+/* ==========================================================================
+   REVO BULLION — Master Luxury Styling (Gold & Hitam Korporat Premium)
+   Based on Official Reference Layout & All 16 Company Profile Poster Contents
+   ========================================================================== */
+
+:root {
+  /* Color System */
+  --bg-dark: #060608;
+  --bg-surface: #0c0c11;
+  --bg-card: rgba(16, 16, 23, 0.85);
+  --bg-card-hover: rgba(24, 24, 35, 0.95);
+  --bg-card-gold: linear-gradient(145deg, #1f1a10 0%, #0d0c08 100%);
+  
+  /* Metallic Gold Palette */
+  --gold-50: #fffbeb;
+  --gold-100: #fef3c7;
+  --gold-200: #fde68a;
+  --gold-300: #fcd34d;
+  --gold-400: #fbbf24;
+  --gold-500: #d4af37; /* Revo Primary Gold */
+  --gold-600: #b89124;
+  --gold-700: #8c6c14;
+  
+  --gold-gradient: linear-gradient(135deg, #fff3cd 0%, #f7d070 30%, #d4af37 65%, #9c7a1c 100%);
+  --gold-gradient-btn: linear-gradient(135deg, #fce49c 0%, #e2b740 50%, #b8861e 100%);
+  --gold-border: rgba(212, 175, 55, 0.28);
+  --gold-border-light: rgba(212, 175, 55, 0.15);
+  --gold-border-hover: rgba(247, 208, 112, 0.7);
+  --gold-glow: 0 0 30px rgba(212, 175, 55, 0.25);
+  --gold-glow-ambient: radial-gradient(ellipse at 50% 12%, rgba(212, 175, 55, 0.18) 0%, rgba(212, 175, 55, 0.04) 45%, transparent 70%);
+
+  /* Platinum Silver Palette */
+  --silver-100: #ffffff;
+  --silver-200: #e5e9f0;
+  --silver-300: #cbd5e1;
+  --silver-400: #94a3b8;
+  --silver-gradient: linear-gradient(135deg, #ffffff 0%, #e2e8f0 45%, #94a3b8 100%);
+  --silver-border: rgba(203, 213, 225, 0.25);
+
+  /* Typography Colors */
+  --text-main: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-gold: #f5d372;
+
+  /* Accent */
+  --whatsapp-green: #25d366;
+  --whatsapp-hover: #1ebd56;
+
+  /* Geometry & Transition */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --radius-full: 9999px;
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-card: 0 12px 36px -8px rgba(0, 0, 0, 0.85);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background Ambient Glow matching reference */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 650px;
+  background: var(--gold-glow-ambient);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Typography Classes */
+.font-serif {
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+}
+
+.text-gold-gradient {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.text-silver-gradient {
+  background: var(--silver-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header matching user reference image */
+.ref-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(6, 6, 8, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  transition: var(--transition);
+}
+
+.ref-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.ref-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.ref-hamburger-btn {
+  background: none;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 28px;
+  height: 28px;
+}
+
+.ref-hamburger-btn span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--text-main);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.ref-brand-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+
+.ref-nav-center-emblem {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(12, 12, 18, 0.8) 100%);
+  border: 1px solid var(--gold-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.35);
+}
+
+.ref-emblem-r {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.ref-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ref-nav-icon-link {
+  color: var(--gold-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--gold-border-light);
+  transition: var(--transition);
+}
+
+.ref-nav-icon-link:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: var(--gold-500);
+  color: #fff;
+}
+
+/* Mobile Slide-over Drawer */
+.mobile-drawer {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  background: rgba(8, 8, 12, 0.98);
+  border-bottom: 1px solid var(--gold-border);
+  padding: 2rem 1.5rem;
+  display: none;
+  flex-direction: column;
+  gap: 1.2rem;
+  z-index: 99;
+}
+
+.mobile-drawer.active {
+  display: flex;
+}
+
+.drawer-link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.drawer-link:hover {
+  color: var(--gold-300);
+}
+
+/* ==========================================
+   HERO SECTION (DIRECT MATCH TO REFERENCE IMAGE)
+   ========================================== */
+.ref-hero-section {
+  text-align: center;
+  padding: 4.5rem 0 3.5rem 0;
+  position: relative;
+}
+
+.ref-hero-badge {
+  display: inline-block;
+  padding: 0.4rem 1.4rem;
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-full);
+  background: rgba(212, 175, 55, 0.06);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gold-300);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.ref-hero-kicker {
+  font-family: 'Cinzel', serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--gold-400);
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+.ref-hero-headline {
+  font-family: 'Playfair Display', 'Cinzel', Georgia, serif;
+  font-size: clamp(2.4rem, 5.2vw, 4rem);
+  line-height: 1.2;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.6rem;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ref-hero-headline em {
+  font-style: italic;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ref-hero-desc {
+  max-width: 680px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+.ref-hero-cta-wrap {
+  margin-bottom: 2.2rem;
+}
+
+.ref-hero-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--gold-300);
+  font-family: 'Cinzel', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.6rem 1.4rem;
+  border-bottom: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.ref-hero-link-btn:hover {
+  color: #fff;
+  border-bottom-color: var(--gold-400);
+  transform: translateX(4px);
+}
+
+.ref-hero-motto {
+  font-family: 'Cinzel', serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  color: var(--gold-500);
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* Section Common */
+.section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.section-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.section-kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold-400);
+  margin-bottom: 0.8rem;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ==========================================
+   CONTENT MODULE 1: PROFIL, VISI & 5 NILAI TERAS
+   (From Poster 01, 02, 03)
+   ========================================== */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+}
+
+.pillar-card {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border-light);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem 1.8rem;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-card:hover {
+  border-color: var(--gold-border);
+  background: var(--bg-card-hover);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card), var(--gold-glow);
+}
+
+.pillar-icon-badge {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.pillar-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+
+.pillar-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex-grow: 1;
+}
+
+.values-chips-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.value-chip {
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--gold-border-light);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--gold-300);
+}
+
+/* ==========================================
+   CONTENT MODULE 2: PRODUCT CATALOG WITHOUT POSTER IMAGES
+   (From Poster 04, 05, 06, 07, 08, 09, 10)
+   Rendered in Pure Luxury CSS Typography Cards
+   ========================================== */
+.catalog-nav-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 3rem;
+}
+
+.cat-tab-btn {
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cat-tab-btn:hover {
+  color: #fff;
+  border-color: var(--gold-border);
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.cat-tab-btn.active {
+  background: var(--gold-gradient);
+  color: #0b0903;
+  font-weight: 700;
+  border-color: transparent;
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
+}
+
+.product-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.8rem;
+}
+
+/* Luxury Pure CSS Product Card */
+.pure-product-card {
+  background: linear-gradient(160deg, rgba(22, 22, 32, 0.9) 0%, rgba(10, 10, 15, 0.95) 100%);
+  border: 1px solid var(--gold-border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.pure-product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gold-gradient);
+  opacity: 0.4;
+  transition: var(--transition);
+}
+
+.pure-product-card.silver-card::before {
+  background: var(--silver-gradient);
+}
+
+.pure-product-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold-border);
+  box-shadow: var(--shadow-card), var(--gold-glow);
+}
+
+.pure-product-card:hover::before {
+  opacity: 1;
+}
+
+.pure-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.pure-metal-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.pure-metal-tag.gold {
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--gold-300);
+  border: 1px solid var(--gold-border);
+}
+
+.pure-metal-tag.silver {
+  background: rgba(203, 213, 225, 0.15);
+  color: var(--silver-200);
+  border: 1px solid var(--silver-border);
+}
+
+.pure-weight-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.pure-series-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-400);
+  margin-bottom: 0.4rem;
+}
+
+.pure-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 0.8rem;
+  line-height: 1.35;
+}
+
+.pure-card-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.4rem;
+  flex-grow: 1;
+}
+
+.pure-price-panel {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.pure-price-unit {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.pure-price-number {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--gold-300);
+}
+
+.pure-card-btn-ws {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--gold-border);
+  color: var(--gold-300);
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.pure-card-btn-ws:hover {
+  background: var(--gold-gradient-btn);
+  color: #0d0a02;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* ==========================================
+   CONTENT MODULE 3: 4 PILIHAN PEMBUNGKUSAN (Poster 11)
+   ========================================== */
+.packaging-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.6rem;
+}
+
+.pack-card {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border-light);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.pack-card:hover {
+  border-color: var(--gold-border);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+}
+
+.pack-card-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--gold-300);
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--gold-border-light);
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+
+.pack-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+
+.pack-card-desc {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
+}
+
+.pack-features-list {
+  list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.pack-features-list li {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  margin-bottom: 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pack-features-list li::before {
+  content: '✓';
+  color: var(--gold-400);
+  font-weight: bold;
+}
+
+/* ==========================================
+   CONTENT MODULE 4: 12 KEGUNAAN PRODUK (Poster 12)
+   ========================================== */
+.use-grid-12 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.4rem;
+}
+
+.use-item-box {
+  background: rgba(14, 14, 20, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: var(--transition);
+}
+
+.use-item-box:hover {
+  border-color: var(--gold-border);
+  background: rgba(22, 22, 32, 0.9);
+  transform: translateY(-4px);
+}
+
+.use-box-num {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--gold-400);
+  margin-bottom: 0.5rem;
+}
+
+.use-box-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.use-box-desc {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ==========================================
+   CONTENT MODULE 5: 6 LANGKAH TEMPAHAN (Poster 13)
+   ========================================== */
+.steps-row-6 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.2rem;
+}
+
+.step-item {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1.6rem 1.2rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.step-item:hover {
+  border-color: var(--gold-border);
+  transform: translateY(-4px);
+}
+
+.step-num-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--gold-gradient);
+  color: #0b0903;
+  font-weight: 800;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.step-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.step-info {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* ==========================================
+   CONTENT MODULE 6: SIAPA SESUAI & KORPORAT (Poster 14 & 15)
+   ========================================== */
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.audience-card {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: var(--transition);
+}
+
+.audience-card:hover {
+  border-color: var(--gold-border);
+  transform: translateY(-4px);
+}
+
+.audience-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.8rem;
+}
+
+.audience-icon {
+  font-size: 1.4rem;
+}
+
+.audience-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.audience-list {
+  list-style: none;
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.audience-list li::before {
+  content: '• ';
+  color: var(--gold-400);
+}
+
+/* ==========================================
+   VVIP EXCLUSIVE SPOTLIGHT (Poster 10)
+   ========================================== */
+.vvip-spotlight-card {
+  margin-top: 3rem;
+  background: radial-gradient(circle at 50% 0%, rgba(35, 30, 15, 0.8) 0%, rgba(12, 12, 18, 0.95) 100%);
+  border: 1px solid var(--gold-400);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2.5rem;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.85), var(--gold-glow);
+  position: relative;
+  overflow: hidden;
+}
+
+.vvip-spotlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gold-gradient-btn);
+}
+
+.vvip-spotlight-head {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.vvip-badge-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1.1rem;
+  border-radius: var(--radius-full);
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--gold-400);
+  color: var(--gold-300);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+
+.vvip-spotlight-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.04em;
+}
+
+.vvip-spotlight-sub {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--gold-200);
+  margin-bottom: 0.9rem;
+}
+
+.vvip-spotlight-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.vvip-features-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2.2rem;
+}
+
+.vvip-feature-pill {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.vvip-feature-pill:hover {
+  border-color: var(--gold-400);
+  background: rgba(212, 175, 55, 0.08);
+  transform: translateY(-3px);
+}
+
+.vvip-feat-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.vvip-feat-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.vvip-feat-text {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.vvip-cta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(10, 10, 15, 0.85);
+  border: 1px solid var(--gold-border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem 1.8rem;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.vvip-cta-left {
+  font-size: 0.92rem;
+  color: #e2e8f0;
+}
+
+.vvip-cta-left strong {
+  color: var(--gold-300);
+}
+
+/* ==========================================
+   BOOKING PATHWAYS (Poster 13)
+   ========================================== */
+.booking-pathways-wrap {
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.pathway-card {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border-light);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem 2rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.pathway-card:hover {
+  border-color: var(--gold-border);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.pathway-tag {
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.pathway-tag.gold {
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--gold-300);
+  border: 1px solid var(--gold-border);
+}
+
+.pathway-tag.corp {
+  background: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.pathway-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.35rem;
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+
+.pathway-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.4rem;
+}
+
+.pathway-checklist {
+  list-style: none;
+  font-size: 0.86rem;
+  color: #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 1.8rem;
+}
+
+.pathway-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.pathway-checklist li::before {
+  content: '✓';
+  color: var(--gold-400);
+  font-weight: 800;
+}
+
+/* 4 Payment & Delivery Guarantees (Poster 13) */
+.order-guarantees-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.guarantee-card {
+  background: rgba(14, 14, 20, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-md);
+  padding: 1.4rem 1.2rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.guarantee-card:hover {
+  border-color: var(--gold-border-light);
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.guarantee-icon {
+  font-size: 1.7rem;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.guarantee-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.35rem;
+}
+
+.guarantee-text {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* ==========================================
+   SOLUSI KORPORAT & INSTITUSI (Poster 15)
+   ========================================== */
+.corp-solutions-box {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border-light);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2.5rem;
+  margin-top: 2rem;
+}
+
+.corp-events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.corp-event-card {
+  background: rgba(20, 20, 28, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-md);
+  padding: 1.6rem 1.4rem;
+  transition: var(--transition);
+}
+
+.corp-event-card:hover {
+  border-color: var(--gold-border);
+  background: rgba(26, 26, 38, 0.9);
+  transform: translateY(-4px);
+}
+
+.corp-event-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--gold-400);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.corp-event-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.7rem;
+}
+
+.corp-event-list {
+  list-style: none;
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.corp-event-list li::before {
+  content: '✓ ';
+  color: var(--gold-400);
+}
+
+/* 6 Sebab Kenapa Pilih Revo Bullion */
+.why-revo-wrap {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.why-revo-pill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.why-revo-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: rgba(10, 10, 14, 0.8);
+  border: 1px solid var(--gold-border-light);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.2rem;
+  transition: var(--transition);
+}
+
+.why-revo-pill:hover {
+  border-color: var(--gold-400);
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.why-revo-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--gold-gradient-btn);
+  color: #000;
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.why-revo-text {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  line-height: 1.4;
+}
+
+/* ==========================================
+   LEGACY & FUTURE WARISAN (Poster 16)
+   ========================================== */
+.legacy-future-box {
+  background: radial-gradient(circle at 50% 20%, rgba(28, 24, 12, 0.75) 0%, rgba(8, 8, 12, 0.95) 100%);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-xl);
+  padding: 3.5rem 2.5rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.legacy-headline {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+
+.legacy-subhead {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--gold-300);
+  margin-bottom: 1rem;
+}
+
+.legacy-statement {
+  max-width: 720px;
+  margin: 0 auto 2.5rem auto;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.legacy-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.4rem;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.legacy-pillar-card {
+  background: rgba(14, 14, 20, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--radius-md);
+  padding: 1.6rem 1.4rem;
+  transition: var(--transition);
+}
+
+.legacy-pillar-card:hover {
+  border-color: var(--gold-400);
+  transform: translateY(-3px);
+}
+
+.legacy-pillar-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.7rem;
+  display: block;
+}
+
+.legacy-pillar-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.legacy-pillar-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.legacy-trust-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.legacy-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold-200);
+}
+
+/* Social Media Channels */
+.ref-social-links-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.ref-social-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.ref-social-badge:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--gold-400);
+  color: var(--gold-300);
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   INTERACTIVE CALCULATOR
+   ========================================== */
+.calculator-box {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card), var(--gold-glow);
+  display: grid;
+  grid-template-columns: 1.25fr 0.85fr;
+}
+
+.calc-inputs-pane {
+  padding: 2.5rem;
+}
+
+.calc-results-pane {
+  background: linear-gradient(150deg, #16151f 0%, #0d0c12 100%);
+  border-left: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calc-group {
+  margin-bottom: 1.5rem;
+}
+
+.calc-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.calc-select, .calc-input {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border-radius: var(--radius-md);
+  background: rgba(10, 10, 14, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.calc-select:focus, .calc-input:focus {
+  border-color: var(--gold-400);
+  outline: none;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.calc-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.step-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.step-btn:hover {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: var(--gold-400);
+  color: var(--gold-300);
+}
+
+.calc-total-card {
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  padding: 1.4rem;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.calc-total-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--gold-300);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+
+.calc-total-val {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--gold-300);
+}
+
+.calc-row-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.7rem;
+}
+
+.calc-row-item strong {
+  color: #fff;
+}
+
+/* ==========================================
+   BOTTOM SECTION (EXACT MATCH TO REFERENCE IMAGE)
+   ========================================== */
+.ref-bottom-section {
+  padding: 4rem 0 2rem 0;
+  position: relative;
+}
+
+/* 1. Golden Emblem & Highlights Card */
+.ref-bottom-gold-card {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding: 2.5rem 1.5rem;
+  background: radial-gradient(circle at center, rgba(30, 26, 15, 0.6) 0%, rgba(12, 12, 16, 0.4) 100%);
+  border: 1px solid var(--gold-border-light);
+  border-radius: var(--radius-lg);
+}
+
+.ref-bottom-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--gold-300);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.08em;
+}
+
+.ref-bottom-tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--gold-200);
+  margin-bottom: 1.4rem;
+}
+
+.ref-bottom-check-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
+
+.ref-bottom-check-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ref-bottom-check-list li::before {
+  content: '✓';
+  color: var(--gold-400);
+  font-weight: 800;
+}
+
+/* 2. Corporate Information Card */
+.ref-bottom-info-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.ref-info-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+
+.ref-info-card-text {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.4rem;
+}
+
+.ref-info-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.92rem;
+  color: #cbd5e1;
+}
+
+.ref-info-contact-list a {
+  color: #cbd5e1;
+}
+
+.ref-info-contact-list a:hover {
+  color: var(--gold-300);
+}
+
+/* 3. Sticky / Prominent Bottom Gold Shimmering Button */
+.ref-bottom-cta-wrap {
+  position: sticky;
+  bottom: 1.5rem;
+  z-index: 90;
+  margin-top: 1.5rem;
+}
+
+.ref-bottom-gold-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 1.15rem 2rem;
+  border-radius: var(--radius-md);
+  background: var(--gold-gradient-btn);
+  color: #0b0903;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+  transition: var(--transition);
+}
+
+.ref-bottom-gold-btn:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 36px rgba(212, 175, 55, 0.6);
+  filter: brightness(1.06);
+  color: #000;
+}
+
+/* Footer Bottom Note */
+.ref-footer-copyright {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .calculator-box {
+    grid-template-columns: 1fr;
+  }
+  .calc-results-pane {
+    border-left: none;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+  }
+}
+
+@media (max-width: 640px) {
+  .ref-hero-headline {
+    font-size: 2.1rem;
+  }
+  .calc-inputs-pane, .calc-results-pane {
+    padding: 1.5rem;
+  }
+  .ref-bottom-gold-btn {
+    font-size: 0.95rem;
+    padding: 1rem 1.2rem;
+  }
+}
