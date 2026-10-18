@@ -253,7 +253,7 @@ if (!empty($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === tru
     </form>
 
     <div class="creds-tip">
-      Akaun Default: Pengguna: <strong>admin</strong> | Laluan: <strong>revobullion2026</strong>
+      Akaun Default: Pengguna: <strong>admin</strong> | Laluan: <strong>admin123</strong>
     </div>
 
     <a href="../" class="back-link">← Kembali ke Laman Web Rasmi</a>
