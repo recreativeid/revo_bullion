@@ -26,7 +26,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="./assets/css/style.css?v=1.0.1">
+  <link rel="stylesheet" href="./assets/css/style.css?v=1.0.3">
 </head>
 <body>
 
@@ -120,7 +120,9 @@
 
       <div class="pillars-grid">
         <div class="pillar-card">
-          <div class="pillar-icon-badge">💎</div>
+          <div class="pillar-icon-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 8.5 12 15 22 8.5 12 2"></polygon><polygon points="2 15.5 12 22 22 15.5"></polygon></svg>
+          </div>
           <h3 class="pillar-title">Nilai Sebenar</h3>
           <p class="pillar-text">
             Emas tulen Au 999.9 (24 Karat) dan perak tulen Ag 999.9 terjamin ketulenan dengan sijil rasmi serta reka bentuk eksklusif tahan luntur.
@@ -132,7 +134,9 @@
         </div>
 
         <div class="pillar-card">
-          <div class="pillar-icon-badge">✏️</div>
+          <div class="pillar-icon-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+          </div>
           <h3 class="pillar-title">Reka Bentuk Custom</h3>
           <p class="pillar-text">
             Menyediakan kebebasan meletakkan tema, logo korporat, nama penerima dan foto mengikut keperluan peribadi mahupun program institusi.
@@ -144,7 +148,9 @@
         </div>
 
         <div class="pillar-card">
-          <div class="pillar-icon-badge">🎁</div>
+          <div class="pillar-icon-badge">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+          </div>
           <h3 class="pillar-title">Pelbagai Kegunaan</h3>
           <p class="pillar-text">
             Sesuai untuk hadiah perkahwinan, sambutan hari lahir, cenderamata VIP, insentif staf, simpanan nilai dan aset perlindungan masa depan.
@@ -160,24 +166,24 @@
       <div style="margin-top: 3.5rem; background: var(--bg-card); border: 1px solid var(--gold-border-light); border-radius: var(--radius-lg); padding: 2.5rem 2rem;">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem;">
           <div>
-            <span class="section-kicker">🎯 VISI SYARIKAT</span>
+            <span class="section-kicker">VISI KORPORAT</span>
             <h3 style="font-family: 'Cinzel', serif; font-size: 1.25rem; color: #fff; margin-bottom: 0.8rem;">Pilihan Utama Bullion Kreatif</h3>
             <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65;">
               Menjadi jenama pilihan bagi kad emas dan perak yang kreatif, eksklusif dan bermakna untuk pelbagai lapisan pelanggan di Malaysia dan serantau.
             </p>
           </div>
           <div>
-            <span class="section-kicker">🚀 MISI SYARIKAT</span>
+            <span class="section-kicker">MISI KORPORAT</span>
             <h3 style="font-family: 'Cinzel', serif; font-size: 1.25rem; color: #fff; margin-bottom: 0.8rem;">Kualiti & Khidmat Profesional</h3>
             <ul style="list-style: none; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.8;">
-              <li>✓ Menawarkan pilihan kad emas dan perak dalam pelbagai berat dan reka bentuk.</li>
-              <li>✓ Menyediakan perkhidmatan custom mengikut keperluan pelanggan.</li>
-              <li>✓ Memberikan produk berkualiti dengan persembahan yang profesional.</li>
-              <li>✓ Membina hubungan jangka panjang dengan pelanggan dan rakan niaga.</li>
+              <li><span style="color: var(--gold-400); font-weight: 800; margin-right: 6px;">&bull;</span> Menawarkan pilihan kad emas dan perak dalam pelbagai berat dan reka bentuk.</li>
+              <li><span style="color: var(--gold-400); font-weight: 800; margin-right: 6px;">&bull;</span> Menyediakan perkhidmatan custom mengikut keperluan pelanggan.</li>
+              <li><span style="color: var(--gold-400); font-weight: 800; margin-right: 6px;">&bull;</span> Memberikan produk berkualiti dengan persembahan yang profesional.</li>
+              <li><span style="color: var(--gold-400); font-weight: 800; margin-right: 6px;">&bull;</span> Membina hubungan jangka panjang dengan pelanggan dan rakan niaga.</li>
             </ul>
           </div>
           <div>
-            <span class="section-kicker">⭐ 5 NILAI TERAS</span>
+            <span class="section-kicker">5 NILAI TERAS UTAMA</span>
             <h3 style="font-family: 'Cinzel', serif; font-size: 1.25rem; color: #fff; margin-bottom: 0.8rem;">Prinsip Keutamaan</h3>
             <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
               <div><strong style="color: var(--gold-300);">1. Kualiti:</strong> Emas dan perak tulen dengan reka bentuk eksklusif.</div>
@@ -194,7 +200,7 @@
 
   <!-- ==========================================
        SECTION 2: KOLEKSI LENGKAP PRODUK (Posters 04 - 10)
-       Pure CSS Typographic Cards (No Poster Images Needed)
+       Separated Minimalist Modern SaaS Tabs (Never Mixed)
        ========================================== -->
   <section class="section" id="koleksi" style="background: rgba(10, 10, 15, 0.6);">
     <div class="container">
@@ -202,19 +208,27 @@
         <span class="section-kicker">Katalog Harga & Spesifikasi</span>
         <h2 class="section-title">Koleksi Baby Gold <span class="text-gold-gradient">& Baby Silver Card</span></h2>
         <p class="section-desc">
-          Semua produk ditempah mengikut berat gramatur rasmi bermula serendah RM 4.44 dengan kuantiti minimum hanya 50 keping setiap berat. Klik mana-mana produk untuk berhubung terus ke WhatsApp.
+          Pilih kategori koleksi di bawah untuk melihat pilihan berat gramatur rasmi bermula serendah RM 4.44 dengan kuantiti minimum hanya 50 keping. Setiap kepingan disertakan gambar rekaan sebenar dan pautan terus ke WhatsApp.
         </p>
       </div>
 
-      <!-- Category Filter Tabs -->
-      <div class="catalog-nav-tabs">
-        <button type="button" class="cat-tab-btn active" data-category="all">Semua Koleksi</button>
-        <button type="button" class="cat-tab-btn" data-category="gold">Baby Gold (Au 999.9)</button>
-        <button type="button" class="cat-tab-btn" data-category="silver">Baby Silver (Ag 999.9)</button>
-        <button type="button" class="cat-tab-btn" data-category="vvip">Siri VVIP Exclusive</button>
+      <!-- Category Filter Tabs - Separated SaaS Tabs (No Mixed 'All' Clutter) -->
+      <div class="catalog-nav-tabs" role="tablist">
+        <button type="button" class="cat-tab-btn active" data-category="gold" role="tab" aria-selected="true">
+          <span class="tab-indicator-dot gold"></span>
+          <span>Baby Gold (Au 999.9)</span>
+        </button>
+        <button type="button" class="cat-tab-btn" data-category="silver" role="tab" aria-selected="false">
+          <span class="tab-indicator-dot silver"></span>
+          <span>Baby Silver (Ag 999.9)</span>
+        </button>
+        <button type="button" class="cat-tab-btn" data-category="vvip" role="tab" aria-selected="false">
+          <span class="tab-indicator-dot vvip"></span>
+          <span>Siri VVIP Exclusive</span>
+        </button>
       </div>
 
-      <!-- Pure Product Cards Grid -->
+      <!-- Product Cards Grid (Rendered via main.js with Authentic Images) -->
       <div class="product-cards-grid" id="pureProductGrid">
         <!-- Rendered via main.js -->
       </div>
@@ -222,7 +236,7 @@
       <!-- VVIP EXCLUSIVE SPOTLIGHT (Poster 10/16) -->
       <div class="vvip-spotlight-card" id="vvip-series">
         <div class="vvip-spotlight-head">
-          <div class="vvip-badge-top">👑 Siri Koleksi Tertinggi — Poster 10/16</div>
+          <div class="vvip-badge-top">SIRI KOLEKSI TERTINGGI &bull; EDISI TERHAD</div>
           <h3 class="vvip-spotlight-title">VVIP EXCLUSIVE BABY CARD SERIES</h3>
           <p class="vvip-spotlight-sub">Reka Bentuk Terhad, Lebih Eksklusif dan Bernilai &bull; Exclusive Design. Timeless Value.</p>
           <p class="vvip-spotlight-desc">
@@ -232,22 +246,30 @@
 
         <div class="vvip-features-row">
           <div class="vvip-feature-pill">
-            <span class="vvip-feat-icon">💎</span>
+            <span class="vvip-feat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 8.5 12 15 22 8.5 12 2"></polygon><polygon points="2 15.5 12 22 22 15.5"></polygon></svg>
+            </span>
             <div class="vvip-feat-title">Au & Ag 999.9 Tulen</div>
             <p class="vvip-feat-text">Ketulenan logam mulia tertinggi bersijil rasmi ketulenan.</p>
           </div>
           <div class="vvip-feature-pill">
-            <span class="vvip-feat-icon">🏛️</span>
+            <span class="vvip-feat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            </span>
             <div class="vvip-feat-title">Kotak Baldu Bersalut Emas</div>
             <p class="vvip-feat-text">Kotak pameran mewah tebal eksklusif Revo Bullion bersama beg hadiah.</p>
           </div>
           <div class="vvip-feature-pill">
-            <span class="vvip-feat-icon">📜</span>
+            <span class="vvip-feat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </span>
             <div class="vvip-feat-title">Sijil Ketulenan Rasmi</div>
             <p class="vvip-feat-text">Certificate of Authenticity dengan nombor siri & jaminan rasmi.</p>
           </div>
           <div class="vvip-feature-pill">
-            <span class="vvip-feat-icon">👥</span>
+            <span class="vvip-feat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </span>
             <div class="vvip-feat-title">MOQ Hanya 50 Keping</div>
             <p class="vvip-feat-text">Kuantiti minimum rendah dan fleksibel untuk setiap berat.</p>
           </div>
@@ -259,7 +281,7 @@
             <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem;">Pilihan VVIP Perak: <strong>5g (RM 111.11)</strong> | <strong>10g (RM 222.22)</strong> | <strong>25g (RM 444.44)</strong></div>
           </div>
           <a href="https://wa.me/601111886654?text=Salam%20Revo%20Bullion,%20saya%20berminat%20dengan%20Siri%20VVIP%20Exclusive%20Baby%20Card%20Series%20(Emas/Perak)" target="_blank" rel="noopener" class="pure-card-btn-ws" style="width: auto; padding: 0.85rem 1.6rem; background: var(--gold-gradient-btn); color: #000; border: none;">
-            <span>💬 Tempah Siri VVIP via WhatsApp</span>
+            <span>Tempah Siri VVIP via WhatsApp</span>
           </a>
         </div>
       </div>
@@ -268,6 +290,7 @@
 
   <!-- ==========================================
        SECTION 3: 4 PILIHAN PEMBUNGKUSAN (Poster 11)
+       With High Resolution Real Images
        ========================================== -->
   <section class="section" id="pembungkusan">
     <div class="container">
@@ -281,6 +304,9 @@
 
       <div class="packaging-grid">
         <div class="pack-card">
+          <div class="pack-card-img-wrap">
+            <img src="./assets/images/products/pack_standard.png" alt="Standard Pack Revo Bullion" class="pack-card-img" loading="lazy">
+          </div>
           <span class="pack-card-tag">Pilihan Asas</span>
           <h3 class="pack-card-title">Standard Pack</h3>
           <p class="pack-card-desc">Ringkas dan eksklusif. Kad pelindung berkilat yang kemas melindungi emas/perak untuk simpanan koleksi peribadi.</p>
@@ -295,6 +321,9 @@
         </div>
 
         <div class="pack-card" style="border-color: var(--gold-border);">
+          <div class="pack-card-img-wrap">
+            <img src="./assets/images/products/pack_premium.png" alt="Premium Gift Box Revo Bullion" class="pack-card-img" loading="lazy">
+          </div>
           <span class="pack-card-tag" style="background: var(--gold-gradient-btn); color: #000;">Paling Popular</span>
           <h3 class="pack-card-title">Premium Gift Box</h3>
           <p class="pack-card-desc">Reka bentuk moden dengan kotak baldu eksklusif dan reben hadiah mewah, sedia diserahkan pada majlis istimewa.</p>
@@ -310,6 +339,9 @@
         </div>
 
         <div class="pack-card" style="border-color: var(--gold-400); box-shadow: var(--shadow-card), var(--gold-glow);">
+          <div class="pack-card-img-wrap">
+            <img src="./assets/images/products/pack_vvip.png" alt="VVIP Luxury Pack Revo Bullion" class="pack-card-img" loading="lazy">
+          </div>
           <span class="pack-card-tag" style="background: #000; border: 1px solid var(--gold-400); color: var(--gold-300);">Siri Eksekutif</span>
           <h3 class="pack-card-title">VVIP Luxury Pack</h3>
           <p class="pack-card-desc">Pembungkusan eksklusif kotak baldu hitam bersalut emas lengkap bersama Certificate of Authenticity (Sijil Ketulenan).</p>
@@ -325,6 +357,9 @@
         </div>
 
         <div class="pack-card">
+          <div class="pack-card-img-wrap">
+            <img src="./assets/images/products/pack_custom.png" alt="Custom Corporate Pack Revo Bullion" class="pack-card-img" loading="lazy">
+          </div>
           <span class="pack-card-tag">Identiti Syarikat</span>
           <h3 class="pack-card-title">Custom Corporate Pack</h3>
           <p class="pack-card-desc">Rekaan mengikut tema organisasi anda (nama, logo syarikat dan mesej rasmi), sesuai untuk majlis korporat dan pelancaran.</p>
@@ -508,22 +543,30 @@
       <!-- 4 Jaminan Pembayaran & Penghantaran (Poster 13/16) -->
       <div class="order-guarantees-grid">
         <div class="guarantee-card">
-          <span class="guarantee-icon">🏛️</span>
+          <span class="guarantee-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+          </span>
           <h5 class="guarantee-title">Pembayaran Mudah</h5>
           <p class="guarantee-text">Pindahan bank selamat (Online Banking / FPX) terus ke akaun rasmi syarikat.</p>
         </div>
         <div class="guarantee-card">
-          <span class="guarantee-icon">🛡️</span>
+          <span class="guarantee-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </span>
           <h5 class="guarantee-title">Transaksi Selamat</h5>
           <p class="guarantee-text">Maklumat pelanggan, butiran rekaan dan invois dilindungi sepenuhnya.</p>
         </div>
         <div class="guarantee-card">
-          <span class="guarantee-icon">🚚</span>
+          <span class="guarantee-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          </span>
           <h5 class="guarantee-title">Penghantaran Seluruh Malaysia</h5>
           <p class="guarantee-text">Kurier berinsurans selamat ke Semenanjung, Sabah dan Sarawak.</p>
         </div>
         <div class="guarantee-card">
-          <span class="guarantee-icon">🎁</span>
+          <span class="guarantee-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+          </span>
           <h5 class="guarantee-title">Pembungkusan Premium</h5>
           <p class="guarantee-text">Setiap kepingan dibungkus rapi, kemas dan eksklusif sedia diserahkan.</p>
         </div>
@@ -547,7 +590,9 @@
       <div class="audience-grid">
         <div class="audience-card">
           <div class="audience-header">
-            <span class="audience-icon">👤</span>
+            <span class="audience-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </span>
             <h4 class="audience-title">Individu</h4>
           </div>
           <ul class="audience-list">
@@ -560,7 +605,9 @@
 
         <div class="audience-card">
           <div class="audience-header">
-            <span class="audience-icon">👨‍👩‍👧‍👦</span>
+            <span class="audience-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </span>
             <h4 class="audience-title">Keluarga</h4>
           </div>
           <ul class="audience-list">
@@ -573,7 +620,9 @@
 
         <div class="audience-card">
           <div class="audience-header">
-            <span class="audience-icon">🏛️</span>
+            <span class="audience-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"></line><line x1="3" y1="10" x2="21" y2="10"></line><polyline points="5 6 12 3 19 6"></polyline><line x1="4" y1="10" x2="4" y2="21"></line><line x1="20" y1="10" x2="20" y2="21"></line><line x1="8" y1="14" x2="8" y2="17"></line><line x1="12" y1="14" x2="12" y2="17"></line><line x1="16" y1="14" x2="16" y2="17"></line></svg>
+            </span>
             <h4 class="audience-title">Majlis & Kerajaan</h4>
           </div>
           <ul class="audience-list">
@@ -586,7 +635,9 @@
 
         <div class="audience-card">
           <div class="audience-header">
-            <span class="audience-icon">🏢</span>
+            <span class="audience-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </span>
             <h4 class="audience-title">Syarikat & Korporat</h4>
           </div>
           <ul class="audience-list">
@@ -599,7 +650,9 @@
 
         <div class="audience-card">
           <div class="audience-header">
-            <span class="audience-icon">🎓</span>
+            <span class="audience-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            </span>
             <h4 class="audience-title">Institusi Pendidikan</h4>
           </div>
           <ul class="audience-list">
@@ -612,7 +665,9 @@
 
         <div class="audience-card">
           <div class="audience-header">
-            <span class="audience-icon">🤝</span>
+            <span class="audience-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </span>
             <h4 class="audience-title">Komuniti & NGO</h4>
           </div>
           <ul class="audience-list">
@@ -625,7 +680,9 @@
 
         <div class="audience-card">
           <div class="audience-header">
-            <span class="audience-icon">✈️</span>
+            <span class="audience-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </span>
             <h4 class="audience-title">Pelancong Luar Negara</h4>
           </div>
           <ul class="audience-list">
@@ -638,7 +695,9 @@
 
         <div class="audience-card">
           <div class="audience-header">
-            <span class="audience-icon">📈</span>
+            <span class="audience-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            </span>
             <h4 class="audience-title">Pelabur & Pengumpul</h4>
           </div>
           <ul class="audience-list">
@@ -651,7 +710,9 @@
 
         <div class="audience-card">
           <div class="audience-header">
-            <span class="audience-icon">💍</span>
+            <span class="audience-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </span>
             <h4 class="audience-title">Hantaran & Perkahwinan</h4>
           </div>
           <ul class="audience-list">
@@ -682,22 +743,30 @@
       <!-- 4 Strategic Pillars from Poster 15 -->
       <div class="vvip-features-row" style="margin-bottom: 2.5rem;">
         <div class="vvip-feature-pill">
-          <span class="vvip-feat-icon">💎</span>
+          <span class="vvip-feat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 8.5 12 15 22 8.5 12 2"></polygon><polygon points="2 15.5 12 22 22 15.5"></polygon></svg>
+          </span>
           <div class="vvip-feat-title">Prestij & Nilai Kekal</div>
           <p class="vvip-feat-text">Aset logam bernilai sebenar yang dihargai penerima sepanjang hayat.</p>
         </div>
         <div class="vvip-feature-pill">
-          <span class="vvip-feat-icon">🎁</span>
+          <span class="vvip-feat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+          </span>
           <div class="vvip-feat-title">Ideal Untuk Hadiah</div>
           <p class="vvip-feat-text">Cenderamata unik yang meninggalkan impak positif mendalam.</p>
         </div>
         <div class="vvip-feature-pill">
-          <span class="vvip-feat-icon">🤝</span>
+          <span class="vvip-feat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </span>
           <div class="vvip-feat-title">Kukuhkan Hubungan</div>
           <p class="vvip-feat-text">Tanda penghargaan tertinggi untuk rakan niaga dan klien VIP.</p>
         </div>
         <div class="vvip-feature-pill">
-          <span class="vvip-feat-icon">👥</span>
+          <span class="vvip-feat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          </span>
           <div class="vvip-feat-title">Pelbagai Acara</div>
           <p class="vvip-feat-text">Fleksibel untuk ulang tahun syarikat, persidangan hingga anugerah.</p>
         </div>
@@ -978,10 +1047,10 @@
        SECTION 9: JOM BERSAMA REVO BULLION (Poster 16)
        Warisan Masa Depan & Saluran Rasmi
        ========================================== -->
-  <section class="section" id="warisan" style="padding-bottom: 2rem;">
+  <section class="section reveal-on-scroll" id="warisan" style="padding-bottom: 2rem;">
     <div class="container">
       <div class="legacy-future-box">
-        <span class="vvip-badge-top" style="margin-bottom: 1.2rem;">✨ Nilai Hari Ini, Warisan Esok — Poster 16/16</span>
+        <span class="vvip-badge-top" style="margin-bottom: 1.2rem;">Nilai Hari Ini, Warisan Esok &bull; Poster 16/16</span>
         <h2 class="legacy-headline">Jom Bersama <span class="text-gold-gradient">REVO BULLION</span></h2>
         <p class="legacy-subhead">Emas & Perak Tulen Untuk Generasi Akan Datang</p>
         
@@ -991,24 +1060,32 @@
         </p>
 
         <!-- 4 Core Pillars from Poster 16 -->
-        <div class="legacy-pillars-grid">
+        <div class="legacy-pillars-grid stagger-parent">
           <div class="legacy-pillar-card">
-            <span class="legacy-pillar-icon">📈</span>
+            <span class="legacy-pillar-icon" style="color: var(--gold-300);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            </span>
             <h4 class="legacy-pillar-title">Pelaburan Bernilai Tinggi</h4>
             <p class="legacy-pillar-desc">Emas & perak fizikal kekal bernilai tinggi untuk pertumbuhan jangka panjang.</p>
           </div>
           <div class="legacy-pillar-card">
-            <span class="legacy-pillar-icon">🛡️</span>
+            <span class="legacy-pillar-icon" style="color: var(--gold-300);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </span>
             <h4 class="legacy-pillar-title">Aset Selamat</h4>
             <p class="legacy-pillar-desc">Perisai terbaik melindungi kekayaan daripada inflasi dan ketidaktentuan ekonomi.</p>
           </div>
           <div class="legacy-pillar-card">
-            <span class="legacy-pillar-icon">🎁</span>
+            <span class="legacy-pillar-icon" style="color: var(--gold-300);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+            </span>
             <h4 class="legacy-pillar-title">Hadiah Bermakna</h4>
             <p class="legacy-pillar-desc">Pilihan cenderamata sempurna dan eksklusif untuk setiap momen istimewa.</p>
           </div>
           <div class="legacy-pillar-card">
-            <span class="legacy-pillar-icon">👥</span>
+            <span class="legacy-pillar-icon" style="color: var(--gold-300);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </span>
             <h4 class="legacy-pillar-title">Sesuai Untuk Semua</h4>
             <p class="legacy-pillar-desc">Memenuhi aspirasi individu, keluarga, program korporat serta komuniti.</p>
           </div>
@@ -1020,26 +1097,30 @@
             Matlamat & Impak Berpanjangan
           </h4>
           <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem;">
-            <span class="value-chip" style="font-size: 0.85rem; padding: 0.5rem 1rem;">🏛️ Pelaburan Jangka Panjang</span>
-            <span class="value-chip" style="font-size: 0.85rem; padding: 0.5rem 1rem;">👨‍👩‍👧‍👦 Perlindungan Untuk Keluarga</span>
-            <span class="value-chip" style="font-size: 0.85rem; padding: 0.5rem 1rem;">💝 Hadiah Penuh Makna</span>
-            <span class="value-chip" style="font-size: 0.85rem; padding: 0.5rem 1rem;">🏢 Pilihan Utama Korporat & Institusi</span>
+            <span class="value-chip" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Pelaburan Jangka Panjang</span>
+            <span class="value-chip" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Perlindungan Untuk Keluarga</span>
+            <span class="value-chip" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Hadiah Penuh Makna</span>
+            <span class="value-chip" style="font-size: 0.85rem; padding: 0.5rem 1rem;">Pilihan Utama Korporat & Institusi</span>
           </div>
         </div>
 
         <!-- 4 Trust Badges from Poster 16 -->
         <div class="legacy-trust-badges">
           <div class="legacy-trust-item">
-            <span>💎</span> Produk Berkualiti Au/Ag 999.9
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 8.5 12 15 22 8.5 12 2"></polygon><polygon points="2 15.5 12 22 22 15.5"></polygon></svg>
+            <span>Produk Berkualiti Au/Ag 999.9</span>
           </div>
           <div class="legacy-trust-item">
-            <span>🛡️</span> Transaksi Selamat Terjamin
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Transaksi Selamat Terjamin</span>
           </div>
           <div class="legacy-trust-item">
-            <span>🚚</span> Penghantaran Seluruh Malaysia
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            <span>Penghantaran Seluruh Malaysia</span>
           </div>
           <div class="legacy-trust-item">
-            <span>🎧</span> Khidmat Pelanggan Profesional
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+            <span>Khidmat Pelanggan Profesional</span>
           </div>
         </div>
 
@@ -1048,15 +1129,18 @@
           <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem;">Ikuti Media Sosial Rasmi REVO BULLION:</p>
           <div class="ref-social-links-wrap">
             <a href="https://instagram.com/revobullion" target="_blank" rel="noopener" class="ref-social-badge">
-              <span>📷 Instagram:</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <span>Instagram:</span>
               <strong style="color: var(--gold-300);">@revobullion</strong>
             </a>
             <a href="https://facebook.com/revobullion" target="_blank" rel="noopener" class="ref-social-badge">
-              <span>📘 Facebook:</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              <span>Facebook:</span>
               <strong style="color: var(--gold-300);">Revo Bullion</strong>
             </a>
             <a href="https://tiktok.com/@revobullion" target="_blank" rel="noopener" class="ref-social-badge">
-              <span>🎵 TikTok:</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+              <span>TikTok:</span>
               <strong style="color: var(--gold-300);">@revobullion</strong>
             </a>
           </div>
@@ -1069,7 +1153,7 @@
        SECTION 10: BOTTOM HIGHLIGHT & CONTACT CARDS
        (EXACT MATCH TO USER REFERENCE IMAGE)
        ========================================== -->
-  <section class="ref-bottom-section" id="kontak">
+  <section class="ref-bottom-section reveal-on-scroll" id="kontak">
     <div class="container" style="max-width: 620px;">
       <!-- 1. Golden Brand Highlights Card -->
       <div class="ref-bottom-gold-card">
@@ -1092,15 +1176,24 @@
 
         <div class="ref-info-contact-list">
           <div>
-            <span>📞 WhatsApp: </span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: -2px; margin-right: 4px; color: var(--gold-400);">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+            </svg>
+            <span>WhatsApp: </span>
             <a href="https://wa.me/601111886654" target="_blank" rel="noopener"><strong>011-1188 6654</strong></a>
           </div>
           <div>
-            <span>✉️ E-mel: </span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px; color: var(--gold-400);">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <span>E-mel: </span>
             <a href="mailto:smgmh23@gmail.com"><strong>smgmh23@gmail.com</strong></a>
           </div>
           <div>
-            <span>🌐 Laman Web: </span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px; color: var(--gold-400);">
+              <circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>Laman Web: </span>
             <a href="https://revobullion.my.id" target="_blank" rel="noopener"><strong>revobullion.my.id</strong></a> / <a href="https://www.revobullion.com" target="_blank" rel="noopener">www.revobullion.com</a>
           </div>
         </div>
@@ -1117,12 +1210,15 @@
       </div>
 
       <div class="ref-footer-copyright">
-        &copy; 2026 <strong>REVO BULLION</strong>. Hak Cipta Terpelihara. Precious Moments Last Forever.
+        <div>&copy; 2026 <strong>REVO BULLION</strong>. Hak Cipta Terpelihara. Precious Moments Last Forever.</div>
+        <div style="margin-top: 0.6rem;">
+          <a href="./admin/" target="_blank" style="color: var(--gold-border); font-size: 0.72rem; letter-spacing: 0.08em; text-decoration: none; transition: color 0.2s;">PORTAL ADMIN CMS &rarr;</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Client Script -->
-  <script src="./assets/js/main.js?v=1.0.1"></script>
+  <script src="./assets/js/main.js?v=1.0.3"></script>
 </body>
 </html>

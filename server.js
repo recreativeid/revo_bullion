@@ -1,67 +1,125 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const fs = require('fs');
+const crypto = require('crypto');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// Serve static frontend files
+// Paths
+const DATA_PATH = path.join(__dirname, 'data', 'content.json');
+const CONFIG_PATH = path.join(__dirname, 'data', 'admin_config.json');
+const INDEX_HTML_PATH = path.join(__dirname, 'index.html');
+const INDEX_PHP_PATH = path.join(__dirname, 'index.php');
+
+// Serve static files
 app.use(express.static(path.join(__dirname)));
+
+// API: Get Full Content
+app.get('/api/content', (req, res) => {
+  try {
+    if (fs.existsSync(DATA_PATH)) {
+      const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
+      return res.json({ success: true, data });
+    }
+    res.status(404).json({ success: false, message: 'Data file not found' });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// API: Save Full Content (Admin CRUD)
+app.post('/api/content', (req, res) => {
+  try {
+    const newContent = req.body;
+    if (!newContent || typeof newContent !== 'object') {
+      return res.status(400).json({ success: false, message: 'Invalid payload' });
+    }
+
+    // Backup
+    if (fs.existsSync(DATA_PATH)) {
+      fs.copyFileSync(DATA_PATH, DATA_PATH + '.bak');
+    }
+
+    fs.writeFileSync(DATA_PATH, JSON.stringify(newContent, null, 2), 'utf8');
+
+    // Auto-update index.html hero texts if present
+    if (fs.existsSync(INDEX_HTML_PATH) && newContent.hero) {
+      let html = fs.readFileSync(INDEX_HTML_PATH, 'utf8');
+      const h = newContent.hero;
+      if (h.pillTag) html = html.replace(/<div class="ref-hero-badge">.*?<\/div>/s, `<div class="ref-hero-badge">${h.pillTag}</div>`);
+      if (h.kicker) html = html.replace(/<span class="ref-hero-kicker">.*?<\/span>/s, `<span class="ref-hero-kicker">${h.kicker}</span>`);
+      if (h.headlineLine1 && h.headlineLine2) {
+        html = html.replace(/<h1 class="ref-hero-headline">.*?<\/h1>/s, `<h1 class="ref-hero-headline">${h.headlineLine1}<br><em>${h.headlineLine2}</em></h1>`);
+      }
+      if (h.description) html = html.replace(/<p class="ref-hero-desc">.*?<\/p>/s, `<p class="ref-hero-desc">${h.description}</p>`);
+      if (h.motto) html = html.replace(/<div class="ref-hero-motto">.*?<\/div>/s, `<div class="ref-hero-motto">${h.motto}</div>`);
+      fs.writeFileSync(INDEX_HTML_PATH, html, 'utf8');
+      if (fs.existsSync(INDEX_PHP_PATH)) {
+        fs.writeFileSync(INDEX_PHP_PATH, html, 'utf8');
+      }
+    }
+
+    res.json({ success: true, message: 'Kandungan berjaya disimpan & dikemaskini!' });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// API: Admin Login
+app.post('/api/admin/login', (req, res) => {
+  try {
+    const { username, password } = req.body;
+    if (fs.existsSync(CONFIG_PATH)) {
+      const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
+      const salt = config.salt || 'revobullion_salt_2026';
+      const hash = crypto.createHash('sha256').update(password + salt).digest('hex');
+
+      if (username === config.username && hash === config.passwordHash) {
+        return res.json({ success: true, message: 'Log masuk berjaya' });
+      }
+    } else if (username === 'admin' && password === 'revobullion2026') {
+      return res.json({ success: true, message: 'Log masuk berjaya' });
+    }
+    res.status(401).json({ success: false, message: 'Nama pengguna atau kata laluan tidak sah' });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
+
+// Admin Route Redirect
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, 'admin', 'index.html'));
+});
 
 // API: Company Info
 app.get('/api/info', (req, res) => {
+  if (fs.existsSync(DATA_PATH)) {
+    const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
+    return res.json(data.site);
+  }
   res.json({
     brand: 'REVO BULLION',
     tagline: 'Precious Moments Last Forever',
     slogan: 'Small in Size, Meaningful in Value',
     domain: 'revobullion.my.id',
     website: 'https://www.revobullion.com',
-    whatsapp: '01111886654',
-    whatsappUrl: 'https://wa.me/601111886654',
-    email: 'smgmh23@gmail.com',
-    socials: {
-      instagram: '@revobullion',
-      facebook: 'Revo Bullion',
-      tiktok: '@revobullion'
-    },
-    purity: ['Au 999.9 (24K Gold)', 'Ag 999.9 (Fine Silver)'],
-    moq: 50
+    whatsapp: '011-1188 6654'
   });
 });
 
 // API: Products & Pricing Catalog
 app.get('/api/products', (req, res) => {
-  const products = [
-    // Baby Gold Custom
-    { id: 'gold-c-0001', series: 'Custom', metal: 'gold', weight: '0.001g', purity: 'Au 999.9', price: 4.44, moq: 50 },
-    { id: 'gold-c-0002', series: 'Custom', metal: 'gold', weight: '0.002g', purity: 'Au 999.9', price: 6.66, moq: 50 },
-    { id: 'gold-c-0005', series: 'Custom', metal: 'gold', weight: '0.005g', purity: 'Au 999.9', price: 11.11, moq: 50 },
-    
-    // Baby Gold Premium
-    { id: 'gold-p-001', series: 'Premium', metal: 'gold', weight: '0.01g', purity: 'Au 999.9', price: 14.44, moq: 50 },
-    { id: 'gold-p-002', series: 'Premium', metal: 'gold', weight: '0.02g', purity: 'Au 999.9', price: 26.66, moq: 50 },
-    { id: 'gold-p-005', series: 'Premium', metal: 'gold', weight: '0.05g', purity: 'Au 999.9', price: 55.55, moq: 50 },
-    
-    // Baby Gold VVIP
-    { id: 'gold-v-01', series: 'VVIP', metal: 'gold', weight: '0.1g', purity: 'Au 999.9', price: 111.11, moq: 50 },
-    { id: 'gold-v-02', series: 'VVIP', metal: 'gold', weight: '0.2g', purity: 'Au 999.9', price: 222.22, moq: 50 },
-    { id: 'gold-v-05', series: 'VVIP', metal: 'gold', weight: '0.5g', purity: 'Au 999.9', price: 444.44, moq: 50 },
-
-    // Baby Silver Custom
-    { id: 'silver-c-1', series: 'Custom', metal: 'silver', weight: '1g', purity: 'Ag 999.9', price: 22.22, moq: 50 },
-    { id: 'silver-c-2', series: 'Custom', metal: 'silver', weight: '2g', purity: 'Ag 999.9', price: 44.44, moq: 50 },
-    { id: 'silver-c-5', series: 'Custom', metal: 'silver', weight: '5g', purity: 'Ag 999.9', price: 111.11, moq: 50 },
-
-    // Baby Silver Premium & VVIP
-    { id: 'silver-p-10', series: 'Premium', metal: 'silver', weight: '10g', purity: 'Ag 999.9', price: 222.22, moq: 50 },
-    { id: 'silver-p-25', series: 'Premium', metal: 'silver', weight: '25g', purity: 'Ag 999.9', price: 444.44, moq: 50 },
-    { id: 'silver-p-50', series: 'Premium', metal: 'silver', weight: '50g', purity: 'Ag 999.9', price: 1222.22, moq: 50 }
-  ];
-  res.json(products);
+  if (fs.existsSync(DATA_PATH)) {
+    const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
+    return res.json(data.products || []);
+  }
+  res.json([]);
 });
 
 // API: Calculate Quote
@@ -104,7 +162,8 @@ app.use((req, res) => {
 
 app.listen(PORT, () => {
   console.log(`\n==================================================`);
-  console.log(`✨ REVO BULLION Server Running on http://localhost:${PORT}`);
-  console.log(`✨ WhatsApp: 011 1188 6654 | Email: smgmh23@gmail.com`);
+  console.log(`REVO BULLION Server Running on http://localhost:${PORT}`);
+  console.log(`Admin CMS: http://localhost:${PORT}/admin`);
+  console.log(`WhatsApp: 011 1188 6654 | Email: smgmh23@gmail.com`);
   console.log(`==================================================\n`);
 });

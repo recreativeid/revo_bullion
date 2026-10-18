@@ -150,4 +150,21 @@ Semua maklumat, struktur teks, senarai harga, faedah dan spesifikasi daripada 16
   Akses di pelayar web: `http://localhost:3000` (atau `http://localhost/revo_bullion/` jika menggunakan Apache XAMPP).
 
 ---
+
+## 9. SISTEM ADMIN CMS & PENGURUSAN KANDUNGAN
+- **Pautan Portal Admin:** `/admin/` (`admin/index.php` atau `admin/index.html`)
+- **Akaun Pentadbir Lalai:**
+  - **Nama Pengguna (Username):** `admin`
+  - **Kata Laluan (Password):** `revobullion2026`
+- **Ciri-Ciri Utama Admin Dashboard:**
+  1. **Katalog Produk (CRUD):** Tambah produk baru, sunting nama, harga, gramatur, muat naik gambar, atau padam produk dengan modal pengesahan.
+  2. **Pengurusan Pakej Pembungkusan:** Kemaskini harga tambahan, tag tarikan, dan ciri-ciri pakej pembungkusan.
+  3. **Pengurusan Teks & Hero:** Kemaskini Pill tag, Kicker, Tajuk Utama, Huraian, Visi & Misi, dan 5 Nilai Teras secara terus.
+  4. **12 Kegunaan & Soalan Lazim (FAQ):** Tambah, sunting dan padam poin kegunaan serta soalan FAQ.
+  5. **Tetapan Maklumat Syarikat:** Ubah nombor WhatsApp, emel, nama domain, dan pautan media sosial.
+  6. **Satu Klik "Simpan & Publish":** Menyimpan terus ke pangkalan data JSON (`data/content.json`) dan menjana kemaskini automatik pada `index.html` dan `index.php`.
+- **Animasi Scroll:** Menggunakan `IntersectionObserver` moden (`.reveal-on-scroll`, `.stagger-parent`) untuk peralihan kemunculan elemen yang lancar dan mewah apabila diskrol.
+
+---
 *Dokumen ini dikemaskini secara automatik mengikut spesifikasi rasmi REVO BULLION (SSOT).*
+
