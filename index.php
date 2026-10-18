@@ -18,7 +18,7 @@
   <meta property="og:description" content="Koleksi Kad Emas (Au 999.9) & Perak (Ag 999.9) Tulen dengan Reka Bentuk Custom Mengikut Tema Anda.">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
 
   <!-- Google Fonts: Cinzel (Luxury Serif) + Playfair Display + Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css?v=1.0.1">
 </head>
 <body>
 
@@ -1123,6 +1123,6 @@
   </section>
 
   <!-- Client Script -->
-  <script src="assets/js/main.js"></script>
+  <script src="./assets/js/main.js?v=1.0.1"></script>
 </body>
 </html>
