@@ -474,21 +474,30 @@ Mohon maklum balas pihak Revo Bullion untuk semakan mockup dan proses seterusnya
 
   calculateQuote();
 
-  // 4. Mobile Drawer Menu
-  const drawerBtn = document.getElementById('refHamburgerBtn');
-  const drawer = document.getElementById('mobileDrawer');
+  // 4. Header Navigation Smooth Scroll & Active Indicator
+  const headerNavLinks = document.querySelectorAll('.ref-header-nav .ref-nav-item');
+  headerNavLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          const headerOffset = 72;
+          const elementPosition = targetEl.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-  if (drawerBtn && drawer) {
-    drawerBtn.addEventListener('click', () => {
-      drawer.classList.toggle('active');
-    });
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
 
-    drawer.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        drawer.classList.remove('active');
-      });
+          headerNavLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      }
     });
-  }
+  });
 
   // 5. Scroll-Driven IntersectionObserver Animations
   function initScrollAnimations() {
@@ -514,7 +523,7 @@ Mohon maklum balas pihak Revo Bullion untuk semakan mockup dan proses seterusnya
 
     // Target major sections and containers
     const revealTargets = document.querySelectorAll(
-      '.section, .ref-hero-section, .ref-bottom-section, .reveal-on-scroll, .stagger-parent, .product-cards-grid, .packaging-grid, .use-grid-12, .audience-grid, .steps-row-6, .pillars-grid, .order-guarantees-grid, .corp-events-grid, .vvip-spotlight-card, .calculator-box'
+      '.section, .ref-hero-section, .ref-bottom-section, .reveal-on-scroll, .stagger-parent, .product-cards-grid, .packaging-grid, .use-compact-grid, .audience-grid, .step-minimal-grid, .pillars-grid, .order-guarantees-grid, .vvip-spotlight-card, .calculator-box'
     );
 
     revealTargets.forEach(el => {
@@ -524,7 +533,7 @@ Mohon maklum balas pihak Revo Bullion untuk semakan mockup dan proses seterusnya
 
     // Also observe individual cards
     document.querySelectorAll(
-      '.pillar-card, .pack-card, .use-item-box, .audience-card, .step-item, .corp-event-card, .guarantee-card, .legacy-pillar-card'
+      '.pillar-card, .pack-card, .use-compact-pill, .audience-card, .step-minimal-pill, .guarantee-card, .legacy-pillar-card'
     ).forEach(el => {
       el.classList.add('reveal-on-scroll');
       scrollObserver.observe(el);

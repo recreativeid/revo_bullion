@@ -35,42 +35,31 @@
        ========================================== -->
   <header class="ref-header">
     <div class="container ref-header-inner">
-      <div class="ref-nav-left">
-        <button type="button" class="ref-hamburger-btn" id="refHamburgerBtn" aria-label="Menu Navigasi">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+      <div class="ref-nav-brand-wrap">
         <a href="#hero" class="ref-brand-title">REVO BULLION</a>
       </div>
 
-      <div class="ref-nav-center-emblem" title="REVO BULLION Official Shield">
-        <span class="ref-emblem-r">R</span>
-      </div>
+      <nav class="ref-header-nav" aria-label="Menu Utama">
+        <a href="#hero" class="ref-nav-item">Utama</a>
+        <a href="#tentang" class="ref-nav-item">Pengenalan</a>
+        <a href="#koleksi" class="ref-nav-item">Koleksi</a>
+        <a href="#vvip-series" class="ref-nav-item">Siri VVIP</a>
+        <a href="#pembungkusan" class="ref-nav-item">Pembungkusan</a>
+        <a href="#kegunaan" class="ref-nav-item">12 Kegunaan</a>
+        <a href="#langkah" class="ref-nav-item">6 Langkah</a>
+        <a href="#segmen" class="ref-nav-item">Segmen</a>
+        <a href="#sebut-harga" class="ref-nav-item">Sebut Harga</a>
+        <a href="#kontak" class="ref-nav-item">Hubungi</a>
+      </nav>
 
       <div class="ref-nav-right">
-        <a href="https://wa.me/601111886654?text=Salam%20Revo%20Bullion,%20saya%20ingin%20bertanya%20mengenai%20produk%20dan%20sebut%20harga" target="_blank" rel="noopener" class="ref-nav-icon-link" aria-label="WhatsApp Revo Bullion">
+        <a href="https://wa.me/601111886654?text=Salam%20Revo%20Bullion,%20saya%20ingin%20bertanya%20mengenai%20produk%20dan%20sebut%20harga" target="_blank" rel="noopener" class="ref-whatsapp-btn" aria-label="Hubungi WhatsApp Revo Bullion">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
           </svg>
+          <span>WhatsApp</span>
         </a>
       </div>
-    </div>
-
-    <!-- Mobile Drawer Menu -->
-    <div class="mobile-drawer" id="mobileDrawer">
-      <a href="#hero" class="drawer-link">Laman Utama</a>
-      <a href="#tentang" class="drawer-link">Pengenalan & 5 Nilai Teras</a>
-      <a href="#koleksi" class="drawer-link">Koleksi Baby Gold & Silver</a>
-      <a href="#vvip-series" class="drawer-link">Siri VVIP Exclusive (Au/Ag 999.9)</a>
-      <a href="#pembungkusan" class="drawer-link">4 Pilihan Pembungkusan</a>
-      <a href="#kegunaan" class="drawer-link">12 Kegunaan Produk</a>
-      <a href="#langkah" class="drawer-link">6 Langkah Tempahan & Jaminan</a>
-      <a href="#segmen" class="drawer-link">9 Segmen Pelanggan Sesuai</a>
-      <a href="#korporat" class="drawer-link">Solusi Hadiah Korporat</a>
-      <a href="#sebut-harga" class="drawer-link">Kalkulator Sebut Harga</a>
-      <a href="#warisan" class="drawer-link">Nilai Hari Ini, Warisan Esok</a>
-      <a href="#kontak" class="drawer-link">Maklumat Korporat & WhatsApp</a>
     </div>
   </header>
 
@@ -390,67 +379,19 @@
         </p>
       </div>
 
-      <div class="use-grid-12">
-        <div class="use-item-box">
-          <div class="use-box-num">01</div>
-          <h4 class="use-box-title">Hadiah Istimewa</h4>
-          <p class="use-box-desc">Sesuai untuk hari lahir, ulang tahun, perkahwinan dan majlis istimewa insan tersayang.</p>
-        </div>
-        <div class="use-item-box">
-          <div class="use-box-num">02</div>
-          <h4 class="use-box-title">Cenderamata Majlis</h4>
-          <p class="use-box-desc">Pilihan premium untuk cenderamata majlis rasmi, event korporat dan kenang-kenangan tetamu.</p>
-        </div>
-        <div class="use-item-box">
-          <div class="use-box-num">03</div>
-          <h4 class="use-box-title">Pelaburan Jangka Panjang</h4>
-          <p class="use-box-desc">Emas & perak kekal bernilai tinggi dan menjadi aset perlindungan terbaik daripada inflasi.</p>
-        </div>
-        <div class="use-item-box">
-          <div class="use-box-num">04</div>
-          <h4 class="use-box-title">Program Korporat</h4>
-          <p class="use-box-desc">Sesuai untuk penghargaan pelanggan, rakan niaga strategik, staf dan program syarikat.</p>
-        </div>
-        <div class="use-item-box">
-          <div class="use-box-num">05</div>
-          <h4 class="use-box-title">Majlis Rasmi & Keagamaan</h4>
-          <p class="use-box-desc">Cenderamata untuk majlis rasmi kerajaan, majlis agama, program komuniti dan persatuan.</p>
-        </div>
-        <div class="use-item-box">
-          <div class="use-box-num">06</div>
-          <h4 class="use-box-title">Koleksi Peribadi</h4>
-          <p class="use-box-desc">Rekaan eksklusif edisi terhad sesuai untuk penggemar dan pengumpul koleksi seni logam mulia.</p>
-        </div>
-        <div class="use-item-box">
-          <div class="use-box-num">07</div>
-          <h4 class="use-box-title">Edukasi & Kesedaran</h4>
-          <p class="use-box-desc">Sebagai medium pendidikan praktikal tentang nilai sebenar emas & perak sejak usia muda.</p>
-        </div>
-        <div class="use-item-box">
-          <div class="use-box-num">08</div>
-          <h4 class="use-box-title">Cabutan Bertuah & Reward</h4>
-          <p class="use-box-desc">Hadiah cabutan bertuah (lucky draw), insentif kecemerlangan dan program motivasi staf.</p>
-        </div>
-        <div class="use-item-box">
-          <div class="use-box-num">09</div>
-          <h4 class="use-box-title">Simpanan Nilai Selamat</h4>
-          <p class="use-box-desc">Mudah disimpan di dalam dompet atau peti keselamatan, bernilai tinggi dan mudah diwarisi.</p>
-        </div>
-        <div class="use-item-box">
-          <div class="use-box-num">10</div>
-          <h4 class="use-box-title">Hadiah Korporat & Jenama</h4>
-          <p class="use-box-desc">Rekaan mengikut tema, nama syarikat, logo korporat dan mesej khas bagi mengukuhkan jenama.</p>
-        </div>
-        <div class="use-item-box">
-          <div class="use-box-num">11</div>
-          <h4 class="use-box-title">Cenderamata Pelancongan</h4>
-          <p class="use-box-desc">Pilihan istimewa untuk pelancong sebagai cenderamata memori ikonik kenangan dari Malaysia.</p>
-        </div>
-        <div class="use-item-box">
-          <div class="use-box-num">12</div>
-          <h4 class="use-box-title">Wasiat & Warisan Pusaka</h4>
-          <p class="use-box-desc">Simpan nilai aset berharga hari ini sebagai warisan bermakna untuk generasi masa hadapan.</p>
-        </div>
+      <div class="use-compact-grid">
+        <div class="use-compact-pill"><span class="use-pill-num">01</span><span>Hadiah Istimewa</span></div>
+        <div class="use-compact-pill"><span class="use-pill-num">02</span><span>Cenderamata Majlis</span></div>
+        <div class="use-compact-pill"><span class="use-pill-num">03</span><span>Pelaburan Jangka Panjang</span></div>
+        <div class="use-compact-pill"><span class="use-pill-num">04</span><span>Program Korporat</span></div>
+        <div class="use-compact-pill"><span class="use-pill-num">05</span><span>Majlis Rasmi & Keagamaan</span></div>
+        <div class="use-compact-pill"><span class="use-pill-num">06</span><span>Koleksi Peribadi</span></div>
+        <div class="use-compact-pill"><span class="use-pill-num">07</span><span>Edukasi & Kesedaran</span></div>
+        <div class="use-compact-pill"><span class="use-pill-num">08</span><span>Cabutan Bertuah & Reward</span></div>
+        <div class="use-compact-pill"><span class="use-pill-num">09</span><span>Simpanan Nilai Selamat</span></div>
+        <div class="use-compact-pill"><span class="use-pill-num">10</span><span>Hadiah Korporat & Jenama</span></div>
+        <div class="use-compact-pill"><span class="use-pill-num">11</span><span>Cenderamata Pelancongan</span></div>
+        <div class="use-compact-pill"><span class="use-pill-num">12</span><span>Wasiat & Warisan Pusaka</span></div>
       </div>
     </div>
   </section>
@@ -468,36 +409,30 @@
         </p>
       </div>
 
-      <div class="steps-row-6">
-        <div class="step-item">
-          <div class="step-num-circle">1</div>
-          <h4 class="step-name">Pilih Produk</h4>
-          <p class="step-info">Pilih jenis (Emas/Perak), berat gramatur dan pembungkusan.</p>
+      <div class="step-minimal-grid">
+        <div class="step-minimal-pill">
+          <span class="step-min-num">1</span>
+          <span class="step-min-title">Pilih Produk</span>
         </div>
-        <div class="step-item">
-          <div class="step-num-circle">2</div>
-          <h4 class="step-name">Hubungi Kami</h4>
-          <p class="step-info">WhatsApp 011-1188 6654 untuk pertanyaan dan tempahan.</p>
+        <div class="step-minimal-pill">
+          <span class="step-min-num">2</span>
+          <span class="step-min-title">Hubungi Kami</span>
         </div>
-        <div class="step-item">
-          <div class="step-num-circle">3</div>
-          <h4 class="step-name">Sahkan Rekaan</h4>
-          <p class="step-info">Pengesahan mockup digital, kuantiti dan butiran tema.</p>
+        <div class="step-minimal-pill">
+          <span class="step-min-num">3</span>
+          <span class="step-min-title">Sahkan Rekaan</span>
         </div>
-        <div class="step-item">
-          <div class="step-num-circle">4</div>
-          <h4 class="step-name">Pembayaran</h4>
-          <p class="step-info">Pembayaran melalui pindahan bank selamat ke akaun rasmi.</p>
+        <div class="step-minimal-pill">
+          <span class="step-min-num">4</span>
+          <span class="step-min-title">Pembayaran</span>
         </div>
-        <div class="step-item">
-          <div class="step-num-circle">5</div>
-          <h4 class="step-name">Pengeluaran</h4>
-          <p class="step-info">Pencetakan kad dan penetapan emas/perak tulen (5–10 hari).</p>
+        <div class="step-minimal-pill">
+          <span class="step-min-num">5</span>
+          <span class="step-min-title">Pengeluaran</span>
         </div>
-        <div class="step-item">
-          <div class="step-num-circle">6</div>
-          <h4 class="step-name">Penghantaran</h4>
-          <p class="step-info">Produk siap dihantar berinsurans ke seluruh Malaysia.</p>
+        <div class="step-minimal-pill">
+          <span class="step-min-num">6</span>
+          <span class="step-min-title">Penghantaran</span>
         </div>
       </div>
 
@@ -726,184 +661,7 @@
     </div>
   </section>
 
-  <!-- ==========================================
-       SECTION 7: SOLUSI HADIAH & CENDERAMATA KORPORAT (Poster 15)
-       Pure Luxury Typographic Corporate Section
-       ========================================== -->
-  <section class="section" id="korporat" style="background: rgba(14, 14, 20, 0.75);">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-kicker">Penyelesaian Korporat & Majlis Rasmi — Poster 15/16</span>
-        <h2 class="section-title">Solusi Hadiah & Cenderamata <span class="text-gold-gradient">Korporat</span></h2>
-        <p class="section-desc">
-          <strong>BERNILAI &bull; EKSKLUSIF &bull; BERMAKNA</strong> — REVO BULLION menyediakan solusi cenderamata dan hadiah korporat menggunakan emas dan perak tulen Au/Ag 999.9, direka khusus mengikut identiti syarikat untuk pelbagai majlis, acara dan program rasmi.
-        </p>
-      </div>
 
-      <!-- 4 Strategic Pillars from Poster 15 -->
-      <div class="vvip-features-row" style="margin-bottom: 2.5rem;">
-        <div class="vvip-feature-pill">
-          <span class="vvip-feat-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 8.5 12 15 22 8.5 12 2"></polygon><polygon points="2 15.5 12 22 22 15.5"></polygon></svg>
-          </span>
-          <div class="vvip-feat-title">Prestij & Nilai Kekal</div>
-          <p class="vvip-feat-text">Aset logam bernilai sebenar yang dihargai penerima sepanjang hayat.</p>
-        </div>
-        <div class="vvip-feature-pill">
-          <span class="vvip-feat-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
-          </span>
-          <div class="vvip-feat-title">Ideal Untuk Hadiah</div>
-          <p class="vvip-feat-text">Cenderamata unik yang meninggalkan impak positif mendalam.</p>
-        </div>
-        <div class="vvip-feature-pill">
-          <span class="vvip-feat-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-          </span>
-          <div class="vvip-feat-title">Kukuhkan Hubungan</div>
-          <p class="vvip-feat-text">Tanda penghargaan tertinggi untuk rakan niaga dan klien VIP.</p>
-        </div>
-        <div class="vvip-feature-pill">
-          <span class="vvip-feat-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-          </span>
-          <div class="vvip-feat-title">Pelbagai Acara</div>
-          <p class="vvip-feat-text">Fleksibel untuk ulang tahun syarikat, persidangan hingga anugerah.</p>
-        </div>
-      </div>
-
-      <!-- 6 Event Categories from Poster 15 -->
-      <h3 style="font-family: 'Cinzel', serif; font-size: 1.3rem; color: #fff; text-align: center; margin-bottom: 0.5rem;">
-        Sesuai Untuk Pelbagai Majlis & Acara
-      </h3>
-      <p style="text-align: center; color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 2rem;">
-        Penyelesaian cenderamata menyeluruh yang disesuaikan mengikut tema dan spesifikasi organisasi anda.
-      </p>
-
-      <div class="corp-events-grid">
-        <div class="corp-event-card">
-          <span class="corp-event-badge">Kategori 01</span>
-          <h4 class="corp-event-title">Hadiah Korporat</h4>
-          <ul class="corp-event-list">
-            <li>Ulang tahun syarikat (Annual Dinner)</li>
-            <li>Penghargaan pelanggan setia</li>
-            <li>Insentif pekerja & staf cemerlang</li>
-            <li>Hadiah rakan niaga strategik</li>
-          </ul>
-          <a href="https://wa.me/601111886654?text=Salam%20Revo%20Bullion,%20saya%20berminat%20dengan%20Solusi%20Hadiah%20Korporat" target="_blank" rel="noopener" class="pure-card-btn-ws" style="font-size: 0.8rem; padding: 0.6rem 0.8rem;">
-            <span>Perundingan Korporat →</span>
-          </a>
-        </div>
-
-        <div class="corp-event-card">
-          <span class="corp-event-badge">Kategori 02</span>
-          <h4 class="corp-event-title">Majlis Rasmi & Kerajaan</h4>
-          <ul class="corp-event-list">
-            <li>Cenderamata rasmi protokol</li>
-            <li>Majlis pelancaran kementerian/agensi</li>
-            <li>Lawatan delegasi kenegaraan</li>
-            <li>Program khas jabatan kerajaan</li>
-          </ul>
-          <a href="https://wa.me/601111886654?text=Salam%20Revo%20Bullion,%20saya%20berminat%20dengan%20Cenderamata%20Majlis%20Rasmi%20Kerajaan" target="_blank" rel="noopener" class="pure-card-btn-ws" style="font-size: 0.8rem; padding: 0.6rem 0.8rem;">
-            <span>Perundingan Protokol →</span>
-          </a>
-        </div>
-
-        <div class="corp-event-card">
-          <span class="corp-event-badge">Kategori 03</span>
-          <h4 class="corp-event-title">Event & Pelancaran</h4>
-          <ul class="corp-event-list">
-            <li>Produk pelancaran khas syarikat</li>
-            <li>Cenderamata tetamu kehormat & VIP</li>
-            <li>Pakej eksklusif acara & konvensyen</li>
-            <li>Reka bentuk kad mengikut tema event</li>
-          </ul>
-          <a href="https://wa.me/601111886654?text=Salam%20Revo%20Bullion,%20saya%20berminat%20dengan%20Pakej%20Event%20dan%20Pelancaran" target="_blank" rel="noopener" class="pure-card-btn-ws" style="font-size: 0.8rem; padding: 0.6rem 0.8rem;">
-            <span>Perundingan Event →</span>
-          </a>
-        </div>
-
-        <div class="corp-event-card">
-          <span class="corp-event-badge">Kategori 04</span>
-          <h4 class="corp-event-title">Perkahwinan & Keluarga</h4>
-          <ul class="corp-event-list">
-            <li>Doorgift eksklusif perkahwinan</li>
-            <li>Kenang-kenangan hari bahagia</li>
-            <li>Hadiah istimewa untuk keluarga</li>
-            <li>Rekaan nama pengantin & tarikh nikah</li>
-          </ul>
-          <a href="https://wa.me/601111886654?text=Salam%20Revo%20Bullion,%20saya%20berminat%20dengan%20Doorgift%20Perkahwinan" target="_blank" rel="noopener" class="pure-card-btn-ws" style="font-size: 0.8rem; padding: 0.6rem 0.8rem;">
-            <span>Perundingan Kahwin →</span>
-          </a>
-        </div>
-
-        <div class="corp-event-card">
-          <span class="corp-event-badge">Kategori 05</span>
-          <h4 class="corp-event-title">Pendidikan & Institusi</h4>
-          <ul class="corp-event-list">
-            <li>Hadiah graduasi & konvokesyen</li>
-            <li>Anugerah kecemerlangan pelajar</li>
-            <li>Cenderamata universiti / kolej / sekolah</li>
-            <li>Program motivasi, seminar & persaraan</li>
-          </ul>
-          <a href="https://wa.me/601111886654?text=Salam%20Revo%20Bullion,%20saya%20berminat%20dengan%20Cenderamata%20Institusi%20Pendidikan" target="_blank" rel="noopener" class="pure-card-btn-ws" style="font-size: 0.8rem; padding: 0.6rem 0.8rem;">
-            <span>Perundingan Pendidikan →</span>
-          </a>
-        </div>
-
-        <div class="corp-event-card">
-          <span class="corp-event-badge">Kategori 06</span>
-          <h4 class="corp-event-title">Komuniti & NGO</h4>
-          <ul class="corp-event-list">
-            <li>Program kebajikan & kemasyarakatan</li>
-            <li>Cenderamata penderma & komuniti</li>
-            <li>Penghargaan sumbangan sukarelawan</li>
-            <li>Rekaan khas mengikut objektif persatuan</li>
-          </ul>
-          <a href="https://wa.me/601111886654?text=Salam%20Revo%20Bullion,%20saya%20berminat%20dengan%20Cenderamata%20Komuniti%20NGO" target="_blank" rel="noopener" class="pure-card-btn-ws" style="font-size: 0.8rem; padding: 0.6rem 0.8rem;">
-            <span>Perundingan Komuniti →</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- 6 Sebab Kenapa Pilih Revo Bullion from Poster 15 -->
-      <div class="why-revo-wrap">
-        <h3 style="font-family: 'Cinzel', serif; font-size: 1.3rem; color: #fff; text-align: center; margin-bottom: 0.4rem;">
-          Kenapa Pilih REVO BULLION?
-        </h3>
-        <p style="text-align: center; color: var(--text-secondary); font-size: 0.85rem;">
-          Keutamaan mutu, ketelusan dan komitmen terbaik untuk kejayaan cenderamata korporat anda.
-        </p>
-
-        <div class="why-revo-pill-grid">
-          <div class="why-revo-pill">
-            <span class="why-revo-num">1</span>
-            <div class="why-revo-text">Emas & Perak Tulen Au/Ag 999.9</div>
-          </div>
-          <div class="why-revo-pill">
-            <span class="why-revo-num">2</span>
-            <div class="why-revo-text">Reka Bentuk Eksklusif & Premium</div>
-          </div>
-          <div class="why-revo-pill">
-            <span class="why-revo-num">3</span>
-            <div class="why-revo-text">Boleh Custom Nama, Logo & Tema</div>
-          </div>
-          <div class="why-revo-pill">
-            <span class="why-revo-num">4</span>
-            <div class="why-revo-text">Pembungkusan Premium & Bernilai</div>
-          </div>
-          <div class="why-revo-pill">
-            <span class="why-revo-num">5</span>
-            <div class="why-revo-text">Sesuai Individu, Korporat & Komuniti</div>
-          </div>
-          <div class="why-revo-pill">
-            <span class="why-revo-num">6</span>
-            <div class="why-revo-text">Penghantaran Berinsurans Seluruh Malaysia</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ==========================================
        SECTION 8: KALKULATOR SEBUT HARGA SEGERA

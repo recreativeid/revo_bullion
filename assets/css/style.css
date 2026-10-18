@@ -134,10 +134,10 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(6, 6, 8, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  background: rgba(6, 6, 8, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
   transition: var(--transition);
 }
 
@@ -145,121 +145,116 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 68px;
+  height: 70px;
+  gap: 1.5rem;
 }
 
-.ref-nav-left {
+.ref-nav-brand-wrap {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-}
-
-.ref-hamburger-btn {
-  background: none;
-  border: none;
-  color: var(--text-main);
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 28px;
-  height: 28px;
-}
-
-.ref-hamburger-btn span {
-  display: block;
-  height: 2px;
-  width: 100%;
-  background: var(--text-main);
-  border-radius: 2px;
-  transition: var(--transition);
+  flex-shrink: 0;
 }
 
 .ref-brand-title {
   font-family: 'Cinzel', serif;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   color: #fff;
+  transition: var(--transition);
 }
 
-.ref-nav-center-emblem {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(12, 12, 18, 0.8) 100%);
-  border: 1px solid var(--gold-500);
+.ref-brand-title:hover {
+  color: var(--gold-300);
+}
+
+/* Header Direct Menu Links (Scroll down on click) */
+.ref-header-nav {
   display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.35);
+  gap: 1.1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  white-space: nowrap;
 }
 
-.ref-emblem-r {
-  font-family: 'Cinzel', serif;
-  font-size: 1.4rem;
-  font-weight: 900;
-  background: var(--gold-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1;
+.ref-header-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.ref-nav-item {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.25s ease;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.ref-nav-item:hover {
+  color: #fff;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.ref-nav-item.active {
+  color: var(--gold-300);
+  background: rgba(212, 175, 55, 0.12);
+  font-weight: 700;
 }
 
 .ref-nav-right {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  flex-shrink: 0;
 }
 
-.ref-nav-icon-link {
-  color: var(--gold-300);
-  display: flex;
+.ref-whatsapp-btn {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--gold-border-light);
-  transition: var(--transition);
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 9999px;
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  color: #25D366;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 15px rgba(37, 211, 102, 0.15);
 }
 
-.ref-nav-icon-link:hover {
-  background: rgba(212, 175, 55, 0.2);
-  border-color: var(--gold-500);
-  color: #fff;
+.ref-whatsapp-btn:hover {
+  background: #25D366;
+  color: #050507;
+  border-color: #25D366;
+  box-shadow: 0 0 25px rgba(37, 211, 102, 0.4);
+  transform: translateY(-1px);
 }
 
-/* Mobile Slide-over Drawer */
-.mobile-drawer {
-  position: fixed;
-  top: 68px;
-  left: 0;
-  right: 0;
-  background: rgba(8, 8, 12, 0.98);
-  border-bottom: 1px solid var(--gold-border);
-  padding: 2rem 1.5rem;
-  display: none;
-  flex-direction: column;
-  gap: 1.2rem;
-  z-index: 99;
-}
-
-.mobile-drawer.active {
-  display: flex;
-}
-
-.drawer-link {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  padding: 0.4rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.drawer-link:hover {
-  color: var(--gold-300);
+@media (max-width: 900px) {
+  .ref-header-inner {
+    height: auto;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .ref-header-nav {
+    order: 3;
+    width: 100%;
+    padding: 0.4rem 0;
+    gap: 0.6rem;
+  }
+  .ref-nav-item {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.6rem;
+    background: rgba(255, 255, 255, 0.04);
+  }
 }
 
 /* ==========================================
@@ -863,98 +858,91 @@ a {
 }
 
 /* ==========================================
-   CONTENT MODULE 4: 12 KEGUNAAN PRODUK (Poster 12)
+   CONTENT MODULE 4: 12 KEGUNAAN PRODUK (Minimalist Modern SaaS)
    ========================================== */
-.use-grid-12 {
+.use-compact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.4rem;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 0.9rem;
 }
 
-.use-item-box {
+.use-compact-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
   background: rgba(14, 14, 20, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(212, 175, 55, 0.18);
   border-radius: var(--radius-md);
-  padding: 1.5rem;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
   transition: var(--transition);
 }
 
-.use-item-box:hover {
-  border-color: var(--gold-border);
-  background: rgba(22, 22, 32, 0.9);
-  transform: translateY(-4px);
+.use-compact-pill:hover {
+  background: rgba(26, 26, 36, 0.9);
+  border-color: var(--gold-400);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.15);
 }
 
-.use-box-num {
+.use-pill-num {
   font-family: 'Cinzel', serif;
-  font-size: 1.3rem;
+  font-size: 0.95rem;
   font-weight: 800;
-  color: var(--gold-400);
-  margin-bottom: 0.5rem;
-}
-
-.use-box-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-
-.use-box-desc {
-  font-size: 0.84rem;
-  color: var(--text-secondary);
-  line-height: 1.55;
+  color: var(--gold-300);
+  background: rgba(212, 175, 55, 0.12);
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  line-height: 1;
+  flex-shrink: 0;
 }
 
 /* ==========================================
-   CONTENT MODULE 5: 6 LANGKAH TEMPAHAN (Poster 13)
+   CONTENT MODULE 5: 6 LANGKAH TEMPAHAN (Minimalist 6 Steps)
    ========================================== */
-.steps-row-6 {
+.step-minimal-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
 }
 
-.step-item {
+.step-minimal-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
   background: var(--bg-card);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--gold-border-light);
   border-radius: var(--radius-md);
-  padding: 1.6rem 1.2rem;
-  text-align: center;
+  padding: 0.9rem 1.1rem;
   transition: var(--transition);
 }
 
-.step-item:hover {
+.step-minimal-pill:hover {
   border-color: var(--gold-border);
-  transform: translateY(-4px);
+  transform: translateY(-2px);
 }
 
-.step-num-circle {
-  width: 42px;
-  height: 42px;
+.step-min-num {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: var(--gold-gradient);
-  color: #0b0903;
+  color: #000;
   font-weight: 800;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1rem auto;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  flex-shrink: 0;
 }
 
-.step-name {
-  font-size: 0.95rem;
+.step-min-title {
+  font-size: 0.9rem;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 0.4rem;
-}
-
-.step-info {
-  font-size: 0.78rem;
-  color: var(--text-secondary);
-  line-height: 1.45;
 }
 
 /* ==========================================

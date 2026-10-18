@@ -167,6 +167,29 @@ if ($action === 'upload_image') {
     }
 }
 
+// 8. SAVE LANDING HTML (In-Place Visual Editor Save)
+if ($action === 'save_landing_html') {
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        jsonResponse(false, [], 'Method not allowed');
+    }
+
+    $input = json_decode(file_get_contents('php://input'), true);
+    $htmlContent = $input['html'] ?? '';
+
+    if (empty($htmlContent)) {
+        jsonResponse(false, [], 'Kandungan HTML tidak boleh kosong.');
+    }
+
+    // Backup current files
+    if (file_exists($indexPath)) copy($indexPath, $indexPath . '.bak');
+
+    // Save updated landing page HTML
+    file_put_contents($indexPath, $htmlContent);
+    file_put_contents($indexPhpPath, $htmlContent);
+
+    jsonResponse(true, ['timestamp' => time()], 'Laman web berjaya dikemaskini secara langsung!');
+}
+
 // HELPER: Recompile index.html from template & data
 function generateHtmlFromData($data, $outputPath) {
     if (!file_exists($outputPath)) return;

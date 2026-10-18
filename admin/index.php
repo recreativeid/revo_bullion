@@ -54,7 +54,7 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
     .admin-navbar {
       background: var(--bg-surface);
       border-bottom: 1px solid var(--gold-border);
-      padding: 0.9rem 1.8rem;
+      padding: 0.85rem 1.8rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -164,52 +164,56 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
     /* Main Container & Tabs */
     .admin-main {
       flex: 1;
-      max-width: 1400px;
+      max-width: 1500px;
       width: 100%;
       margin: 0 auto;
-      padding: 1.8rem;
+      padding: 1.5rem 1.8rem;
+      display: flex;
+      flex-direction: column;
     }
 
     .tabs-header {
       display: flex;
-      gap: 0.5rem;
+      gap: 0.8rem;
       border-bottom: 1px solid var(--gold-border);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.8rem;
-      overflow-x: auto;
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.5rem;
     }
 
     .tab-btn {
-      padding: 0.65rem 1.2rem;
+      padding: 0.75rem 1.4rem;
       background: transparent;
-      border: none;
+      border: 1px solid transparent;
       color: var(--text-secondary);
-      font-size: 0.88rem;
+      font-size: 0.92rem;
       font-weight: 600;
       cursor: pointer;
       border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      white-space: nowrap;
-      transition: all 0.2s ease;
+      gap: 0.6rem;
+      transition: all 0.25s ease;
     }
 
     .tab-btn:hover {
       color: #fff;
       background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(212, 175, 55, 0.15);
     }
 
     .tab-btn.active {
       color: #000;
       background: var(--gold-primary);
+      border-color: var(--gold-primary);
       font-weight: 700;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
     }
 
     /* Content Panes */
     .tab-pane {
       display: none;
-      animation: fadeIn 0.3s ease;
+      animation: fadeIn 0.25s ease;
+      flex: 1;
     }
 
     .tab-pane.active {
@@ -267,12 +271,12 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
     }
 
     .pill-btn {
-      padding: 0.4rem 0.9rem;
+      padding: 0.45rem 1rem;
       border-radius: 9999px;
       border: 1px solid var(--gold-border);
       background: rgba(0, 0, 0, 0.3);
       color: var(--text-secondary);
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
@@ -285,14 +289,14 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
     }
 
     .search-input {
-      padding: 0.5rem 0.9rem;
+      padding: 0.55rem 1rem;
       background: rgba(0, 0, 0, 0.4);
       border: 1px solid var(--gold-border);
       border-radius: var(--radius-sm);
       color: #fff;
       font-size: 0.84rem;
       outline: none;
-      min-width: 220px;
+      min-width: 240px;
     }
 
     .search-input:focus {
@@ -309,11 +313,11 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
       width: 100%;
       border-collapse: collapse;
       text-align: left;
-      font-size: 0.85rem;
+      font-size: 0.86rem;
     }
 
     table.data-table th {
-      padding: 0.8rem 1rem;
+      padding: 0.85rem 1rem;
       background: rgba(0, 0, 0, 0.4);
       color: var(--gold-light);
       font-weight: 700;
@@ -328,16 +332,17 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
     }
 
     table.data-table tr:hover td {
-      background: rgba(212, 175, 55, 0.03);
+      background: rgba(255, 255, 255, 0.02);
     }
 
     .prod-thumb {
-      width: 44px;
-      height: 60px;
-      object-fit: cover;
-      border-radius: 4px;
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
       border: 1px solid var(--gold-border);
       background: #000;
+      padding: 2px;
     }
 
     .badge {
@@ -350,40 +355,38 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
       letter-spacing: 0.04em;
     }
 
-    .badge-gold { background: rgba(212, 175, 55, 0.18); color: var(--gold-light); border: 1px solid rgba(212, 175, 55, 0.35); }
-    .badge-silver { background: rgba(148, 163, 184, 0.18); color: #e2e8f0; border: 1px solid rgba(148, 163, 184, 0.35); }
-    .badge-vvip { background: rgba(168, 85, 247, 0.18); color: #d8b4fe; border: 1px solid rgba(168, 85, 247, 0.35); }
+    .badge-gold { background: rgba(212, 175, 55, 0.18); color: var(--gold-light); border: 1px solid var(--gold-primary); }
+    .badge-silver { background: rgba(192, 192, 192, 0.18); color: #e2e8f0; border: 1px solid #94a3b8; }
+    .badge-vvip { background: rgba(236, 196, 64, 0.25); color: #fff; border: 1px solid #ECC440; }
 
     .price-tag {
+      font-family: 'Cinzel', serif;
       font-weight: 800;
-      color: var(--gold-light);
-      font-size: 0.95rem;
+      color: var(--gold-primary);
     }
 
     /* Modal */
     .modal-backdrop {
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.8);
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(8px);
-      z-index: 100;
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 1rem;
+      z-index: 100;
+      padding: 1.5rem;
     }
 
-    .modal-backdrop.active {
-      display: flex;
-    }
+    .modal-backdrop.active { display: flex; }
 
     .modal-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--gold-border);
       width: 100%;
-      max-width: 620px;
+      max-width: 680px;
       max-height: 90vh;
       overflow-y: auto;
-      background: var(--bg-surface);
-      border: 1px solid var(--gold-primary);
       border-radius: var(--radius-lg);
       padding: 2rem;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(212, 175, 55, 0.15);
@@ -411,26 +414,13 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
       margin-bottom: 1rem;
     }
 
-    .form-full {
-      grid-column: span 2;
-    }
-
-    .form-group {
-      margin-bottom: 1rem;
-    }
-
-    .form-label {
-      display: block;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--gold-light);
-      margin-bottom: 0.35rem;
-      letter-spacing: 0.04em;
-    }
+    .form-full { grid-column: span 2; }
+    .form-group { margin-bottom: 1rem; }
+    .form-label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--gold-light); margin-bottom: 0.4rem; }
 
     .form-input, .form-select, .form-textarea {
       width: 100%;
-      padding: 0.65rem 0.9rem;
+      padding: 0.68rem 0.95rem;
       background: rgba(0, 0, 0, 0.45);
       border: 1px solid var(--gold-border);
       border-radius: var(--radius-sm);
@@ -445,10 +435,135 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
       background: rgba(0, 0, 0, 0.7);
     }
 
-    .form-textarea {
-      resize: vertical;
-      min-height: 80px;
-      font-family: inherit;
+    .form-textarea { resize: vertical; min-height: 80px; font-family: inherit; }
+
+    /* Drag & Drop Direct Image Upload Zone */
+    .upload-dropzone {
+      border: 2px dashed var(--gold-border);
+      border-radius: var(--radius-md);
+      background: rgba(0, 0, 0, 0.35);
+      padding: 1.4rem 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .upload-dropzone:hover, .upload-dropzone.dragover {
+      border-color: var(--gold-primary);
+      background: rgba(212, 175, 55, 0.08);
+    }
+
+    .dropzone-preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .dropzone-preview img {
+      max-width: 110px;
+      max-height: 110px;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--gold-border);
+      background: #000;
+      padding: 4px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    .preview-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+
+    /* Visual Landing Page Live Editor */
+    .visual-editor-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      height: calc(100vh - 160px);
+      min-height: 650px;
+    }
+
+    .visual-toolbar {
+      background: var(--bg-surface);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      padding: 0.8rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .editor-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #fff;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      padding: 0.35rem 0.8rem;
+      border-radius: 9999px;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 10px var(--success);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.4; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.15); }
+      100% { opacity: 0.4; transform: scale(0.9); }
+    }
+
+    .toolbar-hint {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .visual-frame-wrap {
+      flex: 1;
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      position: relative;
+    }
+
+    #visualEditorFrame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      background: #060608;
     }
 
     /* Toast Notification */
@@ -469,17 +584,9 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .toast-notice.show {
-      transform: translateY(0);
-      opacity: 1;
-    }
+    .toast-notice.show { transform: translateY(0); opacity: 1; }
+    .toast-notice.error { background: rgba(239, 68, 68, 0.95); color: #fff; }
 
-    .toast-notice.error {
-      background: rgba(239, 68, 68, 0.95);
-      color: #fff;
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
       .admin-navbar { padding: 0.8rem 1rem; }
       .brand-title { font-size: 1rem; }
@@ -487,6 +594,7 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
       .admin-main { padding: 1rem; }
       .form-grid { grid-template-columns: 1fr; }
       .form-full { grid-column: span 1; }
+      .visual-toolbar { flex-direction: column; align-items: stretch; }
     }
   </style>
 </head>
@@ -509,9 +617,9 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
         <span>Lihat Web</span>
       </a>
 
-      <button type="button" class="btn btn-gold" id="btnPublishStatic" title="Simpan dan Kemaskini Fail index.html untuk GitHub Pages">
+      <button type="button" class="btn btn-gold" id="btnPublishStatic" title="Simpan dan Segerakkan Data">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
-        <span>Simpan & Publish</span>
+        <span>Simpan Data</span>
       </button>
 
       <button type="button" class="btn btn-danger" id="btnLogout" title="Log Keluar">
@@ -524,39 +632,25 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
   <!-- Main Container -->
   <main class="admin-main">
 
-    <!-- Navigation Tabs -->
+    <!-- 2 Only Clean Navigation Tabs: Katalog Produk (CRUD) & Editor Visual Laman Web -->
     <nav class="tabs-header" role="tablist">
       <button type="button" class="tab-btn active" data-tab="tab-products">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 8.5 12 15 22 8.5 12 2"></polygon><polygon points="2 15.5 12 22 22 15.5"></polygon></svg>
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 8.5 12 15 22 8.5 12 2"></polygon><polygon points="2 15.5 12 22 22 15.5"></polygon></svg>
         <span>Katalog Produk (CRUD)</span>
       </button>
-      <button type="button" class="tab-btn" data-tab="tab-packaging">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line></svg>
-        <span>Pembungkusan</span>
-      </button>
-      <button type="button" class="tab-btn" data-tab="tab-content">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-        <span>Teks & Kandungan Laman</span>
-      </button>
-      <button type="button" class="tab-btn" data-tab="tab-uses-faq">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
-        <span>Kegunaan & FAQ</span>
-      </button>
-      <button type="button" class="tab-btn" data-tab="tab-settings">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-        <span>Maklumat Syarikat</span>
+      <button type="button" class="tab-btn" data-tab="tab-visual-editor">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+        <span>Sunting Visual Laman Web (Live In-Place Edit)</span>
       </button>
     </nav>
 
-    <!-- ==============================================
-         TAB 1: PRODUK & HARGA (CRUD)
-         ============================================== -->
+    <!-- TAB 1: PRODUK & HARGA (CRUD) -->
     <section id="tab-products" class="tab-pane active">
       <div class="panel-card">
         <div class="panel-head">
           <div>
             <h2 class="panel-title">Katalog Kad Emas & Perak</h2>
-            <p class="panel-sub">Urus senarai produk, gramatur, harga seunit, gambar dan maklumat tempahan.</p>
+            <p class="panel-sub">Urus senarai produk, gramatur, harga seunit, muat naik gambar dan maklumat tempahan.</p>
           </div>
           <button type="button" class="btn btn-gold" id="btnOpenAddProd">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
@@ -590,263 +684,47 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
                 <th style="text-align: right;">Tindakan</th>
               </tr>
             </thead>
-            <tbody id="productsTableBody">
-              <!-- Rendered via JS -->
-            </tbody>
+            <tbody id="productsTableBody"></tbody>
           </table>
         </div>
       </div>
     </section>
 
-    <!-- ==============================================
-         TAB 2: PAKEJ PEMBUNGKUSAN (CRUD)
-         ============================================== -->
-    <section id="tab-packaging" class="tab-pane">
-      <div class="panel-card">
-        <div class="panel-head">
-          <div>
-            <h2 class="panel-title">4 Pilihan Pembungkusan Premium</h2>
-            <p class="panel-sub">Kemaskini nama pakej, tag tarikan, harga tambahan (RM), dan ciri-ciri pembungkusan.</p>
-          </div>
-          <button type="button" class="btn btn-gold btn-save-pack">
-            <span>Simpan Pembungkusan</span>
-          </button>
-        </div>
-
-        <div id="packagingFormContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-          <!-- Rendered via JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ==============================================
-         TAB 3: TEKS & KANDUNGAN LAMAN
-         ============================================== -->
-    <section id="tab-content" class="tab-pane">
-      <div class="panel-card">
-        <div class="panel-head">
-          <div>
-            <h2 class="panel-title">Bahagian Hero (Laman Utama)</h2>
-            <p class="panel-sub">Ubah teks utama yang terpapar pada skrin pertama pelawat.</p>
-          </div>
-          <button type="button" class="btn btn-gold btn-save-hero">
-            <span>Simpan Hero</span>
-          </button>
-        </div>
-
-        <form id="heroForm">
-          <div class="form-grid">
-            <div class="form-group">
-              <label class="form-label">Teks Tag Pill Atas</label>
-              <input type="text" class="form-input" id="heroPillTag" placeholder="REVO BULLION GOLD & SILVER CARD">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Teks Kicker Emas</label>
-              <input type="text" class="form-input" id="heroKicker" placeholder="KAD EMAS DAN PERAK EKSKLUSIF UNTUK SETIAP MOMEN BERMAKNA">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Tajuk Utama Baris 1</label>
-              <input type="text" class="form-input" id="heroHeadLine1" placeholder="Setiap Detik Istimewa,">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Tajuk Utama Baris 2 (Italik)</label>
-              <input type="text" class="form-input" id="heroHeadLine2" placeholder="Diabadikan dengan...">
-            </div>
-
-            <div class="form-group form-full">
-              <label class="form-label">Huraian Perenggan Utama</label>
-              <textarea class="form-textarea" id="heroDescription" rows="3"></textarea>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Teks Butang Tindakan (CTA)</label>
-              <input type="text" class="form-input" id="heroCtaText" placeholder="Terokai Koleksi">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Motto Jenama Bawah</label>
-              <input type="text" class="form-input" id="heroMotto" placeholder='"PRECIOUS MOMENTS LAST FOREVER"'>
-            </div>
-          </div>
-        </form>
-      </div>
-
-      <!-- Visi & Misi Korporat -->
-      <div class="panel-card">
-        <div class="panel-head">
-          <div>
-            <h2 class="panel-title">Pengenalan, Visi & Misi</h2>
-            <p class="panel-sub">Falsafah perniagaan dan matlamat korporat REVO BULLION.</p>
-          </div>
-          <button type="button" class="btn btn-gold btn-save-about">
-            <span>Simpan Visi & Misi</span>
-          </button>
-        </div>
-
-        <form id="aboutForm">
-          <div class="form-group">
-            <label class="form-label">Huraian Pengenalan</label>
-            <textarea class="form-textarea" id="aboutDesc" rows="3"></textarea>
+    <!-- TAB 2: SUNTING VISUAL LAMAN WEB (IN-PLACE LIVE EDITOR) -->
+    <section id="tab-visual-editor" class="tab-pane">
+      <div class="visual-editor-container">
+        <!-- Floating Visual Editor Toolbar -->
+        <div class="visual-toolbar">
+          <div class="toolbar-left">
+            <span class="editor-indicator">
+              <span class="pulse-dot"></span>
+              Mode Sunting Visual Langsung
+            </span>
+            <span class="toolbar-hint">Klik mana-mana teks pada paparan web di bawah untuk mengubahnya secara manual, kemudian klik Simpan Perubahan.</span>
           </div>
 
-          <div class="form-group">
-            <label class="form-label">Visi Korporat</label>
-            <textarea class="form-textarea" id="aboutVisi" rows="2"></textarea>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label">Misi Korporat (Satu baris untuk setiap poin)</label>
-            <textarea class="form-textarea" id="aboutMisi" rows="4"></textarea>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <!-- ==============================================
-         TAB 4: 12 KEGUNAAN & FAQ
-         ============================================== -->
-    <section id="tab-uses-faq" class="tab-pane">
-      <!-- 12 Kegunaan Produk -->
-      <div class="panel-card">
-        <div class="panel-head">
-          <div>
-            <h2 class="panel-title">12 Kegunaan Produk REVO BULLION</h2>
-            <p class="panel-sub">Urus senarai kegunaan emas & perak untuk inspirasi pelanggan.</p>
-          </div>
-          <button type="button" class="btn btn-gold btn-save-uses">
-            <span>Simpan Kegunaan</span>
-          </button>
-        </div>
-
-        <div id="usesListContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
-          <!-- Rendered via JS -->
-        </div>
-      </div>
-
-      <!-- FAQ Soalan Lazim -->
-      <div class="panel-card">
-        <div class="panel-head">
-          <div>
-            <h2 class="panel-title">Soalan Lazim (FAQ)</h2>
-            <p class="panel-sub">Pertanyaan umum pelanggan mengenai ketulenan, MOQ dan rekaan custom.</p>
-          </div>
-          <button type="button" class="btn btn-outline" id="btnAddFaq">
-            <span>+ Tambah Soalan FAQ</span>
-          </button>
-          <button type="button" class="btn btn-gold btn-save-faq">
-            <span>Simpan FAQ</span>
-          </button>
-        </div>
-
-        <div id="faqListContainer" style="display: flex; flex-direction: column; gap: 1rem;">
-          <!-- Rendered via JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- ==============================================
-         TAB 5: MAKLUMAT SYARIKAT & HUBUNGAN
-         ============================================== -->
-    <section id="tab-settings" class="tab-pane">
-      <div class="panel-card">
-        <div class="panel-head">
-          <div>
-            <h2 class="panel-title">Maklumat Syarikat & Hubungan Rasmi</h2>
-            <p class="panel-sub">Nombor WhatsApp, alamat e-mel, nama domain dan pautan media sosial rasmi.</p>
-          </div>
-          <button type="button" class="btn btn-gold btn-save-settings">
-            <span>Simpan Maklumat</span>
-          </button>
-        </div>
-
-        <form id="settingsForm">
-          <div class="form-grid">
-            <div class="form-group">
-              <label class="form-label">Nama Jenama</label>
-              <input type="text" class="form-input" id="setBrand" placeholder="REVO BULLION">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Tagline Utama</label>
-              <input type="text" class="form-input" id="setTagline" placeholder="Precious Moments Last Forever">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Nombor WhatsApp (Paparan)</label>
-              <input type="text" class="form-input" id="setWhatsapp" placeholder="011-1188 6654">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Nombor WhatsApp (Antarabangsa)</label>
-              <input type="text" class="form-input" id="setWhatsappRaw" placeholder="601111886654">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Alamat E-mel</label>
-              <input type="email" class="form-input" id="setEmail" placeholder="smgmh23@gmail.com">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Nama Domain Utama</label>
-              <input type="text" class="form-input" id="setDomain" placeholder="revobullion.my.id">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Instagram Handle</label>
-              <input type="text" class="form-input" id="setIg" placeholder="@revobullion">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">TikTok Handle</label>
-              <input type="text" class="form-input" id="setTiktok" placeholder="@revobullion">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Facebook Page</label>
-              <input type="text" class="form-input" id="setFb" placeholder="Revo Bullion">
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">URL Laman Web Rasmi</label>
-              <input type="url" class="form-input" id="setWebsite" placeholder="https://www.revobullion.com">
-            </div>
-          </div>
-        </form>
-      </div>
-
-      <!-- Tukar Kata Laluan Admin -->
-      <div class="panel-card" style="max-width: 500px;">
-        <div class="panel-head">
-          <div>
-            <h2 class="panel-title">Tukar Kata Laluan Admin</h2>
-            <p class="panel-sub">Pastikan akaun pentadbir anda kekal selamat.</p>
+          <div class="toolbar-actions">
+            <button type="button" class="btn btn-outline" id="btnReloadVisualEditor" title="Muat Semula Paparan">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"></path><path d="M1 20v-6h6"></path><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+              <span>Muat Semula</span>
+            </button>
+            <button type="button" class="btn btn-gold" id="btnSaveVisualChanges" title="Simpan Semua Perubahan Langsung ke Laman Web">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+              <span>Simpan Perubahan Visual</span>
+            </button>
           </div>
         </div>
 
-        <form id="changePasswordForm">
-          <div class="form-group">
-            <label class="form-label">Kata Laluan Semasa</label>
-            <input type="password" class="form-input" id="oldPassword" required placeholder="••••••••">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Kata Laluan Baru (Min. 6 aksara)</label>
-            <input type="password" class="form-input" id="newPassword" required placeholder="••••••••">
-          </div>
-          <button type="submit" class="btn btn-gold">
-            <span>Kemas Kini Kata Laluan</span>
-          </button>
-        </form>
+        <!-- Frame Container -->
+        <div class="visual-frame-wrap">
+          <iframe id="visualEditorFrame" src="../index.html" title="Visual Landing Page Editor"></iframe>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ==============================================
-       MODAL: TAMBAH / SUNTHING PRODUK
-       ============================================== -->
+  <!-- MODAL: PRODUK (WITH DIRECT IMAGE UPLOAD) -->
   <div class="modal-backdrop" id="productModal">
     <div class="modal-box">
       <button type="button" class="modal-close" id="btnCloseProdModal">&times;</button>
@@ -854,13 +732,11 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
 
       <form id="productForm">
         <input type="hidden" id="editProdId" value="">
-
         <div class="form-grid">
           <div class="form-group form-full">
             <label class="form-label">Nama Produk Lengkap</label>
-            <input type="text" class="form-input" id="prodNameInput" required placeholder="Cth: Baby Gold Card Custom 0.001g">
+            <input type="text" class="form-input" id="prodNameInput" required>
           </div>
-
           <div class="form-group">
             <label class="form-label">Kategori</label>
             <select class="form-select" id="prodCategorySelect" required>
@@ -869,7 +745,6 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
               <option value="vvip">Siri VVIP Exclusive</option>
             </select>
           </div>
-
           <div class="form-group">
             <label class="form-label">Siri Rekaan</label>
             <select class="form-select" id="prodSeriesSelect" required>
@@ -878,7 +753,6 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
               <option value="VVIP Exclusive">VVIP Exclusive</option>
             </select>
           </div>
-
           <div class="form-group">
             <label class="form-label">Jenis Logam Mulia</label>
             <select class="form-select" id="prodMetalSelect" required>
@@ -886,36 +760,54 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
               <option value="Ag 999.9">Ag 999.9 (Fine Silver)</option>
             </select>
           </div>
-
           <div class="form-group">
             <label class="form-label">Berat Gramatur</label>
-            <input type="text" class="form-input" id="prodWeightInput" required placeholder="Cth: 0.001g atau 5g">
+            <input type="text" class="form-input" id="prodWeightInput" required>
           </div>
-
           <div class="form-group">
             <label class="form-label">Harga Seunit (RM)</label>
-            <input type="number" step="0.01" class="form-input" id="prodPriceInput" required placeholder="4.44">
+            <input type="number" step="0.01" class="form-input" id="prodPriceInput" required>
           </div>
-
           <div class="form-group">
             <label class="form-label">Kuantiti Minimum (MOQ)</label>
             <input type="number" class="form-input" id="prodMoqInput" required value="50">
           </div>
 
+          <!-- DIRECT IMAGE UPLOAD ZONE (Bisa Upload Gambar Langsung) -->
           <div class="form-group form-full">
-            <label class="form-label">Pautan / Fail Gambar Produk</label>
-            <input type="text" class="form-input" id="prodImageInput" placeholder="./assets/images/products/card_gold_0001g.png">
-            <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.3rem;">
-              Boleh gunakan pautan fail sedia ada, atau pilih fail gambar baru di bawah untuk dimuat naik automatik.
+            <label class="form-label">Gambar Produk (Muat Naik Terus / Upload Gambar)</label>
+            <div class="upload-dropzone" id="uploadDropzone">
+              <input type="file" id="prodImageFileInput" accept="image/png, image/jpeg, image/webp, image/svg+xml" style="display: none;">
+              
+              <div class="dropzone-content" id="dropzonePrompt">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color: var(--gold-primary); margin-bottom: 0.4rem;">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <div style="font-weight: 700; color: #fff; font-size: 0.9rem;">Klik untuk pilih fail gambar atau seret ke sini</div>
+                <div style="font-size: 0.74rem; color: var(--text-muted); margin-top: 0.2rem;">Format: PNG, JPG, WEBP, SVG (Maks. 5MB)</div>
+              </div>
+
+              <div class="dropzone-preview" id="dropzonePreview" style="display: none;">
+                <img id="imgPreviewTag" src="" alt="Pratonton Gambar">
+                <div class="preview-actions">
+                  <div style="font-size: 0.8rem; font-weight: 700; color: var(--gold-light);" id="previewFileName">gambar_produk.png</div>
+                  <div style="display: flex; gap: 0.5rem; margin-top: 0.3rem;">
+                    <button type="button" class="btn btn-outline" id="btnChangeImage" style="padding: 0.3rem 0.7rem; font-size: 0.75rem;">Tukar Gambar</button>
+                    <button type="button" class="btn btn-danger" id="btnRemoveImage" style="padding: 0.3rem 0.7rem; font-size: 0.75rem;">Buang</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <input type="file" id="prodImageFile" accept="image/*" style="margin-top: 0.4rem; font-size: 0.8rem; color: var(--gold-light);">
+            <!-- Value container storing final URL or base64 -->
+            <input type="hidden" id="prodImageInput" value="">
           </div>
 
           <div class="form-group form-full">
             <label class="form-label">Penerangan Produk</label>
-            <textarea class="form-textarea" id="prodDescInput" rows="3" placeholder="Penerangan ringkas keistimewaan produk..."></textarea>
+            <textarea class="form-textarea" id="prodDescInput" rows="3"></textarea>
           </div>
-
           <div class="form-group form-full" style="display: flex; align-items: center; gap: 0.6rem;">
             <input type="checkbox" id="prodActiveCheck" checked style="width: 18px; height: 18px; accent-color: var(--gold-primary);">
             <label for="prodActiveCheck" style="font-size: 0.85rem; color: #fff; cursor: pointer;">Paparkan produk ini di laman web (Aktif)</label>
@@ -930,52 +822,52 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
     </div>
   </div>
 
-  <!-- Toast Notice -->
   <div id="adminToast" class="toast-notice">Kandungan berjaya disimpan!</div>
 
-  <!-- Admin JavaScript Logic -->
   <script>
+    // Client auth guard
+    if (!localStorage.getItem('revo_admin_auth')) {
+      window.location.href = 'login.html';
+    }
+
     let appData = null;
     let currentFilter = 'all';
 
-    // Show Toast Helper
     function showToast(message, isError = false) {
       const toast = document.getElementById('adminToast');
       toast.textContent = message;
       toast.className = 'toast-notice' + (isError ? ' error show' : ' show');
-      setTimeout(() => {
-        toast.className = 'toast-notice';
-      }, 3500);
+      setTimeout(() => { toast.className = 'toast-notice'; }, 3500);
     }
 
-    // Tab Switching
+    // Tab Navigation Switcher
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
         btn.classList.add('active');
-        const targetId = btn.getAttribute('data-tab');
-        document.getElementById(targetId).classList.add('active');
+        const targetPane = document.getElementById(btn.getAttribute('data-tab'));
+        if (targetPane) targetPane.classList.add('active');
+
+        // When switching to visual editor, ensure editable nodes are initialized
+        if (btn.getAttribute('data-tab') === 'tab-visual-editor') {
+          initVisualEditorIframe();
+        }
       });
     });
 
-    // Fetch Content
+    // Load CMS Data
     async function loadContent() {
       try {
-        const res = await fetch('api.php?action=get_content');
-        const json = await res.json();
-        if (json.success) {
-          appData = json.data;
-          renderAll();
-        } else {
-          showToast('Gagal memuat turun data kandungan', true);
-        }
+        const res = await fetch('../data/content.json?t=' + Date.now());
+        appData = await res.json();
+        renderProducts();
       } catch (err) {
-        showToast('Ralat sambungan fail data', true);
+        showToast('Gagal memuat turun data kandungan', true);
       }
     }
 
-    // Save Content Back to API
+    // Save Data to Server and localStorage
     async function saveContent() {
       try {
         const res = await fetch('api.php?action=save_content', {
@@ -985,65 +877,52 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
         });
         const json = await res.json();
         if (json.success) {
-          showToast(json.message || 'Perubahan berjaya disimpan!');
-          renderAll();
-        } else {
-          showToast(json.message || 'Gagal menyimpan', true);
+          showToast(json.message);
+          renderProducts();
+          // Also refresh visual editor frame to show updated products
+          refreshVisualEditor();
+          return;
         }
-      } catch (err) {
-        showToast('Ralat sambungan API pelayan', true);
-      }
-    }
-
-    // Render Everything
-    function renderAll() {
-      if (!appData) return;
+      } catch (err) {}
+      
+      // Fallback for static hosting
+      localStorage.setItem('revo_content_backup', JSON.stringify(appData));
+      showToast('Perubahan disimpan di sesi pelayar!');
       renderProducts();
-      renderPackaging();
-      renderHero();
-      renderAbout();
-      renderUses();
-      renderFaq();
-      renderSettings();
+      refreshVisualEditor();
     }
 
-    // --- PRODUCTS LOGIC ---
+    // Render Products Table
     function renderProducts() {
+      if (!appData) return;
       const tbody = document.getElementById('productsTableBody');
       const search = document.getElementById('searchProdInput').value.toLowerCase();
       let list = appData.products || [];
 
-      // Counts
       document.getElementById('countAll').textContent = list.length;
       document.getElementById('countGold').textContent = list.filter(p => p.category === 'gold').length;
       document.getElementById('countSilver').textContent = list.filter(p => p.category === 'silver').length;
       document.getElementById('countVvip').textContent = list.filter(p => p.category === 'vvip').length;
 
-      // Filter
-      if (currentFilter !== 'all') {
-        list = list.filter(p => p.category === currentFilter);
-      }
-      if (search) {
-        list = list.filter(p => (p.name + ' ' + p.weight + ' ' + p.series).toLowerCase().includes(search));
-      }
+      if (currentFilter !== 'all') list = list.filter(p => p.category === currentFilter);
+      if (search) list = list.filter(p => (p.name + ' ' + p.weight + ' ' + p.series).toLowerCase().includes(search));
 
       if (list.length === 0) {
         tbody.innerHTML = '<tr><td colspan="9" style="text-align: center; padding: 2rem; color: var(--text-muted);">Tiada produk dijumpai.</td></tr>';
         return;
       }
 
-      tbody.innerHTML = list.map(p => `
+      tbody.innerHTML = list.map(p => {
+        let imgSrc = p.image || './assets/images/products/card_gold_0001g.png';
+        if (imgSrc.startsWith('./')) imgSrc = '.' + imgSrc; // adjust relative to /admin
+        return `
         <tr>
-          <td>
-            <img src=".${p.image}" alt="${p.name}" class="prod-thumb" onerror="this.src='../assets/images/favicon.png'">
-          </td>
+          <td><img src="${imgSrc}" alt="${p.name}" class="prod-thumb" onerror="this.src='../assets/images/favicon.png'"></td>
           <td>
             <strong style="color: #fff; font-size: 0.9rem;">${p.name}</strong>
             <div style="font-size: 0.74rem; color: var(--text-muted);">${p.desc ? p.desc.substring(0, 60) + '...' : ''}</div>
           </td>
-          <td>
-            <span class="badge badge-${p.category}">${p.category}</span>
-          </td>
+          <td><span class="badge badge-${p.category}">${p.category}</span></td>
           <td><span style="color: var(--gold-light); font-size: 0.8rem;">${p.series}</span></td>
           <td><span style="font-weight: 600;">${p.metal}</span></td>
           <td><span class="price-tag">RM ${parseFloat(p.price).toFixed(2)}</span></td>
@@ -1058,10 +937,10 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
             <button type="button" class="btn btn-danger" style="padding: 0.35rem 0.7rem; font-size: 0.75rem;" onclick="deleteProduct('${p.id}')">Padam</button>
           </td>
         </tr>
-      `).join('');
+      `;
+      }).join('');
     }
 
-    // Filter pills
     document.querySelectorAll('.filter-pills .pill-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filter-pills .pill-btn').forEach(b => b.classList.remove('active'));
@@ -1073,14 +952,124 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
 
     document.getElementById('searchProdInput').addEventListener('input', renderProducts);
 
-    // Modal Add / Edit
+    // Modal & Direct Image Upload Setup
     const prodModal = document.getElementById('productModal');
+    const uploadDropzone = document.getElementById('uploadDropzone');
+    const prodImageFileInput = document.getElementById('prodImageFileInput');
+    const dropzonePrompt = document.getElementById('dropzonePrompt');
+    const dropzonePreview = document.getElementById('dropzonePreview');
+    const imgPreviewTag = document.getElementById('imgPreviewTag');
+    const previewFileName = document.getElementById('previewFileName');
+    const prodImageInput = document.getElementById('prodImageInput');
+
+    // Trigger file chooser on dropzone click
+    uploadDropzone.addEventListener('click', (e) => {
+      if (e.target.closest('#btnRemoveImage')) return;
+      prodImageFileInput.click();
+    });
+
+    // Drag and Drop handling
+    ['dragenter', 'dragover'].forEach(eventName => {
+      uploadDropzone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        uploadDropzone.classList.add('dragover');
+      });
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      uploadDropzone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        uploadDropzone.classList.remove('dragover');
+      });
+    });
+
+    uploadDropzone.addEventListener('drop', (e) => {
+      const files = e.dataTransfer.files;
+      if (files && files.length > 0) {
+        handleImageFile(files[0]);
+      }
+    });
+
+    prodImageFileInput.addEventListener('change', () => {
+      if (prodImageFileInput.files && prodImageFileInput.files.length > 0) {
+        handleImageFile(prodImageFileInput.files[0]);
+      }
+    });
+
+    function handleImageFile(file) {
+      if (!file.type.startsWith('image/')) {
+        showToast('Sila pilih fail berformat gambar (PNG, JPG, WEBP, SVG)', true);
+        return;
+      }
+
+      previewFileName.textContent = file.name;
+
+      // 1. Instant Data URL Preview
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const dataUrl = e.target.result;
+        imgPreviewTag.src = dataUrl;
+        dropzonePrompt.style.display = 'none';
+        dropzonePreview.style.display = 'flex';
+        prodImageInput.value = dataUrl;
+      };
+      reader.readAsDataURL(file);
+
+      // 2. Upload file to server via api.php?action=upload_image if running on server
+      const formData = new FormData();
+      formData.append('image', file);
+      fetch('api.php?action=upload_image', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(json => {
+        if (json.success && json.data && json.data.url) {
+          prodImageInput.value = json.data.url;
+          showToast('Gambar berjaya dimuat naik ke pelayan!');
+        }
+      })
+      .catch(() => {
+        // Keeps the instant base64 DataURL as fallback
+      });
+    }
+
+    document.getElementById('btnRemoveImage').addEventListener('click', (e) => {
+      e.stopPropagation();
+      resetImageUpload();
+    });
+
+    function resetImageUpload() {
+      prodImageFileInput.value = '';
+      prodImageInput.value = '';
+      imgPreviewTag.src = '';
+      dropzonePrompt.style.display = 'block';
+      dropzonePreview.style.display = 'none';
+    }
+
+    function setImagePreview(url) {
+      if (url) {
+        prodImageInput.value = url;
+        let displaySrc = url;
+        if (displaySrc.startsWith('./')) displaySrc = '.' + displaySrc;
+        imgPreviewTag.src = displaySrc;
+        previewFileName.textContent = url.split('/').pop() || 'gambar_produk.png';
+        dropzonePrompt.style.display = 'none';
+        dropzonePreview.style.display = 'flex';
+      } else {
+        resetImageUpload();
+      }
+    }
+
     document.getElementById('btnOpenAddProd').addEventListener('click', () => {
       document.getElementById('prodModalTitle').textContent = 'Tambah Produk Baru';
       document.getElementById('editProdId').value = '';
       document.getElementById('productForm').reset();
       document.getElementById('prodMoqInput').value = '50';
       document.getElementById('prodActiveCheck').checked = true;
+      resetImageUpload();
       prodModal.classList.add('active');
     });
 
@@ -1099,9 +1088,9 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
       document.getElementById('prodWeightInput').value = p.weight;
       document.getElementById('prodPriceInput').value = p.price;
       document.getElementById('prodMoqInput').value = p.moq || 50;
-      document.getElementById('prodImageInput').value = p.image || '';
       document.getElementById('prodDescInput').value = p.desc || '';
       document.getElementById('prodActiveCheck').checked = p.active !== false;
+      setImagePreview(p.image);
       prodModal.classList.add('active');
     };
 
@@ -1114,37 +1103,10 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
       }
     };
 
-    // Product Form Submit
-    document.getElementById('productForm').addEventListener('submit', async (e) => {
+    document.getElementById('productForm').addEventListener('submit', (e) => {
       e.preventDefault();
       const id = document.getElementById('editProdId').value;
-      const fileInput = document.getElementById('prodImageFile');
-
-      let imageUrl = document.getElementById('prodImageInput').value.trim();
-
-      // If a file was selected, upload it first
-      if (fileInput.files.length > 0) {
-        const formData = new FormData();
-        formData.append('image', fileInput.files[0]);
-        try {
-          const upRes = await fetch('api.php?action=upload_image', {
-            method: 'POST',
-            body: formData
-          });
-          const upJson = await upRes.json();
-          if (upJson.success) {
-            imageUrl = upJson.data.url;
-          } else {
-            alert('Gagal muat naik gambar: ' + upJson.message);
-          }
-        } catch (err) {
-          alert('Ralat semasa muat naik fail gambar.');
-        }
-      }
-
-      if (!imageUrl) {
-        imageUrl = './assets/images/products/card_gold_0001g.png';
-      }
+      const imageUrl = prodImageInput.value.trim() || './assets/images/products/card_gold_0001g.png';
 
       const prodData = {
         id: id || ('prod-' + Date.now()),
@@ -1161,11 +1123,9 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
       };
 
       if (id) {
-        // Update existing
         const idx = appData.products.findIndex(item => item.id === id);
         if (idx !== -1) appData.products[idx] = prodData;
       } else {
-        // Add new
         appData.products.unshift(prodData);
       }
 
@@ -1173,238 +1133,147 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
       saveContent();
     });
 
-    // --- PACKAGING LOGIC ---
-    function renderPackaging() {
-      const container = document.getElementById('packagingFormContainer');
-      const packList = appData.packaging || [];
-      container.innerHTML = packList.map((pack, idx) => `
-        <div class="panel-card" style="margin-bottom: 0;">
-          <h4 style="font-family: 'Cinzel', serif; color: var(--gold-light); margin-bottom: 0.8rem;">${pack.name}</h4>
-          <div class="form-group">
-            <label class="form-label">Tag Lencana</label>
-            <input type="text" class="form-input pack-tag" data-idx="${idx}" value="${pack.tag}">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Harga Tambahan (RM)</label>
-            <input type="number" step="0.5" class="form-input pack-price" data-idx="${idx}" value="${pack.priceExtra}">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Huraian</label>
-            <textarea class="form-textarea pack-desc" data-idx="${idx}">${pack.desc}</textarea>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Ciri-Ciri (Satu per baris)</label>
-            <textarea class="form-textarea pack-features" data-idx="${idx}" rows="3">${(pack.features || []).join('\n')}</textarea>
-          </div>
-        </div>
-      `).join('');
-    }
+    // ==========================================
+    // TAB 2: IN-PLACE LIVE VISUAL LANDING PAGE EDITOR
+    // ==========================================
+    const visualFrame = document.getElementById('visualEditorFrame');
 
-    document.querySelectorAll('.btn-save-pack').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.pack-tag').forEach(el => {
-          const idx = el.getAttribute('data-idx');
-          appData.packaging[idx].tag = el.value.trim();
-        });
-        document.querySelectorAll('.pack-price').forEach(el => {
-          const idx = el.getAttribute('data-idx');
-          appData.packaging[idx].priceExtra = parseFloat(el.value) || 0;
-        });
-        document.querySelectorAll('.pack-desc').forEach(el => {
-          const idx = el.getAttribute('data-idx');
-          appData.packaging[idx].desc = el.value.trim();
-        });
-        document.querySelectorAll('.pack-features').forEach(el => {
-          const idx = el.getAttribute('data-idx');
-          appData.packaging[idx].features = el.value.split('\n').map(s => s.trim()).filter(Boolean);
-        });
-        saveContent();
-      });
-    });
-
-    // --- HERO LOGIC ---
-    function renderHero() {
-      const h = appData.hero || {};
-      document.getElementById('heroPillTag').value = h.pillTag || '';
-      document.getElementById('heroKicker').value = h.kicker || '';
-      document.getElementById('heroHeadLine1').value = h.headlineLine1 || '';
-      document.getElementById('heroHeadLine2').value = h.headlineLine2 || '';
-      document.getElementById('heroDescription').value = h.description || '';
-      document.getElementById('heroCtaText').value = h.ctaText || '';
-      document.getElementById('heroMotto').value = h.motto || '';
-    }
-
-    document.querySelector('.btn-save-hero').addEventListener('click', () => {
-      appData.hero = {
-        pillTag: document.getElementById('heroPillTag').value.trim(),
-        kicker: document.getElementById('heroKicker').value.trim(),
-        headlineLine1: document.getElementById('heroHeadLine1').value.trim(),
-        headlineLine2: document.getElementById('heroHeadLine2').value.trim(),
-        description: document.getElementById('heroDescription').value.trim(),
-        ctaText: document.getElementById('heroCtaText').value.trim(),
-        ctaTarget: '#koleksi',
-        motto: document.getElementById('heroMotto').value.trim()
-      };
-      saveContent();
-    });
-
-    // --- ABOUT LOGIC ---
-    function renderAbout() {
-      const a = appData.about || {};
-      document.getElementById('aboutDesc').value = a.desc || '';
-      document.getElementById('aboutVisi').value = a.visi || '';
-      document.getElementById('aboutMisi').value = (a.misi || []).join('\n');
-    }
-
-    document.querySelector('.btn-save-about').addEventListener('click', () => {
-      appData.about.desc = document.getElementById('aboutDesc').value.trim();
-      appData.about.visi = document.getElementById('aboutVisi').value.trim();
-      appData.about.misi = document.getElementById('aboutMisi').value.split('\n').map(s => s.trim()).filter(Boolean);
-      saveContent();
-    });
-
-    // --- USES LOGIC ---
-    function renderUses() {
-      const container = document.getElementById('usesListContainer');
-      const uses = appData.uses || [];
-      container.innerHTML = uses.map((u, idx) => `
-        <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--gold-border); border-radius: 8px; padding: 0.9rem;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 0.4rem;">
-            <strong style="color: var(--gold-light); font-size: 0.85rem;">Poin ${u.num}</strong>
-          </div>
-          <input type="text" class="form-input use-title" data-idx="${idx}" value="${u.title}" style="margin-bottom: 0.4rem; font-weight: 700;">
-          <textarea class="form-textarea use-desc" data-idx="${idx}" rows="2" style="font-size: 0.78rem;">${u.desc}</textarea>
-        </div>
-      `).join('');
-    }
-
-    document.querySelector('.btn-save-uses').addEventListener('click', () => {
-      document.querySelectorAll('.use-title').forEach(el => {
-        const idx = el.getAttribute('data-idx');
-        appData.uses[idx].title = el.value.trim();
-      });
-      document.querySelectorAll('.use-desc').forEach(el => {
-        const idx = el.getAttribute('data-idx');
-        appData.uses[idx].desc = el.value.trim();
-      });
-      saveContent();
-    });
-
-    // --- FAQ LOGIC ---
-    function renderFaq() {
-      const container = document.getElementById('faqListContainer');
-      const faqs = appData.faq || [];
-      container.innerHTML = faqs.map((f, idx) => `
-        <div style="background: rgba(0,0,0,0.3); border: 1px solid var(--gold-border); border-radius: 8px; padding: 1rem; position: relative;">
-          <button type="button" onclick="deleteFaq(${idx})" style="position: absolute; top: 0.8rem; right: 0.8rem; background: transparent; border: none; color: var(--danger); cursor: pointer; font-size: 0.8rem;">Padam</button>
-          <div class="form-group" style="margin-bottom: 0.5rem;">
-            <label class="form-label">Soalan ${idx + 1}</label>
-            <input type="text" class="form-input faq-q" data-idx="${idx}" value="${f.q}" style="font-weight: 700;">
-          </div>
-          <div class="form-group" style="margin-bottom: 0;">
-            <label class="form-label">Jawapan</label>
-            <textarea class="form-textarea faq-a" data-idx="${idx}" rows="2">${f.a}</textarea>
-          </div>
-        </div>
-      `).join('');
-    }
-
-    document.getElementById('btnAddFaq').addEventListener('click', () => {
-      if (!appData.faq) appData.faq = [];
-      appData.faq.push({
-        q: 'Soalan Baru?',
-        a: 'Jawapan ringkas di sini...'
-      });
-      renderFaq();
-    });
-
-    window.deleteFaq = function(idx) {
-      if (confirm('Padamkan soalan FAQ ini?')) {
-        appData.faq.splice(idx, 1);
-        renderFaq();
-      }
-    };
-
-    document.querySelector('.btn-save-faq').addEventListener('click', () => {
-      document.querySelectorAll('.faq-q').forEach(el => {
-        const idx = el.getAttribute('data-idx');
-        appData.faq[idx].q = el.value.trim();
-      });
-      document.querySelectorAll('.faq-a').forEach(el => {
-        const idx = el.getAttribute('data-idx');
-        appData.faq[idx].a = el.value.trim();
-      });
-      saveContent();
-    });
-
-    // --- SETTINGS LOGIC ---
-    function renderSettings() {
-      const s = appData.site || {};
-      document.getElementById('setBrand').value = s.brand || '';
-      document.getElementById('setTagline').value = s.tagline || '';
-      document.getElementById('setWhatsapp').value = s.whatsapp || '';
-      document.getElementById('setWhatsappRaw').value = s.whatsappRaw || '';
-      document.getElementById('setEmail').value = s.email || '';
-      document.getElementById('setDomain').value = s.domain || '';
-      document.getElementById('setIg').value = s.instagram || '';
-      document.getElementById('setTiktok').value = s.tiktok || '';
-      document.getElementById('setFb').value = s.facebook || '';
-      document.getElementById('setWebsite').value = s.website || '';
-    }
-
-    document.querySelector('.btn-save-settings').addEventListener('click', () => {
-      appData.site.brand = document.getElementById('setBrand').value.trim();
-      appData.site.tagline = document.getElementById('setTagline').value.trim();
-      appData.site.whatsapp = document.getElementById('setWhatsapp').value.trim();
-      appData.site.whatsappRaw = document.getElementById('setWhatsappRaw').value.trim();
-      appData.site.email = document.getElementById('setEmail').value.trim();
-      appData.site.domain = document.getElementById('setDomain').value.trim();
-      appData.site.instagram = document.getElementById('setIg').value.trim();
-      appData.site.tiktok = document.getElementById('setTiktok').value.trim();
-      appData.site.facebook = document.getElementById('setFb').value.trim();
-      appData.site.website = document.getElementById('setWebsite').value.trim();
-      saveContent();
-    });
-
-    // Change Password
-    document.getElementById('changePasswordForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const old_password = document.getElementById('oldPassword').value;
-      const new_password = document.getElementById('newPassword').value;
+    function initVisualEditorIframe() {
       try {
-        const res = await fetch('api.php?action=change_password', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ old_password, new_password })
-        });
-        const json = await res.json();
-        if (json.success) {
-          showToast(json.message);
-          document.getElementById('changePasswordForm').reset();
-        } else {
-          showToast(json.message, true);
+        const frameDoc = visualFrame.contentDocument || visualFrame.contentWindow.document;
+        if (!frameDoc || !frameDoc.body) return;
+
+        // Inject Visual Editor interactive styling into iframe
+        let styleTag = frameDoc.getElementById('revoVisualEditorStyles');
+        if (!styleTag) {
+          styleTag = frameDoc.createElement('style');
+          styleTag.id = 'revoVisualEditorStyles';
+          styleTag.textContent = `
+            [data-editable-node="true"] {
+              transition: all 0.2s ease;
+            }
+            [data-editable-node="true"]:hover {
+              outline: 2px dashed #D4AF37 !important;
+              outline-offset: 4px !important;
+              background: rgba(212, 175, 55, 0.12) !important;
+              border-radius: 4px !important;
+              cursor: text !important;
+            }
+            [data-editable-node="true"]:focus {
+              outline: 2.5px solid #F3E5AB !important;
+              outline-offset: 4px !important;
+              background: rgba(212, 175, 55, 0.22) !important;
+              box-shadow: 0 0 16px rgba(212, 175, 55, 0.5) !important;
+              border-radius: 4px !important;
+            }
+          `;
+          frameDoc.head.appendChild(styleTag);
         }
+
+        // Target all editable text selectors on the landing page
+        const editableSelectors = [
+          'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+          'p', '.ref-hero-badge', '.ref-hero-kicker', '.ref-hero-motto',
+          '.section-kicker', '.section-title', '.section-desc',
+          '.pillar-title', '.pillar-text', '.value-chip',
+          '.use-compact-pill span', '.step-min-title',
+          '.audience-title', '.audience-list li',
+          '.guarantee-title', '.guarantee-text',
+          '.pure-card-btn-ws span', '.legacy-pillar-title', '.legacy-pillar-desc',
+          '.ref-footer-about', '.footer-link-group a', '.footer-bottom-copy'
+        ];
+
+        frameDoc.querySelectorAll(editableSelectors.join(', ')).forEach(node => {
+          node.setAttribute('contenteditable', 'true');
+          node.setAttribute('spellcheck', 'false');
+          node.setAttribute('data-editable-node', 'true');
+        });
+
+        // Prevent navigation when clicking links inside iframe during editing
+        frameDoc.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+              // Allow smooth scroll anchors to work inside frame
+              const target = frameDoc.querySelector(href);
+              if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+              }
+            } else {
+              e.preventDefault(); // Don't leave page
+            }
+          });
+        });
+
       } catch (err) {
-        showToast('Ralat sambungan pelayan', true);
+        // Cross-origin fallback if running under restricted file:// protocol
       }
-    });
+    }
 
-    // Publish / Save Static
-    document.getElementById('btnPublishStatic').addEventListener('click', () => {
-      saveContent();
-    });
+    visualFrame.addEventListener('load', initVisualEditorIframe);
 
-    // Logout
-    document.getElementById('btnLogout').addEventListener('click', async () => {
+    function refreshVisualEditor() {
+      visualFrame.src = '../index.html?t=' + Date.now();
+    }
+
+    document.getElementById('btnReloadVisualEditor').addEventListener('click', refreshVisualEditor);
+
+    // Save In-Place Visual Landing Page Changes
+    document.getElementById('btnSaveVisualChanges').addEventListener('click', async () => {
       try {
-        await fetch('api.php?action=logout');
-        window.location.href = 'login.php';
+        const frameDoc = visualFrame.contentDocument || visualFrame.contentWindow.document;
+        if (!frameDoc || !frameDoc.documentElement) {
+          showToast('Gagal mengakses kandungan pratonton visual', true);
+          return;
+        }
+
+        // Clone document to clean up editor temporary attributes
+        const clonedDoc = frameDoc.documentElement.cloneNode(true);
+
+        // Remove injected editor stylesheet
+        const injectedStyle = clonedDoc.querySelector('#revoVisualEditorStyles');
+        if (injectedStyle) injectedStyle.remove();
+
+        // Strip contenteditable and editor markers
+        clonedDoc.querySelectorAll('[data-editable-node="true"]').forEach(el => {
+          el.removeAttribute('contenteditable');
+          el.removeAttribute('spellcheck');
+          el.removeAttribute('data-editable-node');
+        });
+
+        const fullHtml = '<!DOCTYPE html>\n<html lang="ms">\n' + clonedDoc.innerHTML + '\n</html>';
+
+        // 1. Save directly to index.html and index.php via PHP API
+        try {
+          const res = await fetch('api.php?action=save_landing_html', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ html: fullHtml })
+          });
+          const json = await res.json();
+          if (json.success) {
+            showToast('Semua perubahan visual berjaya disimpan terus ke laman web!');
+            localStorage.setItem('revo_landing_custom_html', fullHtml);
+            return;
+          }
+        } catch (err) {}
+
+        // Fallback: save to localStorage
+        localStorage.setItem('revo_landing_custom_html', fullHtml);
+        showToast('Semua perubahan visual disimpan di pelayar!');
+
       } catch (err) {
-        window.location.href = 'login.php';
+        showToast('Ralat semasa menyimpan perubahan visual', true);
       }
     });
 
-    // Init
+    document.getElementById('btnPublishStatic').addEventListener('click', () => saveContent());
+    document.getElementById('btnLogout').addEventListener('click', () => {
+      localStorage.removeItem('revo_admin_auth');
+      window.location.href = 'login.html';
+    });
+
     loadContent();
   </script>
 </body>
