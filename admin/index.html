@@ -13,10 +13,10 @@
 
   <style>
     :root {
-      --bg-dark: #0e0f15;
-      --bg-surface: #151722;
-      --bg-card: #1c1f2e;
-      --bg-card-hover: #24283b;
+      --bg-dark: #151824;
+      --bg-surface: #1e2233;
+      --bg-card: #25293d;
+      --bg-card-hover: #2f344d;
       --gold-primary: #D4AF37;
       --gold-light: #F3E5AB;
       --gold-dark: #997A15;
@@ -925,18 +925,27 @@
       });
     });
 
-    // Default Products Fallback (for file:// protocol where fetch is restricted)
+    // Default Products Fallback (with updated product images & specs)
     function getDefaultProducts() {
       return [
-        { id: 'gold-p-0001', name: 'Baby Gold Card Premium 0.001g', metal: 'Au 999.9', category: 'gold', weight: '0.001g', price: 9.99, moq: 50, series: 'Premium Series', image: './assets/images/products/card_gold_0001g.png', active: true },
-        { id: 'gold-p-002', name: 'Baby Gold Card Premium 0.02g', metal: 'Au 999.9', category: 'gold', weight: '0.02g', price: 26.66, moq: 50, series: 'Premium Series', image: './assets/images/products/card_gold_002g.png', active: true },
-        { id: 'gold-p-005', name: 'Baby Gold Card Premium 0.05g', metal: 'Au 999.9', category: 'gold', weight: '0.05g', price: 55.55, moq: 50, series: 'Premium Series', image: './assets/images/products/card_gold_005g.png', active: true },
-        { id: 'silver-c-1', name: 'Baby Silver Card Custom 1g', metal: 'Ag 999.9', category: 'silver', weight: '1g', price: 22.22, moq: 50, series: 'Custom Series', image: './assets/images/products/card_silver_1g.png', active: true },
-        { id: 'silver-c-2', name: 'Baby Silver Card Custom 2g', metal: 'Ag 999.9', category: 'silver', weight: '2g', price: 44.44, moq: 50, series: 'Custom Series', image: './assets/images/products/card_silver_2g.png', active: true },
-        { id: 'silver-c-5', name: 'Baby Silver Card Custom 5g', metal: 'Ag 999.9', category: 'silver', weight: '5g', price: 111.11, moq: 50, series: 'Custom Series', image: './assets/images/products/card_silver_5g.png', active: true },
-        { id: 'silver-p-10', name: 'Baby Silver Card Premium 10g', metal: 'Ag 999.9', category: 'silver', weight: '10g', price: 222.22, moq: 50, series: 'Premium Series', image: './assets/images/products/card_silver_10g.png', active: true },
-        { id: 'silver-p-25', name: 'Baby Silver Card Premium 25g', metal: 'Ag 999.9', category: 'silver', weight: '25g', price: 444.44, moq: 50, series: 'Premium Series', image: './assets/images/products/card_silver_25g.png', active: true },
-        { id: 'silver-p-50', name: 'Baby Silver Card Premium 50g', metal: 'Ag 999.9', category: 'silver', weight: '50g', price: 888.88, moq: 50, series: 'Premium Series', image: './assets/images/products/card_silver_50g.png', active: true }
+        { id: 'gold-c-0001', name: 'Baby Gold Card Custom 0.001g', metal: 'Au 999.9', category: 'gold', weight: '0.001g', price: 4.44, moq: 50, series: 'Custom Series', image: './assets/images/products/card_gold_c_0001.webp', active: true },
+        { id: 'gold-c-0002', name: 'Baby Gold Card Custom 0.002g', metal: 'Au 999.9', category: 'gold', weight: '0.002g', price: 6.66, moq: 50, series: 'Custom Series', image: './assets/images/products/card_gold_c_0002.webp', active: true },
+        { id: 'gold-c-0005', name: 'Baby Gold Card Custom 0.005g', metal: 'Au 999.9', category: 'gold', weight: '0.005g', price: 11.11, moq: 50, series: 'Custom Series', image: './assets/images/products/card_gold_c_0005.webp', active: true },
+        { id: 'gold-p-001', name: 'Baby Gold Card Premium 0.01g', metal: 'Au 999.9', category: 'gold', weight: '0.01g', price: 14.44, moq: 50, series: 'Premium Series', image: './assets/images/products/card_gold_p_001.webp', active: true },
+        { id: 'gold-p-002', name: 'Baby Gold Card Premium 0.02g', metal: 'Au 999.9', category: 'gold', weight: '0.02g', price: 26.66, moq: 50, series: 'Premium Series', image: './assets/images/products/card_gold_p_002.webp', active: true },
+        { id: 'gold-p-005', name: 'Baby Gold Card Premium 0.05g', metal: 'Au 999.9', category: 'gold', weight: '0.05g', price: 55.55, moq: 50, series: 'Premium Series', image: './assets/images/products/card_gold_p_005.webp', active: true },
+        { id: 'silver-c-1', name: 'Baby Silver Card Custom 1g', metal: 'Ag 999.9', category: 'silver', weight: '1g', price: 22.22, moq: 50, series: 'Custom Series', image: './assets/images/products/card_silver_c_1.webp', active: true },
+        { id: 'silver-c-2', name: 'Baby Silver Card Custom 2g', metal: 'Ag 999.9', category: 'silver', weight: '2g', price: 44.44, moq: 50, series: 'Custom Series', image: './assets/images/products/card_silver_c_2.webp', active: true },
+        { id: 'silver-c-5', name: 'Baby Silver Card Custom 5g', metal: 'Ag 999.9', category: 'silver', weight: '5g', price: 111.11, moq: 50, series: 'Custom Series', image: './assets/images/products/card_silver_c_5.webp', active: true },
+        { id: 'silver-p-10', name: 'Baby Silver Card Premium 10g', metal: 'Ag 999.9', category: 'silver', weight: '10g', price: 222.22, moq: 50, series: 'Premium Series', image: './assets/images/products/card_silver_p_10.webp', active: true },
+        { id: 'silver-p-25', name: 'Baby Silver Card Premium 25g', metal: 'Ag 999.9', category: 'silver', weight: '25g', price: 444.44, moq: 50, series: 'Premium Series', image: './assets/images/products/card_silver_p_25.webp', active: true },
+        { id: 'silver-p-50', name: 'Baby Silver Card Premium 50g', metal: 'Ag 999.9', category: 'silver', weight: '100g', price: 2444.44, moq: 50, series: 'Premium Series', image: './assets/images/products/card_silver_p_50.webp', active: true },
+        { id: 'vvip-g-01', name: 'Baby Gold Card VVIP 0.1g', metal: 'Au 999.9', category: 'vvip', weight: '0.1g', price: 111.11, moq: 50, series: 'VVIP Exclusive', image: './assets/images/products/card_gold_vvip_01g.png', active: true },
+        { id: 'vvip-g-02', name: 'Baby Gold Card VVIP 0.2g', metal: 'Au 999.9', category: 'vvip', weight: '0.2g', price: 222.22, moq: 50, series: 'VVIP Exclusive', image: './assets/images/products/card_gold_vvip_02g.png', active: true },
+        { id: 'vvip-g-05', name: 'Baby Gold Card VVIP 0.5g', metal: 'Au 999.9', category: 'vvip', weight: '0.5g', price: 444.44, moq: 50, series: 'VVIP Exclusive', image: './assets/images/products/card_gold_vvip_05g.png', active: true },
+        { id: 'vvip-s-5', name: 'Baby Silver Card VVIP 5g', metal: 'Ag 999.9', category: 'vvip', weight: '5g', price: 111.11, moq: 50, series: 'VVIP Exclusive', image: './assets/images/products/card_silver_vvip_5g.png', active: true },
+        { id: 'vvip-s-10', name: 'Baby Silver Card VVIP 10g', metal: 'Ag 999.9', category: 'vvip', weight: '10g', price: 222.22, moq: 50, series: 'VVIP Exclusive', image: './assets/images/products/card_silver_vvip_10g.png', active: true },
+        { id: 'vvip-s-25', name: 'Baby Silver Card VVIP 25g', metal: 'Ag 999.9', category: 'vvip', weight: '25g', price: 444.44, moq: 50, series: 'VVIP Exclusive', image: './assets/images/products/card_silver_vvip_25g.png', active: true }
       ];
     }
 

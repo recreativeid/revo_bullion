@@ -952,7 +952,7 @@
               <circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
             </svg>
             <span>Laman Web: </span>
-            <a href="https://revobullion.my.id" target="_blank" rel="noopener"><strong>revobullion.my.id</strong></a> / <a href="https://www.revobullion.com" target="_blank" rel="noopener">www.revobullion.com</a>
+            <a href="https://revobullion.my.id" target="_blank" rel="noopener"><strong>revobullion.my.id</strong></a>
           </div>
         </div>
       </div>

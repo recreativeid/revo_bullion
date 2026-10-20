@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 4.44,
       moq: 50,
       series: 'Custom Series',
-      image: './assets/images/products/card_gold_0001g.png',
+      image: './assets/images/products/card_gold_c_0001.webp',
       desc: 'Emas tulen Au 999.9 bersaiz mini dengan reka bentuk custom mengikut tema acara, jenama korporat atau nama anda.',
       active: true
     },
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 6.66,
       moq: 50,
       series: 'Custom Series',
-      image: './assets/images/products/card_gold_0002g.png',
+      image: './assets/images/products/card_gold_c_0002.webp',
       desc: 'Pilihan paling popular untuk doorgift perkahwinan, majlis hari jadi dan cenderamata kenang-kenangan.',
       active: true
     },
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 11.11,
       moq: 50,
       series: 'Custom Series',
-      image: './assets/images/products/card_gold_0005g.png',
+      image: './assets/images/products/card_gold_c_0005.webp',
       desc: 'Emas tulen nilai bermakna dengan cetakan kad eksklusif kalis luntur dan kemasan berkilat.',
       active: true
     },
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 14.44,
       moq: 50,
       series: 'Premium Series',
-      image: './assets/images/products/card_gold_001g.png',
+      image: './assets/images/products/card_gold_p_001.webp',
       desc: 'Siri premium rekaan artistik khas Malaysia Madani, corak floral elegan dan tema kemegahan negara.',
       active: true
     },
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 26.66,
       moq: 50,
       series: 'Premium Series',
-      image: './assets/images/products/card_gold_002g.png',
+      image: './assets/images/products/card_gold_p_002.webp',
       desc: 'Hadiah penghargaan kakitangan cemerlang, cenderamata rakan niaga dan tanda ingatan abadi.',
       active: true
     },
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 55.55,
       moq: 50,
       series: 'Premium Series',
-      image: './assets/images/products/card_gold_005g.png',
+      image: './assets/images/products/card_gold_p_005.webp',
       desc: 'Kemasan eksklusif berkilauan emas tulen padu 0.05g berprestij tinggi untuk majlis rasmi.',
       active: true
     },
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 22.22,
       moq: 50,
       series: 'Custom Series',
-      image: './assets/images/products/card_silver_1g.png',
+      image: './assets/images/products/card_silver_c_1.webp',
       desc: 'Perak tulen Ag 999.9 bersaiz kompak dengan reka bentuk moden, alternatif perak mampu milik.',
       active: true
     },
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 44.44,
       moq: 50,
       series: 'Custom Series',
-      image: './assets/images/products/card_silver_2g.png',
+      image: './assets/images/products/card_silver_c_2.webp',
       desc: 'Kepingan perak tulen 2g sesuai untuk cenderamata perkahwinan dan hadiah majlis penghargaan.',
       active: true
     },
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 111.11,
       moq: 50,
       series: 'Custom Series',
-      image: './assets/images/products/card_silver_5g.png',
+      image: './assets/images/products/card_silver_c_5.webp',
       desc: 'Ketulenan perak padu 5g dengan persembahan kad mewah untuk simpanan peribadi dan cenderamata korporat.',
       active: true
     },
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 222.22,
       moq: 50,
       series: 'Premium Series',
-      image: './assets/images/products/card_silver_10g.png',
+      image: './assets/images/products/card_silver_p_10.webp',
       desc: 'Siri perak premium berwajaran 10g dengan cetakan seni halus dan kad pelindung berkualiti tinggi.',
       active: true
     },
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
       price: 444.44,
       moq: 50,
       series: 'Premium Series',
-      image: './assets/images/products/card_silver_25g.png',
+      image: './assets/images/products/card_silver_p_25.webp',
       desc: 'Nilai simpanan perak fizikal yang padu dan bernilai seni tinggi, sesuai sebagai aset perlindungan.',
       active: true
     },
@@ -176,12 +176,12 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Baby Silver Card Premium 50g',
       metal: 'silver',
       category: 'silver',
-      weight: '50g',
+      weight: '100g',
       purity: 'Ag 999.9',
-      price: 1222.22,
+      price: 2444.44,
       moq: 50,
       series: 'Premium Series',
-      image: './assets/images/products/card_silver_50g.png',
+      image: './assets/images/products/card_silver_p_50.webp',
       desc: 'Barisan koleksi perak tulen terbesar dalam kad perlindungan rasmi Revo Bullion.',
       active: true
     },

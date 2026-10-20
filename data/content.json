@@ -4,7 +4,7 @@
     "tagline": "Precious Moments Last Forever",
     "slogan": "Small in Size, Meaningful in Value",
     "domain": "revobullion.my.id",
-    "website": "https://www.revobullion.com",
+    "website": "https://revobullion.my.id",
     "whatsapp": "011-1188 6654",
     "whatsappRaw": "601111886654",
     "email": "smgmh23@gmail.com",
@@ -38,175 +38,190 @@
       "Membina hubungan jangka panjang dengan pelanggan dan rakan niaga."
     ],
     "nilaiTeras": [
-      { "title": "Kualiti", "desc": "Emas dan perak tulen dengan reka bentuk eksklusif." },
-      { "title": "Kreativiti", "desc": "Reka bentuk custom mengikut tema dan keperluan." },
-      { "title": "Kepercayaan", "desc": "Perkhidmatan yang telus, profesional dan dipercayai." },
-      { "title": "Pelanggan", "desc": "Mengutamakan kepuasan pelanggan dalam setiap urusan." },
-      { "title": "Pertumbuhan", "desc": "Membangunkan jenama secara berterusan untuk masa depan." }
+      {
+        "title": "Kualiti",
+        "desc": "Emas dan perak tulen dengan reka bentuk eksklusif."
+      },
+      {
+        "title": "Kreativiti",
+        "desc": "Reka bentuk custom mengikut tema dan keperluan."
+      },
+      {
+        "title": "Kepercayaan",
+        "desc": "Perkhidmatan yang telus, profesional dan dipercayai."
+      },
+      {
+        "title": "Pelanggan",
+        "desc": "Mengutamakan kepuasan pelanggan dalam setiap urusan."
+      },
+      {
+        "title": "Pertumbuhan",
+        "desc": "Membangunkan jenama secara berterusan untuk masa depan."
+      }
     ]
   },
   "products": [
     {
       "id": "gold-c-0001",
+      "name": "Baby Gold Card Custom 0.001g",
       "category": "gold",
       "series": "Custom Series",
-      "name": "Baby Gold Card Custom 0.001g",
       "metal": "Au 999.9",
       "weight": "0.001g",
       "price": 4.44,
       "moq": 50,
-      "image": "./assets/images/products/card_gold_0001g.png",
+      "image": "./assets/images/products/card_gold_c_0001.webp",
       "desc": "Emas tulen Au 999.9 bersaiz mini dengan reka bentuk custom mengikut tema acara, jenama korporat atau nama anda.",
       "active": true
     },
     {
       "id": "gold-c-0002",
+      "name": "Baby Gold Card Custom 0.002g",
       "category": "gold",
       "series": "Custom Series",
-      "name": "Baby Gold Card Custom 0.002g",
       "metal": "Au 999.9",
       "weight": "0.002g",
       "price": 6.66,
       "moq": 50,
-      "image": "./assets/images/products/card_gold_0002g.png",
+      "image": "./assets/images/products/card_gold_c_0002.webp",
       "desc": "Pilihan paling popular untuk doorgift perkahwinan, majlis hari jadi dan cenderamata kenang-kenangan.",
       "active": true
     },
     {
       "id": "gold-c-0005",
+      "name": "Baby Gold Card Custom 0.005g",
       "category": "gold",
       "series": "Custom Series",
-      "name": "Baby Gold Card Custom 0.005g",
       "metal": "Au 999.9",
       "weight": "0.005g",
       "price": 11.11,
       "moq": 50,
-      "image": "./assets/images/products/card_gold_0005g.png",
+      "image": "./assets/images/products/card_gold_c_0005.webp",
       "desc": "Emas tulen nilai bermakna dengan cetakan kad eksklusif kalis luntur dan kemasan berkilat.",
       "active": true
     },
     {
       "id": "gold-p-001",
+      "name": "Baby Gold Card Premium 0.01g",
       "category": "gold",
       "series": "Premium Series",
-      "name": "Baby Gold Card Premium 0.01g",
       "metal": "Au 999.9",
       "weight": "0.01g",
       "price": 14.44,
       "moq": 50,
-      "image": "./assets/images/products/card_gold_001g.png",
+      "image": "./assets/images/products/card_gold_p_001.webp",
       "desc": "Siri premium rekaan artistik khas Malaysia Madani, corak floral elegan dan tema kemegahan negara.",
       "active": true
     },
     {
       "id": "gold-p-002",
+      "name": "Baby Gold Card Premium 0.02g",
       "category": "gold",
       "series": "Premium Series",
-      "name": "Baby Gold Card Premium 0.02g",
       "metal": "Au 999.9",
       "weight": "0.02g",
       "price": 26.66,
       "moq": 50,
-      "image": "./assets/images/products/card_gold_002g.png",
+      "image": "./assets/images/products/card_gold_p_002.webp",
       "desc": "Hadiah penghargaan kakitangan cemerlang, cenderamata rakan niaga dan tanda ingatan abadi.",
       "active": true
     },
     {
       "id": "gold-p-005",
+      "name": "Baby Gold Card Premium 0.05g",
       "category": "gold",
       "series": "Premium Series",
-      "name": "Baby Gold Card Premium 0.05g",
       "metal": "Au 999.9",
       "weight": "0.05g",
       "price": 55.55,
       "moq": 50,
-      "image": "./assets/images/products/card_gold_005g.png",
+      "image": "./assets/images/products/card_gold_p_005.webp",
       "desc": "Kemasan eksklusif berkilauan emas tulen padu 0.05g berprestij tinggi untuk majlis rasmi.",
       "active": true
     },
     {
       "id": "silver-c-1",
+      "name": "Baby Silver Card Custom 1g",
       "category": "silver",
       "series": "Custom Series",
-      "name": "Baby Silver Card Custom 1g",
       "metal": "Ag 999.9",
       "weight": "1g",
       "price": 22.22,
       "moq": 50,
-      "image": "./assets/images/products/card_silver_1g.png",
+      "image": "./assets/images/products/card_silver_c_1.webp",
       "desc": "Perak tulen Ag 999.9 bersaiz kompak dengan reka bentuk moden, alternatif perak mampu milik.",
       "active": true
     },
     {
       "id": "silver-c-2",
+      "name": "Baby Silver Card Custom 2g",
       "category": "silver",
       "series": "Custom Series",
-      "name": "Baby Silver Card Custom 2g",
       "metal": "Ag 999.9",
       "weight": "2g",
       "price": 44.44,
       "moq": 50,
-      "image": "./assets/images/products/card_silver_2g.png",
+      "image": "./assets/images/products/card_silver_c_2.webp",
       "desc": "Kepingan perak tulen 2g sesuai untuk cenderamata perkahwinan dan hadiah majlis penghargaan.",
       "active": true
     },
     {
       "id": "silver-c-5",
+      "name": "Baby Silver Card Custom 5g",
       "category": "silver",
       "series": "Custom Series",
-      "name": "Baby Silver Card Custom 5g",
       "metal": "Ag 999.9",
       "weight": "5g",
       "price": 111.11,
       "moq": 50,
-      "image": "./assets/images/products/card_silver_5g.png",
+      "image": "./assets/images/products/card_silver_c_5.webp",
       "desc": "Ketulenan perak padu 5g dengan persembahan kad mewah untuk simpanan peribadi dan cenderamata korporat.",
       "active": true
     },
     {
       "id": "silver-p-10",
+      "name": "Baby Silver Card Premium 10g",
       "category": "silver",
       "series": "Premium Series",
-      "name": "Baby Silver Card Premium 10g",
       "metal": "Ag 999.9",
       "weight": "10g",
       "price": 222.22,
       "moq": 50,
-      "image": "./assets/images/products/card_silver_10g.png",
+      "image": "./assets/images/products/card_silver_p_10.webp",
       "desc": "Siri perak premium berwajaran 10g dengan cetakan seni halus dan kad pelindung berkualiti tinggi.",
       "active": true
     },
     {
       "id": "silver-p-25",
+      "name": "Baby Silver Card Premium 25g",
       "category": "silver",
       "series": "Premium Series",
-      "name": "Baby Silver Card Premium 25g",
       "metal": "Ag 999.9",
       "weight": "25g",
       "price": 444.44,
       "moq": 50,
-      "image": "./assets/images/products/card_silver_25g.png",
+      "image": "./assets/images/products/card_silver_p_25.webp",
       "desc": "Nilai simpanan perak fizikal yang padu dan bernilai seni tinggi, sesuai sebagai aset perlindungan.",
       "active": true
     },
     {
       "id": "silver-p-50",
+      "name": "Baby Silver Card Premium 50g",
       "category": "silver",
       "series": "Premium Series",
-      "name": "Baby Silver Card Premium 50g",
       "metal": "Ag 999.9",
-      "weight": "50g",
-      "price": 1222.22,
+      "weight": "100g",
+      "price": 2444.44,
       "moq": 50,
-      "image": "./assets/images/products/card_silver_50g.png",
+      "image": "./assets/images/products/card_silver_p_50.webp",
       "desc": "Barisan koleksi perak tulen terbesar dalam kad perlindungan rasmi Revo Bullion.",
       "active": true
     },
     {
       "id": "vvip-g-01",
+      "name": "Baby Gold Card VVIP 0.1g",
       "category": "vvip",
       "series": "VVIP Exclusive",
-      "name": "Baby Gold Card VVIP 0.1g",
       "metal": "Au 999.9",
       "weight": "0.1g",
       "price": 111.11,
@@ -299,7 +314,7 @@
       "id": "pack-premium",
       "name": "Premium Gift Box",
       "tag": "Paling Popular",
-      "priceExtra": 8.0,
+      "priceExtra": 8,
       "image": "./assets/images/products/pack_premium.png",
       "desc": "Reka bentuk moden dengan kotak baldu eksklusif dan reben hadiah mewah, sedia diserahkan pada majlis istimewa.",
       "features": [
@@ -313,7 +328,7 @@
       "id": "pack-vvip",
       "name": "VVIP Luxury Pack",
       "tag": "Siri Eksekutif",
-      "priceExtra": 18.0,
+      "priceExtra": 18,
       "image": "./assets/images/products/pack_vvip.png",
       "desc": "Pembungkusan eksklusif kotak baldu hitam bersalut emas lengkap bersama Certificate of Authenticity (Sijil Ketulenan).",
       "features": [
@@ -327,7 +342,7 @@
       "id": "pack-custom",
       "name": "Custom Corporate Pack",
       "tag": "Identiti Syarikat",
-      "priceExtra": 12.0,
+      "priceExtra": 12,
       "image": "./assets/images/products/pack_custom.png",
       "desc": "Rekaan mengikut tema organisasi anda (nama, logo syarikat dan mesej rasmi), sesuai untuk majlis korporat dan pelancaran.",
       "features": [
@@ -339,18 +354,66 @@
     }
   ],
   "uses": [
-    { "num": "01", "title": "Hadiah Istimewa", "desc": "Sesuai untuk hari lahir, ulang tahun, perkahwinan dan majlis istimewa insan tersayang." },
-    { "num": "02", "title": "Cenderamata Majlis", "desc": "Pilihan premium untuk cenderamata majlis rasmi, event korporat dan kenang-kenangan tetamu." },
-    { "num": "03", "title": "Pelaburan Jangka Panjang", "desc": "Emas & perak kekal bernilai tinggi dan menjadi aset perlindungan terbaik daripada inflasi." },
-    { "num": "04", "title": "Program Korporat", "desc": "Sesuai untuk penghargaan pelanggan, rakan niaga strategik, staf dan program syarikat." },
-    { "num": "05", "title": "Majlis Rasmi & Keagamaan", "desc": "Cenderamata untuk majlis rasmi kerajaan, majlis agama, program komuniti dan persatuan." },
-    { "num": "06", "title": "Koleksi Peribadi", "desc": "Rekaan eksklusif edisi terhad sesuai untuk penggemar dan pengumpul koleksi seni logam mulia." },
-    { "num": "07", "title": "Edukasi & Kesedaran", "desc": "Sebagai medium pendidikan praktikal tentang nilai sebenar emas & perak sejak usia muda." },
-    { "num": "08", "title": "Cabutan Bertuah & Reward", "desc": "Hadiah cabutan bertuah (lucky draw), insentif kecemerlangan dan program motivasi staf." },
-    { "num": "09", "title": "Simpanan Nilai Selamat", "desc": "Mudah disimpan di dalam dompet atau peti keselamatan, bernilai tinggi dan mudah diwarisi." },
-    { "num": "10", "title": "Hadiah Korporat & Jenama", "desc": "Rekaan mengikut tema, nama syarikat, logo korporat dan mesej khas bagi mengukuhkan jenama." },
-    { "num": "11", "title": "Cenderamata Pelancongan", "desc": "Pilihan istimewa untuk pelancong sebagai cenderamata memori ikonik kenangan dari Malaysia." },
-    { "num": "12", "title": "Wasiat & Warisan Pusaka", "desc": "Simpan nilai aset berharga hari ini sebagai warisan bermakna untuk generasi masa hadapan." }
+    {
+      "num": "01",
+      "title": "Hadiah Istimewa",
+      "desc": "Sesuai untuk hari lahir, ulang tahun, perkahwinan dan majlis istimewa insan tersayang."
+    },
+    {
+      "num": "02",
+      "title": "Cenderamata Majlis",
+      "desc": "Pilihan premium untuk cenderamata majlis rasmi, event korporat dan kenang-kenangan tetamu."
+    },
+    {
+      "num": "03",
+      "title": "Pelaburan Jangka Panjang",
+      "desc": "Emas & perak kekal bernilai tinggi dan menjadi aset perlindungan terbaik daripada inflasi."
+    },
+    {
+      "num": "04",
+      "title": "Program Korporat",
+      "desc": "Sesuai untuk penghargaan pelanggan, rakan niaga strategik, staf dan program syarikat."
+    },
+    {
+      "num": "05",
+      "title": "Majlis Rasmi & Keagamaan",
+      "desc": "Cenderamata untuk majlis rasmi kerajaan, majlis agama, program komuniti dan persatuan."
+    },
+    {
+      "num": "06",
+      "title": "Koleksi Peribadi",
+      "desc": "Rekaan eksklusif edisi terhad sesuai untuk penggemar dan pengumpul koleksi seni logam mulia."
+    },
+    {
+      "num": "07",
+      "title": "Edukasi & Kesedaran",
+      "desc": "Sebagai medium pendidikan praktikal tentang nilai sebenar emas & perak sejak usia muda."
+    },
+    {
+      "num": "08",
+      "title": "Cabutan Bertuah & Reward",
+      "desc": "Hadiah cabutan bertuah (lucky draw), insentif kecemerlangan dan program motivasi staf."
+    },
+    {
+      "num": "09",
+      "title": "Simpanan Nilai Selamat",
+      "desc": "Mudah disimpan di dalam dompet atau peti keselamatan, bernilai tinggi dan mudah diwarisi."
+    },
+    {
+      "num": "10",
+      "title": "Hadiah Korporat & Jenama",
+      "desc": "Rekaan mengikut tema, nama syarikat, logo korporat dan mesej khas bagi mengukuhkan jenama."
+    },
+    {
+      "num": "11",
+      "title": "Cenderamata Pelancongan",
+      "desc": "Pilihan istimewa untuk pelancong sebagai cenderamata memori ikonik kenangan dari Malaysia."
+    },
+    {
+      "num": "12",
+      "title": "Wasiat & Warisan Pusaka",
+      "desc": "Simpan nilai aset berharga hari ini sebagai warisan bermakna untuk generasi masa hadapan."
+    }
   ],
   "faq": [
     {

@@ -20,8 +20,8 @@ if (!empty($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === tru
   
   <style>
     :root {
-      --bg-dark: #0d0e14;
-      --bg-card: rgba(20, 22, 32, 0.9);
+      --bg-dark: #151824;
+      --bg-card: rgba(28, 33, 49, 0.92);
       --gold-primary: #D4AF37;
       --gold-light: #F3E5AB;
       --gold-dark: #997A15;

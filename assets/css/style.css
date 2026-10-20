@@ -4,12 +4,12 @@
    ========================================================================== */
 
 :root {
-  /* Color System - Sophisticated Elevated Charcoal Black */
-  --bg-dark: #0e0f15;
-  --bg-surface: #151722;
-  --bg-card: rgba(22, 25, 36, 0.88);
-  --bg-card-hover: rgba(30, 34, 48, 0.96);
-  --bg-card-gold: linear-gradient(145deg, #242017 0%, #14151d 100%);
+  /* Color System - Sophisticated Elevated Charcoal Black (Lighter & Smoother) */
+  --bg-dark: #151824;
+  --bg-surface: #1e2233;
+  --bg-card: rgba(28, 33, 49, 0.90);
+  --bg-card-hover: rgba(36, 42, 62, 0.96);
+  --bg-card-gold: linear-gradient(145deg, #2c271b 0%, #1c1f2d 100%);
   
   /* Metallic Gold Palette */
   --gold-50: #fffbeb;
@@ -1513,7 +1513,7 @@ a {
 }
 
 .calc-results-pane {
-  background: linear-gradient(150deg, #16151f 0%, #0d0c12 100%);
+  background: linear-gradient(150deg, #1e2233 0%, #151824 100%);
   border-left: 1px solid rgba(212, 175, 55, 0.2);
   padding: 2.5rem;
   display: flex;
