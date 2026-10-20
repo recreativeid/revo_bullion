@@ -40,15 +40,10 @@
       </div>
 
       <nav class="ref-header-nav" aria-label="Menu Utama">
-        <a href="#hero" class="ref-nav-item">Utama</a>
+        <a href="#hero" class="ref-nav-item active">Utama</a>
         <a href="#tentang" class="ref-nav-item">Pengenalan</a>
         <a href="#koleksi" class="ref-nav-item">Koleksi</a>
         <a href="#vvip-series" class="ref-nav-item">Siri VVIP</a>
-        <a href="#pembungkusan" class="ref-nav-item">Pembungkusan</a>
-        <a href="#kegunaan" class="ref-nav-item">12 Kegunaan</a>
-        <a href="#langkah" class="ref-nav-item">6 Langkah</a>
-        <a href="#segmen" class="ref-nav-item">Segmen</a>
-        <a href="#sebut-harga" class="ref-nav-item">Sebut Harga</a>
         <a href="#kontak" class="ref-nav-item">Hubungi</a>
       </nav>
 

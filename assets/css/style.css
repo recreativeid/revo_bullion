@@ -205,6 +205,21 @@ a {
   font-weight: 700;
 }
 
+.ref-nav-item[href="#vvip-series"] {
+  color: var(--gold-300);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.08);
+  font-weight: 700;
+}
+
+.ref-nav-item[href="#vvip-series"]:hover,
+.ref-nav-item[href="#vvip-series"].active {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: var(--gold-400);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+}
+
 .ref-nav-right {
   display: flex;
   align-items: center;
