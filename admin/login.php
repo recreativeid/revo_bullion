@@ -20,8 +20,8 @@ if (!empty($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === tru
   
   <style>
     :root {
-      --bg-dark: #07070a;
-      --bg-card: rgba(16, 16, 24, 0.85);
+      --bg-dark: #0d0e14;
+      --bg-card: rgba(20, 22, 32, 0.9);
       --gold-primary: #D4AF37;
       --gold-light: #F3E5AB;
       --gold-dark: #997A15;
@@ -238,7 +238,7 @@ if (!empty($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === tru
     <form id="loginForm" autocomplete="off">
       <div class="form-group">
         <label class="form-label" for="usernameInput">Nama Pengguna (Username)</label>
-        <input type="text" id="usernameInput" class="form-control" placeholder="admin" required autofocus value="admin">
+        <input type="text" id="usernameInput" class="form-control" placeholder="Nama Pengguna" required autofocus>
       </div>
 
       <div class="form-group">
@@ -251,10 +251,6 @@ if (!empty($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === tru
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
       </button>
     </form>
-
-    <div class="creds-tip">
-      Akaun Default: Pengguna: <strong>admin</strong> | Laluan: <strong>admin123</strong>
-    </div>
 
     <a href="../" class="back-link">← Kembali ke Laman Web Rasmi</a>
   </div>

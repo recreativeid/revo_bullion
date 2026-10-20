@@ -20,10 +20,10 @@ if (empty($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
 
   <style>
     :root {
-      --bg-dark: #07070a;
-      --bg-surface: #0e0e14;
-      --bg-card: #13131c;
-      --bg-card-hover: #191924;
+      --bg-dark: #0e0f15;
+      --bg-surface: #151722;
+      --bg-card: #1c1f2e;
+      --bg-card-hover: #24283b;
       --gold-primary: #D4AF37;
       --gold-light: #F3E5AB;
       --gold-dark: #997A15;

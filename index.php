@@ -369,7 +369,7 @@
   <!-- ==========================================
        SECTION 4: 12 KEGUNAAN PRODUK REVO BULLION (Poster 12)
        ========================================== -->
-  <section class="section" id="kegunaan" style="background: rgba(8, 8, 12, 0.8);">
+  <section class="section" id="kegunaan" style="background: rgba(18, 20, 28, 0.75);">
     <div class="container">
       <div class="section-head">
         <span class="section-kicker">Impak & Fleksibiliti</span>
@@ -512,7 +512,7 @@
   <!-- ==========================================
        SECTION 6: SIAPA SESUAI (Poster 14)
        ========================================== -->
-  <section class="section" id="segmen" style="background: rgba(12, 12, 18, 0.6);">
+  <section class="section" id="segmen" style="background: rgba(21, 23, 33, 0.65);">
     <div class="container">
       <div class="section-head">
         <span class="section-kicker">Segmen Pelanggan</span>

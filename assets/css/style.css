@@ -4,12 +4,12 @@
    ========================================================================== */
 
 :root {
-  /* Color System */
-  --bg-dark: #060608;
-  --bg-surface: #0c0c11;
-  --bg-card: rgba(16, 16, 23, 0.85);
-  --bg-card-hover: rgba(24, 24, 35, 0.95);
-  --bg-card-gold: linear-gradient(145deg, #1f1a10 0%, #0d0c08 100%);
+  /* Color System - Sophisticated Elevated Charcoal Black */
+  --bg-dark: #0e0f15;
+  --bg-surface: #151722;
+  --bg-card: rgba(22, 25, 36, 0.88);
+  --bg-card-hover: rgba(30, 34, 48, 0.96);
+  --bg-card-gold: linear-gradient(145deg, #242017 0%, #14151d 100%);
   
   /* Metallic Gold Palette */
   --gold-50: #fffbeb;
@@ -27,7 +27,7 @@
   --gold-border-light: rgba(212, 175, 55, 0.15);
   --gold-border-hover: rgba(247, 208, 112, 0.7);
   --gold-glow: 0 0 30px rgba(212, 175, 55, 0.25);
-  --gold-glow-ambient: radial-gradient(ellipse at 50% 12%, rgba(212, 175, 55, 0.18) 0%, rgba(212, 175, 55, 0.04) 45%, transparent 70%);
+  --gold-glow-ambient: radial-gradient(ellipse at 50% 12%, rgba(212, 175, 55, 0.22) 0%, rgba(212, 175, 55, 0.05) 50%, transparent 75%);
 
   /* Platinum Silver Palette */
   --silver-100: #ffffff;
@@ -134,10 +134,10 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(6, 6, 8, 0.92);
+  background: rgba(14, 15, 21, 0.94);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
   transition: var(--transition);
 }
 
