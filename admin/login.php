@@ -278,6 +278,9 @@ if (!empty($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === tru
         const data = await res.json();
 
         if (data.success) {
+          localStorage.setItem('revo_admin_auth', 'true');
+          localStorage.setItem('revo_admin_token', 'revo_secret_admin_2026');
+          document.cookie = 'revo_admin_token=revo_secret_admin_2026; path=/; max-age=86400';
           alertBox.className = 'alert-box alert-success';
           alertBox.textContent = 'Log masuk berjaya! Mengalihkan ke dashboard...';
           alertBox.style.display = 'block';

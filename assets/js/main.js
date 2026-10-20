@@ -542,28 +542,66 @@ Mohon maklum balas pihak Revo Bullion untuk semakan mockup dan proses seterusnya
 
   initScrollAnimations();
 
-  // 6. Dynamic Content Sync from data/content.json (if updated via Admin CMS)
+  // 6. Dynamic Content Sync from localStorage & data/content.json (if updated via Admin CMS)
   async function syncFromCMS() {
+    // A. Check localStorage first so changes made in Admin CMS display instantly
+    const customProdsRaw = localStorage.getItem('revo_custom_products');
+    if (customProdsRaw) {
+      try {
+        const customProds = JSON.parse(customProdsRaw);
+        if (Array.isArray(customProds) && customProds.length > 0) {
+          customProds.forEach(cp => {
+            const idx = currentProducts.findIndex(p => p.id === cp.id);
+            if (idx !== -1) {
+              currentProducts[idx] = { ...currentProducts[idx], ...cp };
+            } else {
+              currentProducts.push(cp);
+            }
+          });
+          renderCatalog(currentCategory);
+          updateCalculatorProducts();
+        }
+      } catch (e) {}
+    }
+
+    // B. Fetch server data/content.json if accessible
     try {
       const res = await fetch('./data/content.json?t=' + Date.now());
-      if (!res.ok) return;
-      const data = await res.json();
+      if (res.ok) {
+        const data = await res.json();
 
-      if (data.products && Array.isArray(data.products) && data.products.length > 0) {
-        currentProducts = data.products;
-        renderCatalog(currentCategory);
-        updateCalculatorProducts();
-      }
+        if (data.products && Array.isArray(data.products) && data.products.length > 0) {
+          currentProducts = data.products;
 
-      if (data.hero) {
-        const pill = document.querySelector('.ref-hero-badge');
-        if (pill && data.hero.pillTag) pill.textContent = data.hero.pillTag;
+          // Merge any customized products from localStorage on top of server data
+          if (customProdsRaw) {
+            try {
+              const customProds = JSON.parse(customProdsRaw);
+              if (Array.isArray(customProds)) {
+                customProds.forEach(cp => {
+                  const idx = currentProducts.findIndex(p => p.id === cp.id);
+                  if (idx !== -1) {
+                    currentProducts[idx] = { ...currentProducts[idx], ...cp };
+                  }
+                });
+              }
+            } catch (e) {}
+          }
 
-        const kicker = document.querySelector('.ref-hero-kicker');
-        if (kicker && data.hero.kicker) kicker.textContent = data.hero.kicker;
+          renderCatalog(currentCategory);
+          updateCalculatorProducts();
+        }
 
-        const motto = document.querySelector('.ref-hero-motto');
-        if (motto && data.hero.motto) motto.textContent = data.hero.motto;
+        if (data.hero) {
+          const pill = document.querySelector('.ref-hero-badge');
+          if (pill && data.hero.pillTag) pill.textContent = data.hero.pillTag;
+
+          const kicker = document.querySelector('.ref-hero-kicker');
+          if (kicker && data.hero.kicker) kicker.textContent = data.hero.kicker;
+
+          const motto = document.querySelector('.ref-hero-motto');
+          if (motto && data.hero.motto) motto.textContent = data.hero.motto;
+        }
       }
     } catch (err) {
       // Offline or local file protocol fallback is already handled
@@ -571,4 +609,11 @@ Mohon maklum balas pihak Revo Bullion untuk semakan mockup dan proses seterusnya
   }
 
   syncFromCMS();
+
+  // Listen to cross-tab storage events to immediately update catalog when CMS saves
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'revo_custom_products' && e.newValue) {
+      syncFromCMS();
+    }
+  });
 });
