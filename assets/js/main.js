@@ -542,9 +542,49 @@ Mohon maklum balas pihak Revo Bullion untuk semakan mockup dan proses seterusnya
 
   initScrollAnimations();
 
-  // 6. Dynamic Content Sync from localStorage & data/content.json (if updated via Admin CMS)
+  // IndexedDB Store Access for public catalog
+  const REVO_DB = {
+    name: 'RevoBullionDB',
+    version: 1,
+    storeName: 'products',
+
+    async open() {
+      if (!window.indexedDB) return null;
+      return new Promise((resolve) => {
+        const req = indexedDB.open(this.name, this.version);
+        req.onupgradeneeded = (e) => {
+          const db = e.target.result;
+          if (!db.objectStoreNames.contains(this.storeName)) {
+            db.createObjectStore(this.storeName, { keyPath: 'id' });
+          }
+        };
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => resolve(null);
+      });
+    },
+
+    async getAll() {
+      const db = await this.open();
+      if (!db) return null;
+      return new Promise((resolve) => {
+        try {
+          const tx = db.transaction(this.storeName, 'readonly');
+          const store = tx.objectStore(this.storeName);
+          const req = store.getAll();
+          req.onsuccess = () => resolve(req.result || null);
+          req.onerror = () => resolve(null);
+        } catch (e) {
+          resolve(null);
+        }
+      });
+    }
+  };
+
+  // 6. Dynamic Content Sync from IndexedDB, localStorage & data/content.json
   async function syncFromCMS() {
-    // A. Check localStorage first so changes made in Admin CMS display instantly
+    let hasUpdates = false;
+
+    // A. Check localStorage (legacy fallback)
     const customProdsRaw = localStorage.getItem('revo_custom_products');
     if (customProdsRaw) {
       try {
@@ -553,43 +593,48 @@ Mohon maklum balas pihak Revo Bullion untuk semakan mockup dan proses seterusnya
           customProds.forEach(cp => {
             const idx = currentProducts.findIndex(p => p.id === cp.id);
             if (idx !== -1) {
-              currentProducts[idx] = { ...currentProducts[idx], ...cp };
-            } else {
-              currentProducts.push(cp);
+              if (cp.image && cp.image.startsWith('data:')) {
+                currentProducts[idx] = { ...currentProducts[idx], ...cp };
+                hasUpdates = true;
+              }
             }
           });
-          renderCatalog(currentCategory);
-          updateCalculatorProducts();
         }
       } catch (e) {}
     }
 
-    // B. Fetch server data/content.json if accessible
+    // B. Check IndexedDB (primary unconstrained store - overrides localStorage)
+    try {
+      const dbProducts = await REVO_DB.getAll();
+      if (dbProducts && Array.isArray(dbProducts) && dbProducts.length > 0) {
+        dbProducts.forEach(dp => {
+          const idx = currentProducts.findIndex(p => p.id === dp.id);
+          if (idx !== -1) {
+            currentProducts[idx] = { ...currentProducts[idx], ...dp };
+          } else {
+            currentProducts.push(dp);
+          }
+        });
+        hasUpdates = true;
+      }
+    } catch (e) {}
+
+    // C. Fetch server data/content.json if accessible
     try {
       const res = await fetch('./data/content.json?t=' + Date.now());
       if (res.ok) {
         const data = await res.json();
-
         if (data.products && Array.isArray(data.products) && data.products.length > 0) {
-          currentProducts = data.products;
-
-          // Merge any customized products from localStorage on top of server data
-          if (customProdsRaw) {
-            try {
-              const customProds = JSON.parse(customProdsRaw);
-              if (Array.isArray(customProds)) {
-                customProds.forEach(cp => {
-                  const idx = currentProducts.findIndex(p => p.id === cp.id);
-                  if (idx !== -1) {
-                    currentProducts[idx] = { ...currentProducts[idx], ...cp };
-                  }
-                });
+          data.products.forEach(sp => {
+            const idx = currentProducts.findIndex(p => p.id === sp.id);
+            if (idx !== -1) {
+              // Only override if current doesn't have custom base64 image
+              if (!currentProducts[idx].image || !currentProducts[idx].image.startsWith('data:')) {
+                currentProducts[idx] = { ...currentProducts[idx], ...sp };
               }
-            } catch (e) {}
-          }
-
-          renderCatalog(currentCategory);
-          updateCalculatorProducts();
+            }
+          });
+          hasUpdates = true;
         }
 
         if (data.hero) {
@@ -604,15 +649,32 @@ Mohon maklum balas pihak Revo Bullion untuk semakan mockup dan proses seterusnya
         }
       }
     } catch (err) {
-      // Offline or local file protocol fallback is already handled
+      // Offline fallback is already handled
+    }
+
+    if (hasUpdates) {
+      renderCatalog(currentCategory);
+      updateCalculatorProducts();
     }
   }
 
   syncFromCMS();
 
-  // Listen to cross-tab storage events to immediately update catalog when CMS saves
+  // Listen to cross-tab broadcast channel for instant real-time sync
+  try {
+    if (window.BroadcastChannel) {
+      const bc = new BroadcastChannel('revo_cms_channel');
+      bc.onmessage = (e) => {
+        if (e.data && e.data.type === 'PRODUCTS_UPDATED') {
+          syncFromCMS();
+        }
+      };
+    }
+  } catch (e) {}
+
+  // Listen to cross-tab storage events
   window.addEventListener('storage', (e) => {
-    if (e.key === 'revo_custom_products' && e.newValue) {
+    if (e.key === 'revo_custom_products' || e.key === 'revo_content_backup') {
       syncFromCMS();
     }
   });

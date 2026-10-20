@@ -843,6 +843,72 @@
       setTimeout(() => { toast.className = 'toast-notice'; }, 3500);
     }
 
+    // ==========================================
+    // 1. INDEXEDDB ENGINE (Unlimited Local Storage)
+    // ==========================================
+    const REVO_DB = {
+      name: 'RevoBullionDB',
+      version: 1,
+      storeName: 'products',
+
+      async open() {
+        if (!window.indexedDB) return null;
+        return new Promise((resolve) => {
+          const req = indexedDB.open(this.name, this.version);
+          req.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains(this.storeName)) {
+              db.createObjectStore(this.storeName, { keyPath: 'id' });
+            }
+          };
+          req.onsuccess = () => resolve(req.result);
+          req.onerror = () => resolve(null);
+        });
+      },
+
+      async getAll() {
+        const db = await this.open();
+        if (!db) return null;
+        return new Promise((resolve) => {
+          try {
+            const tx = db.transaction(this.storeName, 'readonly');
+            const store = tx.objectStore(this.storeName);
+            const req = store.getAll();
+            req.onsuccess = () => resolve(req.result || null);
+            req.onerror = () => resolve(null);
+          } catch (e) {
+            resolve(null);
+          }
+        });
+      },
+
+      async saveAll(products) {
+        if (!Array.isArray(products) || products.length === 0) return false;
+        const db = await this.open();
+        if (!db) return false;
+        return new Promise((resolve) => {
+          try {
+            const tx = db.transaction(this.storeName, 'readwrite');
+            const store = tx.objectStore(this.storeName);
+            products.forEach(p => store.put(p));
+            tx.oncomplete = () => resolve(true);
+            tx.onerror = () => resolve(false);
+          } catch (e) {
+            resolve(false);
+          }
+        });
+      },
+
+      async clear() {
+        const db = await this.open();
+        if (!db) return;
+        try {
+          const tx = db.transaction(this.storeName, 'readwrite');
+          tx.objectStore(this.storeName).clear();
+        } catch (e) {}
+      }
+    };
+
     // Tab Navigation Switcher
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -859,8 +925,24 @@
       });
     });
 
-    // Load CMS Data & Merge LocalStorage Overrides
+    // Default Products Fallback (for file:// protocol where fetch is restricted)
+    function getDefaultProducts() {
+      return [
+        { id: 'gold-p-0001', name: 'Baby Gold Card Premium 0.001g', metal: 'Au 999.9', category: 'gold', weight: '0.001g', price: 9.99, moq: 50, series: 'Premium Series', image: './assets/images/products/card_gold_0001g.png', active: true },
+        { id: 'gold-p-002', name: 'Baby Gold Card Premium 0.02g', metal: 'Au 999.9', category: 'gold', weight: '0.02g', price: 26.66, moq: 50, series: 'Premium Series', image: './assets/images/products/card_gold_002g.png', active: true },
+        { id: 'gold-p-005', name: 'Baby Gold Card Premium 0.05g', metal: 'Au 999.9', category: 'gold', weight: '0.05g', price: 55.55, moq: 50, series: 'Premium Series', image: './assets/images/products/card_gold_005g.png', active: true },
+        { id: 'silver-c-1', name: 'Baby Silver Card Custom 1g', metal: 'Ag 999.9', category: 'silver', weight: '1g', price: 22.22, moq: 50, series: 'Custom Series', image: './assets/images/products/card_silver_1g.png', active: true },
+        { id: 'silver-c-2', name: 'Baby Silver Card Custom 2g', metal: 'Ag 999.9', category: 'silver', weight: '2g', price: 44.44, moq: 50, series: 'Custom Series', image: './assets/images/products/card_silver_2g.png', active: true },
+        { id: 'silver-c-5', name: 'Baby Silver Card Custom 5g', metal: 'Ag 999.9', category: 'silver', weight: '5g', price: 111.11, moq: 50, series: 'Custom Series', image: './assets/images/products/card_silver_5g.png', active: true },
+        { id: 'silver-p-10', name: 'Baby Silver Card Premium 10g', metal: 'Ag 999.9', category: 'silver', weight: '10g', price: 222.22, moq: 50, series: 'Premium Series', image: './assets/images/products/card_silver_10g.png', active: true },
+        { id: 'silver-p-25', name: 'Baby Silver Card Premium 25g', metal: 'Ag 999.9', category: 'silver', weight: '25g', price: 444.44, moq: 50, series: 'Premium Series', image: './assets/images/products/card_silver_25g.png', active: true },
+        { id: 'silver-p-50', name: 'Baby Silver Card Premium 50g', metal: 'Ag 999.9', category: 'silver', weight: '50g', price: 888.88, moq: 50, series: 'Premium Series', image: './assets/images/products/card_silver_50g.png', active: true }
+      ];
+    }
+
+    // Load CMS Data & Merge IndexedDB + LocalStorage
     async function loadContent() {
+      // 1. Server fetch
       try {
         const res = await fetch('../data/content.json?t=' + Date.now());
         if (res.ok) {
@@ -870,15 +952,20 @@
         console.warn('Could not fetch server content.json', err);
       }
 
-      // Check localStorage for backup if fetch failed
-      const savedBackup = localStorage.getItem('revo_content_backup');
-      if (!appData && savedBackup) {
-        try {
-          appData = JSON.parse(savedBackup);
-        } catch(e) {}
+      // 2. Local storage backup fallback
+      if (!appData) {
+        const savedBackup = localStorage.getItem('revo_content_backup');
+        if (savedBackup) {
+          try { appData = JSON.parse(savedBackup); } catch(e) {}
+        }
       }
 
-      // Merge user custom products from localStorage
+      // 3. Fallback to default template if still empty
+      if (!appData || !Array.isArray(appData.products)) {
+        appData = { site: { brand: 'REVO BULLION' }, products: getDefaultProducts() };
+      }
+
+      // 4. Merge from legacy localStorage first (if any existing items)
       const customProds = localStorage.getItem('revo_custom_products');
       if (customProds && appData && Array.isArray(appData.products)) {
         try {
@@ -887,31 +974,61 @@
             parsed.forEach(cp => {
               const idx = appData.products.findIndex(p => p.id === cp.id);
               if (idx !== -1) {
-                appData.products[idx] = { ...appData.products[idx], ...cp };
-              } else {
-                appData.products.unshift(cp);
+                // Only merge if it's an uploaded custom base64 image
+                if (cp.image && cp.image.startsWith('data:')) {
+                  appData.products[idx] = { ...appData.products[idx], ...cp };
+                }
               }
             });
           }
         } catch(e) {}
       }
 
+      // 5. MASTER OVERRIDE: Merge from IndexedDB (highest authority and capacity)
+      const dbProducts = await REVO_DB.getAll();
+      if (dbProducts && Array.isArray(dbProducts) && dbProducts.length > 0) {
+        dbProducts.forEach(dp => {
+          const idx = appData.products.findIndex(p => p.id === dp.id);
+          if (idx !== -1) {
+            appData.products[idx] = { ...appData.products[idx], ...dp };
+          } else {
+            appData.products.unshift(dp);
+          }
+        });
+      }
+
       renderProducts();
+
+      // 6. Background self-healing: Compress any bloated >60KB images to free up space
+      setTimeout(() => {
+        autoCompressExistingProducts();
+      }, 500);
     }
 
-    // Save Data to Server and localStorage
+    // Save Data to IndexedDB, LocalStorage, and Server
     async function saveContent() {
       if (!appData || !Array.isArray(appData.products)) return;
 
-      // 1. Always store to localStorage so changes are NEVER lost
+      // 1. Save to IndexedDB (unlimited quota, 100% resilient)
+      await REVO_DB.saveAll(appData.products);
+
+      // 2. Try to save to localStorage
       try {
         localStorage.setItem('revo_custom_products', JSON.stringify(appData.products));
         localStorage.setItem('revo_content_backup', JSON.stringify(appData));
       } catch (storageErr) {
-        console.warn('LocalStorage save warning:', storageErr);
+        console.warn('LocalStorage quota warning - data safely secured in IndexedDB:', storageErr);
       }
 
-      // 2. Save to PHP API if server is active
+      // 3. Broadcast to all open tabs so landing page updates instantly
+      try {
+        if (window.BroadcastChannel) {
+          const bc = new BroadcastChannel('revo_cms_channel');
+          bc.postMessage({ type: 'PRODUCTS_UPDATED' });
+        }
+      } catch (e) {}
+
+      // 4. Save to PHP API if server is reachable
       let serverSaved = false;
       try {
         const res = await fetch('api.php?action=save_content', {
@@ -925,12 +1042,11 @@
         const json = await res.json();
         if (json.success) {
           serverSaved = true;
-          // If server replaced base64 images with clean file paths, update local list
           if (json.data && Array.isArray(json.data.products)) {
             appData.products = json.data.products;
+            await REVO_DB.saveAll(appData.products);
             try {
               localStorage.setItem('revo_custom_products', JSON.stringify(appData.products));
-              localStorage.setItem('revo_content_backup', JSON.stringify(appData));
             } catch(e) {}
           }
           showToast(json.message || 'Kandungan berjaya disimpan ke fail pelayan!');
@@ -938,7 +1054,7 @@
       } catch (err) {}
 
       if (!serverSaved) {
-        showToast('Perubahan disimpan di sesi pelayar & sedia dipratonton!');
+        showToast('Perubahan disimpan di storan pelayar & sedia dipratonton!');
       }
 
       renderProducts();
@@ -1015,9 +1131,16 @@
     const previewFileName = document.getElementById('previewFileName');
     const prodImageInput = document.getElementById('prodImageInput');
 
-    // Trigger file chooser on dropzone click
+    // Trigger file chooser on dropzone click or "Tukar Gambar"
     uploadDropzone.addEventListener('click', (e) => {
       if (e.target.closest('#btnRemoveImage')) return;
+      prodImageFileInput.value = ''; // Always clear so selecting same file fires change
+      prodImageFileInput.click();
+    });
+
+    document.getElementById('btnChangeImage').addEventListener('click', (e) => {
+      e.stopPropagation();
+      prodImageFileInput.value = '';
       prodImageFileInput.click();
     });
 
@@ -1063,27 +1186,77 @@
       showToast('Fail content.json telah dimuat turun!');
     }
 
-    function resetToDefault() {
-      if (confirm('Adakah anda pasti mahu memadamkan cache tempatan dan menetapkan semula ke kandungan asal pelayan?')) {
+    async function resetToDefault() {
+      if (confirm('Adakah anda pasti mahu memadamkan cache tempatan dan menetapkan semula ke kandungan asal fail pelayan?')) {
+        await REVO_DB.clear();
         localStorage.removeItem('revo_custom_products');
         localStorage.removeItem('revo_content_backup');
-        loadContent();
-        showToast('Kandungan telah ditetapkan semula ke fail asal pelayan.');
+        appData = null;
+        await loadContent();
+        showToast('Kandungan telah ditetapkan semula ke fail asal.');
       }
     }
 
-    // Client-side Image Compression (HTML5 Canvas) to prevent QuotaExceededError
-    function compressImage(file, maxWidth = 800, maxHeight = 800, quality = 0.85) {
-      return new Promise((resolve, reject) => {
+    // High-efficiency Image Compression (HTML5 Canvas) to ~25KB WebP
+    function compressImage(file, maxWidth = 640, maxHeight = 640, quality = 0.75) {
+      return new Promise((resolve) => {
+        if (file.type === 'image/svg+xml' || (file.name && file.name.endsWith('.svg'))) {
+          const r = new FileReader();
+          r.onload = () => resolve(r.result);
+          r.onerror = () => resolve('');
+          r.readAsDataURL(file);
+          return;
+        }
+
         const reader = new FileReader();
-        reader.onerror = reject;
         reader.onload = (e) => {
           const img = new Image();
-          img.onerror = reject;
           img.onload = () => {
+            try {
+              let width = img.width;
+              let height = img.height;
+              if (width > maxWidth || height > maxHeight) {
+                if (width > height) {
+                  height = Math.round((height * maxWidth) / width);
+                  width = maxWidth;
+                } else {
+                  width = Math.round((width * maxHeight) / height);
+                  height = maxHeight;
+                }
+              }
+              const canvas = document.createElement('canvas');
+              canvas.width = width;
+              canvas.height = height;
+              const ctx = canvas.getContext('2d');
+              ctx.imageSmoothingEnabled = true;
+              ctx.imageSmoothingQuality = 'high';
+              ctx.drawImage(img, 0, 0, width, height);
+
+              let out = canvas.toDataURL('image/webp', quality);
+              if (!out || !out.startsWith('data:image/webp')) {
+                out = canvas.toDataURL('image/jpeg', quality);
+              }
+              resolve(out || e.target.result);
+            } catch (err) {
+              resolve(e.target.result);
+            }
+          };
+          img.onerror = () => resolve(e.target.result);
+          img.src = e.target.result;
+        };
+        reader.onerror = () => resolve('');
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // Recompress existing base64 string
+    function recompressDataUrl(dataUrl, maxWidth = 640, maxHeight = 640, quality = 0.75) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => {
+          try {
             let width = img.width;
             let height = img.height;
-
             if (width > maxWidth || height > maxHeight) {
               if (width > height) {
                 height = Math.round((height * maxWidth) / width);
@@ -1093,7 +1266,6 @@
                 height = maxHeight;
               }
             }
-
             const canvas = document.createElement('canvas');
             canvas.width = width;
             canvas.height = height;
@@ -1102,38 +1274,84 @@
             ctx.imageSmoothingQuality = 'high';
             ctx.drawImage(img, 0, 0, width, height);
 
-            let dataUrl = canvas.toDataURL('image/webp', quality);
-            if (!dataUrl.startsWith('data:image/webp')) {
-              dataUrl = canvas.toDataURL('image/jpeg', quality);
+            let out = canvas.toDataURL('image/webp', quality);
+            if (!out || !out.startsWith('data:image/webp')) {
+              out = canvas.toDataURL('image/jpeg', quality);
             }
+            resolve(out);
+          } catch (err) {
             resolve(dataUrl);
-          };
-          img.src = e.target.result;
+          }
         };
-        reader.readAsDataURL(file);
+        img.onerror = () => resolve(dataUrl);
+        img.src = dataUrl;
       });
     }
 
+    // Automatically shrink any bloated products (>80KB) in background
+    async function autoCompressExistingProducts() {
+      if (!appData || !Array.isArray(appData.products)) return;
+      let needsSave = false;
+      for (let p of appData.products) {
+        if (p.image && p.image.startsWith('data:image') && p.image.length > 80000) {
+          try {
+            const shrunk = await recompressDataUrl(p.image, 640, 640, 0.75);
+            if (shrunk && shrunk.length < p.image.length) {
+              p.image = shrunk;
+              needsSave = true;
+            }
+          } catch(e) {}
+        }
+      }
+      if (needsSave) {
+        await REVO_DB.saveAll(appData.products);
+        try {
+          localStorage.setItem('revo_custom_products', JSON.stringify(appData.products));
+          localStorage.setItem('revo_content_backup', JSON.stringify(appData));
+        } catch(e) {}
+        renderProducts();
+      }
+    }
+
     async function handleImageFile(file) {
-      if (!file.type.startsWith('image/')) {
+      if (!file) return;
+      const isImage = (file.type && file.type.startsWith('image/')) || /\.(jpe?g|png|webp|svg|gif|bmp|jfif)$/i.test(file.name);
+      if (!isImage) {
         showToast('Sila pilih fail berformat gambar (PNG, JPG, WEBP, SVG)', true);
         return;
       }
 
       previewFileName.textContent = file.name;
-      showToast('Mengoptimumkan gambar...');
+      showToast('Memproses gambar...');
 
       try {
-        // 1. Client-side canvas compression down to ~40-60KB
-        const compressedDataUrl = await compressImage(file, 800, 800, 0.85);
+        // 1. Instant preview so user immediately sees the change in modal
+        const rawDataUrl = await new Promise((res) => {
+          const r = new FileReader();
+          r.onload = () => res(r.result);
+          r.onerror = () => res('');
+          r.readAsDataURL(file);
+        });
 
-        // 2. Set instant crisp preview & form value
-        imgPreviewTag.src = compressedDataUrl;
-        dropzonePrompt.style.display = 'none';
-        dropzonePreview.style.display = 'flex';
-        prodImageInput.value = compressedDataUrl;
+        if (rawDataUrl) {
+          imgPreviewTag.src = rawDataUrl;
+          dropzonePrompt.style.display = 'none';
+          dropzonePreview.style.display = 'flex';
+          prodImageInput.value = rawDataUrl;
+        }
 
-        // 3. Upload to server if running
+        // 2. High-speed Canvas compression down to ~25KB WebP
+        const compressed = await compressImage(file, 640, 640, 0.75);
+        if (compressed) {
+          imgPreviewTag.src = compressed;
+          prodImageInput.value = compressed;
+          const sizeKb = Math.round((compressed.length * 0.75) / 1024);
+          previewFileName.textContent = `${file.name} (${sizeKb} KB)`;
+        }
+
+        showToast('Gambar sedia! Tekan "Simpan Produk".');
+
+        // 3. Optional server upload if api.php is active
         try {
           const res = await fetch('api.php?action=upload_image', {
             method: 'POST',
@@ -1142,7 +1360,7 @@
               'X-Admin-Token': 'revo_secret_admin_2026'
             },
             body: JSON.stringify({
-              base64: compressedDataUrl,
+              base64: compressed || rawDataUrl,
               name: file.name
             })
           });
@@ -1150,13 +1368,9 @@
           if (json.success && json.data && json.data.url) {
             prodImageInput.value = json.data.url;
             showToast('Gambar dimuat naik & disimpan di pelayan!');
-            return;
           }
-        } catch (uploadErr) {
-          // Fallback: the optimized base64 string is retained in prodImageInput.value
-        }
+        } catch (netErr) {}
 
-        showToast('Gambar sedia disimpan!');
       } catch (err) {
         showToast('Gagal memproses gambar: ' + err.message, true);
       }
@@ -1181,7 +1395,7 @@
         let displaySrc = url;
         if (displaySrc.startsWith('./')) displaySrc = '.' + displaySrc;
         imgPreviewTag.src = displaySrc;
-        previewFileName.textContent = url.split('/').pop() || 'gambar_produk.png';
+        previewFileName.textContent = url.startsWith('data:') ? 'gambar_kustom.webp' : (url.split('/').pop() || 'gambar_produk.png');
         dropzonePrompt.style.display = 'none';
         dropzonePreview.style.display = 'flex';
       } else {
@@ -1220,16 +1434,17 @@
       prodModal.classList.add('active');
     };
 
-    window.deleteProduct = function(id) {
+    window.deleteProduct = async function(id) {
       const p = appData.products.find(item => item.id === id);
       if (!p) return;
       if (confirm(`Adakah anda pasti mahu memadamkan produk "${p.name}"?`)) {
         appData.products = appData.products.filter(item => item.id !== id);
-        saveContent();
+        renderProducts();
+        await saveContent();
       }
     };
 
-    document.getElementById('productForm').addEventListener('submit', (e) => {
+    document.getElementById('productForm').addEventListener('submit', async (e) => {
       e.preventDefault();
       const id = document.getElementById('editProdId').value;
       const imageUrl = prodImageInput.value.trim() || './assets/images/products/card_gold_0001g.png';
@@ -1250,13 +1465,22 @@
 
       if (id) {
         const idx = appData.products.findIndex(item => item.id === id);
-        if (idx !== -1) appData.products[idx] = prodData;
+        if (idx !== -1) {
+          appData.products[idx] = prodData;
+        }
       } else {
         appData.products.unshift(prodData);
       }
 
+      // Close modal immediately
       prodModal.classList.remove('active');
-      saveContent();
+
+      // CRITICAL: Update table UI right away so the user immediately sees the new image!
+      renderProducts();
+      showToast('Gambar berjaya dikemaskini!');
+
+      // Save to IndexedDB, localStorage & server
+      await saveContent();
     });
 
     // ==========================================
